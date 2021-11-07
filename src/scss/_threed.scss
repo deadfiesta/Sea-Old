@@ -409,8 +409,13 @@
             p, h3, h2 {
                 color: white;
             }
-            @include grid(420px) {
-                gap: 2rem;
+            @include grid(335px) {
+                gap: 3rem;
+            }
+            @include desktop {
+                @include grid(400px) {
+                    gap: 3rem;
+                }
             }
         }
         ul.con-list {

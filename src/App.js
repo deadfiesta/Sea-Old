@@ -9,7 +9,7 @@ import Flat from './Components/Flat';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename={"/trends"}>
         <Menu />
         <Switch>
           <Route exact path="/">
