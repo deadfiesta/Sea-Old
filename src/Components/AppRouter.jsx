@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router , Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import { brutalist, flat, glassmorphism, monochromatic, neumorphism, threed } from './Data';
 import Menu from './Menu';
@@ -7,7 +7,7 @@ import Flat from './Flat';
 
 const AppRouter = () => {
     return (
-        <HashRouter basename={"/trends"}>
+        <Router basename={"/trends"}>
             <Menu />
             <Switch>
                 <Route exact path="/">
@@ -35,7 +35,7 @@ const AppRouter = () => {
                     <Flat data={threed} />
                 </Route>
             </Switch>
-        </HashRouter>
+        </Router>
     )
 }
 
