@@ -393,8 +393,13 @@
         }
         ul.pro-list,
         ul.con-list {
-            @include grid(420px) {
-                gap: 2rem;
+            @include grid(335px) {
+                gap: 3rem;
+            }
+            @include desktop {
+                @include grid(400px) {
+                    gap: 3rem;
+                }
             }
             li {
                 box-sizing: border-box;

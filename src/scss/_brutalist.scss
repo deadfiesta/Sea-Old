@@ -519,9 +519,15 @@
         }
         ul.pro-list,
         ul.con-list {
-            @include grid(400px) {
+            @include grid(335px) {
                 gap: 3rem;
             }
+            @include desktop {
+                @include grid(400px) {
+                    gap: 3rem;
+                }
+            }
+            
             li {
                 position: relative;
                 z-index: 1;
