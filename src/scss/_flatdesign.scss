@@ -1,0 +1,340 @@
+#flat-design {
+    padding: 2rem 0;
+    @include desktop($desktop) {
+        padding: 3rem 0;
+    }
+    @include flex(column) {
+        gap: 2rem;
+        @include desktop($desktop) {
+            gap: 4rem;
+        }
+    }
+    nav {
+        .navbar-container {
+            .branding {
+                .design {
+                    color: color(accent);
+                }
+            }
+            ul.tabs {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @include desktop($desktop) {
+                    gap: 3rem;
+                }
+                li {
+                    cursor: pointer;
+                    color: color(gray, secondary);
+                    &:hover {
+                        color: color(accent);
+                    }
+                    &:last-child {
+                        color: color(neutral);
+                        border-radius: 1.5rem;
+                        padding: 0.75rem 1.5rem;
+                        background-color: color(accent);
+                        &:hover {
+                            background-color: color(accent, main4);
+                        }
+                    }
+                }
+                li.active {
+                    font-weight: 600;
+                    color: color(gray);
+                }
+            }
+        }
+    }
+    header {
+        .header-container {
+            margin: 2rem 0;
+            @include desktop {
+                margin: 12rem 0;
+            }
+            .left {
+                @include flex(column) {
+                    gap: 1rem;
+                    @include desktop {
+                        align-items: flex-start;
+                        gap: 2rem;
+                    }
+                }
+                .description {
+                    max-width: 58ch;
+                    color: color(gray, secondary);
+                }
+                .button-container {
+                    margin-top: 2rem;
+                    @include flex {
+                        gap: 2rem;
+                    }
+                    .arrow {
+                        opacity: 0;
+                        transition: all 0.2s ease-out;
+                    }
+                    button.cta {
+                        color: color(neutral);
+                        &:hover {
+                            color: color(accent);
+                            &:after {
+                                margin: 0.25rem;
+                            }
+                            .arrow {
+                                opacity: 1;
+                            }
+                        }
+                        &:before {
+                            background-color: color(accent);
+                        }
+                        &:after {
+                            margin: 3rem;
+                            background-color: color(neutral);
+                        }
+                    }
+                    button.cta-secondary {
+                        color: color(accent);
+                        &:before {
+                            opacity: 0;
+                            background-color: color(accent);
+                        }
+                        &:after {
+                            border: 1px solid color(accent);
+                        }
+                        &:hover {
+                            outline: none;
+                            &:before {
+                                opacity: 0.1;
+                            }
+                            &:after {
+                                opacity: 0;
+                            }
+                            .arrow {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            .right {
+                @include desktop {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                .rocket-container {
+                    position: relative;
+                    .rocket {
+                        @include desktop {
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            transform: translateY(-45%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    section {
+        .container {
+            @include flex(column) {
+                gap: 4rem;
+                align-items: center;
+            }
+        }
+        .title-container {
+            @include flex(column) {
+                align-items: center;
+                gap: 1rem;
+            }
+            p {
+                max-width: 80ch;
+                color: color(gray, secondary);
+                text-align: center;
+            }
+        }
+        h4 {
+            color: color(accent);
+        }
+    }
+    section.traits {
+        padding: 4rem 0;
+        background-color: color(neutral, bg);
+        @include desktop {
+            padding: 6rem 0;
+        }
+        .traits-container {
+            @include grid {
+                gap: 2rem;
+            }
+            li {
+                cursor: default;
+                background-color: color(neutral);
+                padding: 2rem;
+                box-shadow: 2px 10px 20px 0 rgba(black, 0);
+                @include flex(column) {
+                    gap: 1rem;
+                }
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 6px 10px 2rem 0 rgba(black, 0.075);
+                }
+                p {
+                    text-align: center;
+                    color: color(gray, secondary);
+                }
+            }
+        }
+    }
+    section.introduction {
+        padding: 2rem 0;
+        @include desktop {
+            padding: 6rem 0;
+        }
+        .paragraph-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+            gap: 2rem;
+            p {
+                padding: 4rem 2rem;
+                background-color: color(gray, shade1);
+
+                max-width: initial;
+            }
+        }
+    }
+    section.examples {
+        padding: 2rem 0;
+        @include desktop {
+            padding: 6rem 0;
+        }
+        background-color: color(gray, shade1);
+        .images-container {
+            width: 100%;
+            @include grid {
+                gap: 2rem;
+            }
+        }
+        a {
+            position: relative;
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                border: 0 solid color(accent);
+                transition: all 0.1s ease;
+            }
+            .example-container {
+                background-color: color(accent);
+                padding: 0.5rem 1rem;
+                transform: translateY(100%);
+                h4 {
+                    color: color(neutral);
+                }
+                .arrow {
+                    stroke: color(neutral);
+                }
+            }
+            &:hover {
+                &:after {
+                    border-width: 4px;
+                }
+                .example-container {
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+    section.procon {
+        p {
+            color: color(gray, secondary);
+        }
+        .pro-container,
+        .con-container {
+            padding: 4rem 0;
+            @include desktop {
+                padding: 6rem 0;
+            }
+        }
+        .pro-container {
+            background-color: color(gray, shade2);
+        }
+        ul.pro-list {
+            @include grid(420px) {
+                gap: 2rem;
+            }
+        }
+        ul.con-list {
+            @include grid(335px) {
+                gap: 2rem;
+            }
+        }
+        ul.pro-list,
+        ul.con-list {
+            li {
+                position: relative;
+                padding: 3rem;
+                background-color: color(neutral);
+                box-shadow: 4px 4px 20px 0 rgba(black, 0);
+                @include flex(column) {
+                    gap: 1rem;
+                }
+                &:after {
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 0.25rem;
+                    background-color: color(accent);
+                    @include transition;
+                }
+                &:before {
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    opacity: 0;
+                    border: 1px solid color(accent);
+                    @include transition(all, .2s);
+                }
+                &:hover {
+                    &:before {
+                        opacity: 1;
+                        border-width: .5rem;
+                    }
+                }
+                h3 {
+                    text-align: center;
+                }
+            }
+        }
+        ul.con-list {
+            li {
+                &:hover {
+                    &:after {
+                        background-color: color(pink);
+                    }
+                }
+            }
+            li:before {
+                border-color: color(pink);
+            }
+            li:after {
+                background-color: color(pink);
+            }
+        }
+        button {
+            h4,
+            svg {
+                stroke: color(gray, shade7);
+                color: color(gray, shade7);
+            }
+        }
+    }
+}

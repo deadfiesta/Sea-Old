@@ -1,0 +1,26 @@
+@function color($base, $shade: main) {
+    $color: map-get(map-get($colors, $base), $shade);
+    @return $color;
+}
+
+@mixin desktop($min-width: #{$breakpoint}) {
+    @media (min-width: $min-width) {
+        @content;
+    }
+}
+
+@mixin flex($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    @content;
+}
+
+@mixin grid($min: 260px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
+    @content;
+}
+
+@mixin transition($transform: all, $duration: .3s, $ease: ease) {
+    transition: $transform $duration $ease;
+}

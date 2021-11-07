@@ -1,0 +1,65 @@
+$colors: (
+    gray: (
+        main: #1B2631,
+        secondary: #5D6D7E,
+        black: #000814,
+        shade1: #f8f9fa,
+        shade2: #e9ecef,
+        shade3: #dee2e6,
+        shade4: #ced4da,
+        shade5: #adb5bd,
+        shade6: #6c757d,
+        shade7: #495057,
+        shade8: #343a40,
+        shade9: #212529,
+    ),
+    neutral: (
+        main: #fff,
+        gray: #EBEDED,
+        bg: #f8f9f9 ,
+        divider: #eaecee,
+    ),
+    accent: (
+        main: #8338ec,
+        main1: #e0aaff,
+        main2: #c77dff,
+        main3: #9d4edd,
+        main4: #7b2cbf,
+        main5: #5a189a,
+        main6: #3c096c,
+        main7: #240046,
+        secondary: #FF9E00,
+        secondary1: #ff9e00,
+        secondary2: #ff9100,
+        secondary3: #ff8500,
+        secondary4: #ff7900,
+        secondary5: #ff6d00,
+    ),
+    pink: (
+        main: #ff0a54,
+        2: #ff477e,
+        3: #ff5c8a,
+        4: #ff7096,
+        5: #ff85a1,
+        6: #ff99ac,
+        7: #fbb1bd,
+        8: #f9bec7,
+        9: #f7cad0,
+        10: #fae0e4, 
+    ),
+    teal: (
+        main: #008080,
+        1: #b2d8d8,
+        2: #66b2b2,
+        3: #008080,
+        4: #006666,
+        5: #004c4c,
+    ),
+    yellow: (
+        main: #F1C40F
+    )
+);
+
+$breakpoint: 1100px;
+$hidepoint: 940px;
+$desktop: 720px;

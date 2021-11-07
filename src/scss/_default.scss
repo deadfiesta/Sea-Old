@@ -1,0 +1,249 @@
+.page-container {
+    box-sizing: border-box;
+    .arrow {
+        width: 8px;
+        fill: none;
+        stroke-width: 2px;
+        stroke: color(accent);
+    }
+    .wrapper {
+        box-sizing: border-box;
+        @include transition;
+    }
+    .rocket {
+        @include transition;
+        circle.border {
+            fill: none;
+            stroke: color(accent);
+            stroke-width: 9px;
+            stroke-linecap: round;
+            stroke-dasharray: 300;
+        }
+        circle.bg {
+            fill: #eaf2f8;
+        }
+        path.smog {
+            fill: color(neutral);
+        }
+        path.cloud {
+            fill: color(neutral);
+        }
+        circle.sparkle.inside {
+            fill: color(accent);
+        }
+        circle.sparkle.outside {
+            fill: color(accent);
+        }
+        path.star.inside {
+            fill: color(accent);
+        }
+        path.star.left {
+            fill: color(accent);
+        }
+        path.star.right {
+            fill: color(accent, secondary);
+        }
+        path.flame {
+            fill: color(gray, shade3);
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+            animation-direction: alternate;
+        }
+        path.exhaust {
+            fill: color(accent, main7);
+        }
+        path.wing {
+            fill: color(accent);
+        }
+        path.body {
+            fill: color(neutral);
+        }
+        path.tip {
+            fill: color(accent);
+        }
+        path.window.frame {
+            fill: color(accent);
+            stroke-dasharray: 0;
+        }
+        path.window.panel {
+            fill: color(accent, secondary1);
+        }
+        g.rocket-body {
+            animation: blasting 0.0075s linear infinite forwards;
+            animation-play-state: paused;
+        }
+        &:hover {
+            $movement: 5px;
+
+            @keyframes blasting {
+                0% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY($movement);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+            g.rocket-body {
+                animation-play-state: running;
+            }
+            path.flame {
+                animation-play-state: running;
+            }
+        }
+    }
+    nav {
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            gap: 5vw;
+            .branding {
+                flex: 1;
+                position: relative;
+                @include transition;
+                &:after {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    content: "D";
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: white;
+                    padding: 0.5rem;
+                    background-color: color(accent);
+                    transform: translateY(-50%);
+                    @include desktop(520px) {
+                        display: none;
+                    }
+                }
+                @include desktop($desktop) {
+                    flex: 1;
+                    font-size: 1.5rem;
+                }
+                .design {
+                    font-weight: 700;
+                }
+                span {
+                    @media (max-width: 520px) {
+                        display: none;
+                    }
+                }
+            }
+            ul.tabs {
+                flex: 6;
+                @include desktop(520px) {
+                    flex: 3;
+                }
+                @include desktop($desktop) {
+                    flex: 0;
+                }
+                li {
+                    @include transition;
+                }
+            }
+        }
+    }
+    header {
+        .header-container {
+            @include flex(column-reverse);
+            @include transition;
+            @include desktop {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            }
+            .left,
+            .right {
+                display: grid;
+                place-items: center;
+            }
+            .cta,
+            .cta > svg,
+            .cta-secondary,
+            .cta-secondary > svg {
+                @include transition(transform, 0.2s);
+            }
+
+            button.cta,
+            button.cta-secondary {
+                padding: 1.5rem;
+                svg {
+                    @media (max-width: 440px) {
+                        display: none;
+                    }
+                }
+            }
+            button.cta {
+                @include desktop {
+                    padding: 1.5rem 4rem;
+                }
+            }
+            button.cta-secondary {
+                @include desktop {
+                    padding: 1.5rem 2rem;
+                }
+            }
+
+            .rocket {
+                width: clamp(180px, 50vw, 500px);
+                height: auto;
+                * {
+                    @include transition;
+                }
+            }
+        }
+    }
+    section {
+        @include transition;
+        ul {
+            width: 100%;
+            li {
+                @include transition(all, 0.2s);
+            }
+        }
+
+        a.link {
+            .inline svg {
+                @include transition;
+            }
+        }
+        a.web-image {
+            @include transition;
+            .bg-container {
+                @include transition;
+            }
+            .example-container {
+                @include transition;
+            }
+        }
+        button {
+            h4,
+            svg {
+                @include transition(all, 0.1s);
+            }
+        }
+    }
+    section.procon {
+        ul li {
+            overflow: hidden;
+            .emoji-container {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                margin: 1rem;
+                font-size: 4em;
+                transform: translateX(-75%) translateY(10%) rotate(45deg);
+                @include transition;
+            }
+            &:hover {
+                box-shadow: 4px 4px 3rem 0 rgba(black, .15);
+                transform: scale(1.05);
+                .emoji-container {
+                    transform: translateX(-25%) translateY(10%) rotate(25deg);
+                }
+            }
+        }
+    }
+}

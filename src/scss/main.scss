@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+@import "./variables";
+@import "./functions";
+@import "./menu";
+@import "./default";
+@import "./nocss";
+@import "./flatdesign";
+@import "./glassmorphism";
+@import "./neumorphism";
+@import "./monochromatic";
+@import "./brutalist";
+@import "./threed";
+
+* {
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+button {
+    @include flex{
+        gap: .5rem;
+        align-items: center;
+    }
+    z-index: 1;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    font-family: inherit;
+    &:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: all 0.3s ease;
+    }
+    &:before {
+        z-index: -2;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: all 0.3s ease;
+    }
+}
+
+html,
+body {
+    color: color(gray);
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-weight: 700; //bold
+    font-size: 2.5rem;
+    line-height: 4rem;
+    @include desktop($desktop) {
+        font-size: 4rem; //64px
+        line-height: 5rem; // 80px
+    }
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600; //semibold
+    @include desktop($desktop) {
+        font-size: 2rem; //32px
+        line-height: 2.5rem; //40px
+    }
+}
+
+h3 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 600; //semibold
+    @include desktop($desktop) {
+        line-height: 1.5rem; //24px
+    }
+}
+
+h4 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+}
+
+p {
+    font-weight: 400;
+    line-height: 1.5rem;
+    @include desktop($desktop) {
+        line-height: 1.8rem; //24px
+    }
+}
+
+h1,
+h2,
+h3,
+p {
+    @media (max-width: $desktop) {
+        text-align: center;
+    }
+}
+
+.em {
+    font-weight: 600 !important;
+}
+
+.navbar,
+button {
+    border: none; // remove default styling
+    background: none; //remove default styling
+    font-size: 1.5rem; //24px
+    line-height: 1.75rem; //28px
+}
+
+button.inline {
+    overflow: inherit;
+    &:hover {
+        .arrow {
+            transform: translateX(.25rem);
+        }
+    }
+}
+
+.spacer {
+    height: 48px;
+    @media (max-width: $hidepoint) {
+        display: none;
+    }
+}
+
+.menu {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.container {
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    @include desktop(1216px) {
+        padding: 0;
+    }
+}
+
+a.web-image {
+    position: relative;
+    display: block;
+    padding-top: 56.25%;
+    overflow: hidden;
+    &:hover {
+        .bg-container {
+            transform: scale(1.1)
+        }
+    }
+}
+
+.example-container {
+    position: absolute;
+    left:0;
+    bottom: 0;
+}
+
+.bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: color(neutral, bg) center center / cover no-repeat;
+}
+
+.em {
+    font-weight: 600;
+}
+
+.rocket {
+    circle.bg {
+        fill: color(gray, 4);
+    }
+    path.smog {
+        fill: color(gray, 1);
+    }
+    path.cloud {
+        fill: color(gray, 2);
+    }
+    circle.sparkle.inside {
+        fill: color(gray, 6);
+    }
+    circle.sparkle.outside {
+        fill: color(gray, 5);
+    }
+    path.star.inside {
+        fill: color(gray, 8);
+    }
+    path.star.left {
+        fill: color(gray, 4);
+    }
+    path.star.right {
+        fill: color(gray, 8);
+    }
+    path.flame {
+        fill: color(gray, 5);
+    }
+    path.exhaust {
+        fill: color(gray, 8);
+    }
+    path.wing {
+        fill: color(gray, 6);
+    }
+    path.body {
+        fill: color(neutral);
+    }
+    path.tip {
+        fill: color(gray, 7);
+    }
+    path.window.frame {
+        fill: color(gray, 6);
+    }
+    path.window.panel {
+        fill: color(gray, 4);
+    }
+}

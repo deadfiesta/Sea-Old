@@ -1,0 +1,138 @@
+nav.menubar {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(color(neutral), .15);
+    z-index: 50;
+    border-bottom: 1px solid rgba(white, .1);
+    @include desktop($hidepoint) {
+        backdrop-filter: blur(2rem);
+
+    }
+    .hamburger-container {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 3rem;
+        height: 3rem;
+        z-index: 20;
+        transition: all .3s ease;
+        background-color: color(neutral);
+        box-shadow: 3px 3px 10px 1px rgba(color(gray), .1);
+        @include flex(column) {
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        @include desktop($hidepoint) {
+            display: none;
+        }
+        span {
+            display: block;
+            height: 2px;
+            width: 1.25rem;
+            background-color: color(gray);
+            transform-origin: center left;
+            transition: all .3s ease;
+        }
+    }
+    .hamburger-container.open {
+        $translatey: 1px;
+        $rotate: 44deg;
+        background-color: color(accent);
+        span {
+            background-color: color(neutral);
+        }
+        span.top {
+            transform: translateX(3px) rotate($rotate) translateY(calc(#{$translatey}*-1))
+        }
+        span.middle {
+            transform: scaleX(0)
+        }
+        span.bottom {
+            transform: translateX(3px) rotate(calc(#{$rotate}*-1)) translateY($translatey) 
+        }
+    }
+    .menu-container {
+        position: relative;
+        span.underline {
+            z-index: 20;
+            position: absolute;
+            top: 0;
+            height: 4px;
+            background-color: color(accent);
+            transition: all .3s ease;
+            @media (max-width: $hidepoint) {
+                display: none;
+            }
+        }
+        ul.menu.open {
+            transform: translateY(0)
+        }
+        ul.menu {
+            position: fixed;
+            z-index: 10;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: color(neutral, bg);
+            transform: translateY(100%);
+            @include flex(column) {
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
+            @include desktop($hidepoint) {
+                background: none;
+                position: initial;
+                width: inherit;
+                height: 48px;
+                transform: initial;
+                @include flex {
+                    justify-content: space-between;
+                    gap: initial;
+                }
+            }
+            h4 {
+                font-weight: 600;
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+                @include desktop($hidepoint) {
+                    font-size: inherit;
+                    line-height: inherit;
+                }
+            }
+            li {
+                width: 18rem;
+                background-color: color(gray, shade4);
+                padding: 1rem;
+                @include desktop($hidepoint) {
+                    width: initial;
+                    background: none;
+                    padding: 0;
+                }
+            }
+            li.style {
+                opacity: .5;
+                @include transition;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            li.style.active {
+                opacity: 1;
+                background-color: color(accent);
+                color: color(neutral);
+                @include desktop($hidepoint) {
+                    color: inherit;
+                    background: none;
+                }
+            }
+        }
+    }
+}
+
+nav.menubar.white {
+    color: white;
+}

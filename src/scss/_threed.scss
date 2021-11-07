@@ -1,0 +1,465 @@
+#threed {
+    $bg: #fff;
+    padding: 2rem 0;
+    @mixin threed {
+        box-sizing: border-box;
+        border: 1px solid rgba(white, 0.35);
+        box-shadow: 0.25rem 0.45rem 2rem 0.25rem inset rgba(white, 0.4),
+            0rem -0.5rem 1.5rem 0.15rem inset rgba(black, 0.25), 0.5rem 1.5rem 3rem 0.25rem rgba(black, 0.25),
+            0.1rem 0.1rem 0.5rem 0 rgba(black, 0.1);
+    }
+    @include desktop($desktop) {
+        padding: 3rem 0;
+    }
+    @include flex(column) {
+        gap: 2rem;
+        @include desktop($desktop) {
+            gap: 4rem;
+        }
+    }
+    nav {
+        &:before {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            content: "";
+            background-color: $bg;
+        }
+        .navbar-container {
+            color: color(gray);
+            .branding {
+                .design {
+                    color: color(accent);
+                }
+            }
+            ul.tabs {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @include desktop($desktop) {
+                    gap: 3rem;
+                }
+                li {
+                    cursor: pointer;
+                    color: color(gray, secondary);
+                    &:hover {
+                        color: color(accent);
+                    }
+                    &:last-child {
+                        color: color(neutral);
+                        border-radius: 1.5rem;
+                        padding: 0.75rem 1.5rem;
+                        background-color: color(pink, 4);
+                        &:hover {
+                            background-color: color(pink, 5);
+                        }
+                    }
+                }
+                li.active {
+                    font-weight: 600;
+                    color: color(gray);
+                }
+            }
+        }
+    }
+    header {
+        .header-container {
+            margin: 2rem 0;
+            @include desktop {
+                margin: 12rem 0;
+            }
+            .left {
+                color: color(gray);
+                @include flex(column) {
+                    gap: 1rem;
+                    @include desktop {
+                        align-items: flex-start;
+                        gap: 2rem;
+                    }
+                }
+                .description {
+                    max-width: 58ch;
+                }
+                .button-container {
+                    margin-top: 2rem;
+                    @include flex {
+                        gap: 2rem;
+                    }
+                    .arrow {
+                        opacity: 1;
+                        transition: all 0.2s ease-out;
+                        stroke: white;
+                    }
+                    button {
+                        border-radius: 0.75rem;
+                    }
+                    button.cta {
+                        overflow: hidden;
+                        position: relative;
+                        padding: 1.5rem 2rem;
+                        gap: 3rem;
+                        color: color(neutral);
+                        background-color: color(accent);
+                        @include threed;
+                        &:before {
+                            z-index: -1;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: initial;
+                            width: 4.5rem;
+                            content: "";
+                            background-color: color(pink, 4);
+                            @include threed;
+                        }
+                        &:hover {
+                            &:before {
+                                width: 4rem;
+                            }
+                            .arrow {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    button.cta-secondary {
+                        color: color(pink, 4);
+                        background-color: rgba(color(pink, 10), 0.25);
+                        .arrow {
+                            stroke: color(pink, 4);
+                        }
+                    }
+                }
+            }
+            .right {
+                z-index: -1;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                @include desktop(1024px) {
+                    background-size: 40vw;
+                }
+                &:after {
+                    position: absolute;
+                    content: "";
+                    opacity: 0;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: color(gray);
+                    @include desktop(1024px) {
+                        opacity: 0;
+                    }
+                }
+                &:before {
+                    z-index: -1;
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background: url("../Backgrounds/rocket.jpg") center center / cover no-repeat;
+                    @include transition;
+                    @include desktop(1024px) {
+                        background-position: 75% bottom;
+                        background-size: auto;
+                    }
+                }
+                .rocket-container {
+                    .rocket {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    section {
+        .container {
+            @include flex(column) {
+                gap: 4rem;
+                align-items: center;
+            }
+        }
+        .title-container {
+            @include flex(column) {
+                align-items: center;
+                gap: 1rem;
+            }
+            p {
+                max-width: 80ch;
+                color: color(gray, secondary);
+                text-align: center;
+            }
+        }
+        
+        
+    }
+    section.traits {
+        padding: 4rem 0;
+        background-color: color(gray, shade1);
+        @include desktop {
+            padding: 6rem 0;
+        }
+        button.inline {
+            border-radius: 1rem;
+            padding: 1.5rem 2.5rem;
+            background-color: rgba(color(accent, main1), 0.15);
+            .arrow {
+                stroke: color(accent);
+            }
+            h4 {
+                color: color(accent);
+            }
+        }
+        .traits-container {
+            @include grid(300px) {
+                gap: 2rem;
+            }
+            
+            li {
+                border-radius: 1rem;
+                position: relative;
+                background-color: color(neutral);
+                padding: 2rem;
+                box-shadow: 2px 10px 20px 0 rgba(black, 0);
+                perspective: 1000px;
+                @include flex(column) {
+                    gap: 1rem;
+                }
+                @include desktop {
+                    &:first-child {
+                        .title-container {
+                            background-image: url("../Backgrounds/pink2.jpg");
+                        }
+                    }
+                    &:last-child {
+                        .title-container {
+                            background-image: url("../Backgrounds/pink4.jpg");
+                        }
+                    }
+                    &:nth-child(3) {
+                        .title-container {
+                            background-image: url("../Backgrounds/pink3.jpg");
+                        }
+                    }
+                    .title-container {
+                        overflow: hidden;
+                        border-radius: 1rem;
+                        position: absolute;
+                        background: url("../Backgrounds/pink1.jpg") center center / cover no-repeat;
+                        color: white;
+                        z-index: 1;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        display: grid;
+                        place-items: center;
+                        transform-style: preserve-3d;
+                        backface-visibility: hidden;
+                        transform-origin: top center;
+                        padding: 2rem;
+                        @include transition(all, 0.5s);
+                        &:before {
+                            position: absolute;
+                            opacity: 0.1;
+                            z-index: -1;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            content: "";
+                            background-color: color(gray, black);
+                        }
+                        h3 {
+                            text-align: center;
+                            border-radius: 0.5rem;
+                            padding: 0.5rem 1rem;
+                            background-color: color(accent);
+                        }
+                    }
+                    .paragraph-container {
+                        background-color: white;
+                        height: 100%;
+                        display: grid;
+                        place-items: center;
+                        transform-style: preserve-3d;
+                        backface-visibility: hidden;
+                        transform-origin: top center;
+                        transform: rotateX(-180deg);
+                        @include transition(all, 0.5s);
+                    }
+                    &:hover {
+                        .title-container {
+                            transform: rotateX(180deg);
+                        }
+                        .paragraph-container {
+                            transform: rotateX(0);
+                        }
+                        // transform: scale(1.05);
+                        // box-shadow: 6px 10px 2rem 0 rgba(black, 0.075);
+                    }
+                }
+                p {
+                    text-align: center;
+                    color: color(gray, secondary);
+                }
+            }
+        }
+    }
+    section.introduction {
+        display: none;
+        padding: 2rem 0;
+        background: url("../Backgrounds/palmtree.jpg") center center / cover no-repeat;
+        @include desktop {
+            padding: 8rem 0;
+        }
+        h2 {
+            color: white;
+        }
+        .paragraph-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+            gap: 2rem;
+            p {
+                border-radius: 1.5rem;
+                color: white;
+                background-color: rgba(black, 0.1);
+                backdrop-filter: blur(2rem);
+                padding: 2rem;
+                @include threed;
+                @include desktop {
+                    padding: 2rem 3rem;
+                }
+
+                max-width: initial;
+            }
+        }
+    }
+    section.examples {
+        padding: 2rem 0;
+        @include desktop {
+            padding: 3rem 0;
+            padding-bottom: 6rem;
+        }
+        .images-container {
+            width: 100%;
+            @include grid {
+                gap: 2rem;
+            }
+        }
+        a {
+            position: relative;
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                border: 0 solid color(accent);
+                transition: all 0.1s ease;
+            }
+            .example-container {
+                background-color: color(accent);
+                padding: 0.5rem 1rem;
+                transform: translateY(100%);
+                h4 {
+                    color: color(neutral);
+                }
+                .arrow {
+                    stroke: color(neutral);
+                }
+            }
+            &:hover {
+                &:after {
+                    border-width: 4px;
+                }
+                .example-container {
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+    section.procon {
+        display: none;
+        p {
+            color: color(gray, secondary);
+        }
+        .pro-container,
+        .con-container {
+            padding: 4rem 0;
+            @include desktop {
+                padding: 6rem 0;
+            }
+        }
+        .pro-container {
+            background: url("../Backgrounds/palmtree.jpg") center center / cover no-repeat;
+        }
+        .con-container {
+            background: url("../Backgrounds/peripheral2.jpg") center center / cover no-repeat;
+        }
+        ul.pro-list {
+            p, h3, h2 {
+                color: white;
+            }
+            @include grid(420px) {
+                gap: 2rem;
+            }
+        }
+        ul.con-list {
+            @include grid(335px) {
+                gap: 2rem;
+            }
+        }
+        ul.pro-list,
+        ul.con-list {
+            li {
+                border-radius: 1rem;
+                position: relative;
+                padding: 3rem;
+                box-shadow: 4px 4px 20px 0 rgba(black, 0);
+                backdrop-filter: blur(1rem);
+                background-color: rgba(color(neutral), .15);
+                @include threed;
+                @include flex(column) {
+                    gap: 1rem;
+                }
+                &:hover {
+                    &:after {
+                        height: 1rem;
+                        background-color: color(accent);
+                    }
+                }
+                h3 {
+                    text-align: center;
+                }
+            }
+        }
+        ul.con-list {
+            li {
+                &:hover {
+                    &:after {
+                        background-color: color(pink);
+                    }
+                }
+            }
+            li:after {
+                background-color: color(pink);
+            }
+        }
+        button {
+            h4,
+            svg {
+                stroke: color(gray, shade7);
+                color: color(gray, shade7);
+            }
+        }
+    }
+}
