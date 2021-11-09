@@ -1,5 +1,4 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
 import { useState } from 'react'
 import Header from './Header'
 import Navigation from './Navigation'
@@ -15,16 +14,15 @@ const AppRouter = () => {
     }
     return (
         <>
-            <Router basename="/motion">
-                <Header open={isOpen}>
-                    <Hamburger toggled={isOpen} toggle={setOpen} direction="right" />
-                </Header>
-                <div className="content">
-                    <Navigation open={isOpen} />
-                    {isOpen && <Scrium click={closeMenu} />}
-                    <Content />
-                </div>
-            </Router>
+
+            <Header open={isOpen}>
+                <Hamburger toggled={isOpen} toggle={setOpen} direction="right" />
+            </Header>
+            <div className="content">
+                <Navigation open={isOpen} />
+                {isOpen && <Scrium click={closeMenu} />}
+                <Content />
+            </div>
         </>
     )
 }

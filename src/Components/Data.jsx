@@ -195,10 +195,10 @@ const content = [
                 title: "Functional",
                 images: [
                     {
-                        url: "./images/motion-principles/functional01.gif"
+                        url: "./images/motion/functional01.gif"
                     },
                     {
-                        url: './images/motion-principles/functional02.gif'
+                        url: './images/motion/functional02.gif'
                     }
                 ],
                 description: "Functional animation guide and provide visual feedback to the user. It enhances user experience with small animated details to improve usability and emotional appeal. It also reinforces the design and has very clear and logical purposes including: Reduce cognitive load. Prevent change blindness.",

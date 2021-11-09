@@ -16,7 +16,11 @@ const Content = () => {
                                 {subtopic.images !== undefined &&
                                     <ul className="image-container">
                                         {subtopic.images.map((image, i) => (
-                                            <li className="image" style={{ backgroundImage : `url(${image.url})` }} key={i} />
+                                            <li className="image" style={
+                                                {
+                                                    backgroundImage: `url(${image.url})`
+                                                }
+                                            } key={i} />
                                         ))}
                                     </ul>
                                 }
