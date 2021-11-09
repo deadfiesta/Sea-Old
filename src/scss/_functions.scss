@@ -9,3 +9,21 @@
         @content;
     }
 }
+
+@mixin absolute($psuedo: false) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @if ($psuedo) {
+        content: '';
+    }
+    @content;
+}
+
+@mixin flex($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    @content;
+}

@@ -1,9 +1,10 @@
+import AppRouter from './Components/AppRouter';
 import './scss/main.scss'
 
 function App() {
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <AppRouter />
     </div>
   );
 }

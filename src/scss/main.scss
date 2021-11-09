@@ -1,10 +1,181 @@
-@import './variables';
-@import './functions';
-@import './typography';
+@import "./variables";
+@import "./functions";
+@import "./typography";
+@import "./nav";
 
-html, body {
-    font-family: 'Open Sans', sans-serif;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+html,
+body {
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     color: color(gray, secondary);
 }
 
+.source {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    @include flex {
+        gap: 0.5rem;
+        align-items: center;
+    }
+}
+
+.dribbble {
+    background-color: color(accent, dribbble);
+}
+
+.wrapper {
+    padding: 0 1.5rem;
+    @include media {
+        padding: 0 3rem;
+    }
+}
+
+.scrium {
+    @include absolute;
+    background-color: color(gray);
+    opacity: 0.5;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.content {
+    @include media {
+        display: grid;
+        grid-template-columns: 296px auto;
+    }
+}
+
+header {
+    position: relative;
+    height: 8rem;
+    width: 100vw;
+    background-color: color(accent, sea);
+    overflow: hidden;
+    @include flex {
+        align-items: center;
+        @include media {
+            align-items: flex-end;
+        }
+    }
+    @include media {
+        height: 38rem;
+    }
+    .header-container {
+        z-index: 2;
+        height: 100%;
+        @include flex {
+            gap: 2rem;
+            align-items: center;
+        }
+        @include media {
+            background-image: linear-gradient(rgba(black, 0), rgba(black, 0.75));
+        }
+    }
+    .hamburger-container.open {
+        color: color(accent, sea);
+        background-color: rgba(color(accent, sea), 0);
+    }
+    .hamburger-container.fixed {
+        top: 3rem;
+        background-color: color(accent, sea);
+    }
+    .hamburger-container {
+        top: 0;
+        padding: 0.25rem;
+        color: color(neutral);
+        transition: all 0.3s ease;
+        @include media {
+            display: none;
+        }
+    }
+    .text-container {
+        width: 100vw;
+        height: 100%;
+        z-index: 2;
+        @include flex(column) {
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        @include media {
+            justify-content: flex-end;
+            padding-bottom: 3rem;
+        }
+    }
+    .bottom-container {
+        @include flex {
+            align-items: center;
+            gap: 1rem;
+        }
+        .avatar-container {
+            overflow: hidden;
+            border-radius: 1rem;
+            width: 2rem;
+            .bg-image {
+                width: 100%;
+                padding-top: 100%;
+                background: color(neutral, bg) url("../Images/me.png") center center / cover no-repeat;
+            }
+        }
+        p {
+            font-size: 12px;
+            color: color(neutral);
+        }
+    }
+    .headerbg-container {
+        @include absolute;
+        @include media(max) {
+            display: none;
+        }
+        .source {
+            font-size: 12px;
+            color: color(neutral);
+            @include absolute {
+                z-index: 3;
+                top: initial;
+                left: initial;
+                bottom: 3rem;
+                right: 3rem;
+            }
+        }
+    }
+}
+
+.video-content {
+    width: 100%;
+    height: auto;
+}
+
+h1.home-title {
+    color: color(neutral);
+    font-size: 1.125rem;
+    line-height: 2rem;
+    @include media {
+        font-size: 4rem;
+        line-height: 6rem;
+    }
+}
+
+main {
+    padding: 3rem;
+}
+
+section {
+    ul.image-container {
+        height: 12rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+        li.image {
+            background: color(neutral, bg) center center / contain no-repeat;
+        }
+    }
+}
