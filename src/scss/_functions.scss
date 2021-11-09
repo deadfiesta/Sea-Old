@@ -1,0 +1,11 @@
+@import "./variables";
+
+@function color($color, $tone: "main") {
+    @return map-get(map-get($colors, $color), $tone);
+}
+
+@mixin media($minmax: "min", $size: $breakpoint) {
+    @media (#{$minmax}-width: $size) {
+        @content;
+    }
+}
