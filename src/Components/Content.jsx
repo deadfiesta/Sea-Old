@@ -51,7 +51,7 @@ const Content = () => {
                                             {subtopic.images.map((image, i) => (
                                                 <li key={i}>
                                                     <Zoom zoomMargin={96}>
-                                                        <img className="image" media="(max-width: 300px)" height="224px" src={`${image.url}`} alt={image.url} />
+                                                        <img className="image" media="(max-width: 300px)" height="224px" src={`${image.url}`} alt="" />
                                                     </Zoom>
                                                     {image.caption !== undefined &&
                                                         <figcaption className="caption">{image.caption}</figcaption>
