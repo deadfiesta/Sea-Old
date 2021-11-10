@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/motion/static/css/main.a6d21e85.chunk.css",
-    "main.js": "/motion/static/js/main.0b9887c4.chunk.js",
-    "main.js.map": "/motion/static/js/main.0b9887c4.chunk.js.map",
-    "runtime-main.js": "/motion/static/js/runtime-main.00f5e873.js",
-    "runtime-main.js.map": "/motion/static/js/runtime-main.00f5e873.js.map",
+    "main.css": "/motion/static/css/main.5d2ffc82.chunk.css",
+    "main.js": "/motion/static/js/main.cce900c0.chunk.js",
+    "main.js.map": "/motion/static/js/main.cce900c0.chunk.js.map",
+    "runtime-main.js": "/motion/static/js/runtime-main.cd814401.js",
+    "runtime-main.js.map": "/motion/static/js/runtime-main.cd814401.js.map",
     "static/css/2.0d0b0543.chunk.css": "/motion/static/css/2.0d0b0543.chunk.css",
-    "static/js/2.cc7ac903.chunk.js": "/motion/static/js/2.cc7ac903.chunk.js",
-    "static/js/2.cc7ac903.chunk.js.map": "/motion/static/js/2.cc7ac903.chunk.js.map",
-    "static/js/3.c1758e2c.chunk.js": "/motion/static/js/3.c1758e2c.chunk.js",
-    "static/js/3.c1758e2c.chunk.js.map": "/motion/static/js/3.c1758e2c.chunk.js.map",
+    "static/js/2.872f9255.chunk.js": "/motion/static/js/2.872f9255.chunk.js",
+    "static/js/2.872f9255.chunk.js.map": "/motion/static/js/2.872f9255.chunk.js.map",
+    "static/js/3.31cba718.chunk.js": "/motion/static/js/3.31cba718.chunk.js",
+    "static/js/3.31cba718.chunk.js.map": "/motion/static/js/3.31cba718.chunk.js.map",
     "index.html": "/motion/index.html",
     "static/css/2.0d0b0543.chunk.css.map": "/motion/static/css/2.0d0b0543.chunk.css.map",
-    "static/css/main.a6d21e85.chunk.css.map": "/motion/static/css/main.a6d21e85.chunk.css.map",
-    "static/js/2.cc7ac903.chunk.js.LICENSE.txt": "/motion/static/js/2.cc7ac903.chunk.js.LICENSE.txt",
+    "static/css/main.5d2ffc82.chunk.css.map": "/motion/static/css/main.5d2ffc82.chunk.css.map",
+    "static/js/2.872f9255.chunk.js.LICENSE.txt": "/motion/static/js/2.872f9255.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/motion/static/media/me.2bc2bcf6.png",
     "static/media/voice-interface.058b4510.mp4": "/motion/static/media/voice-interface.058b4510.mp4"
   },
   "entrypoints": [
-    "static/js/runtime-main.00f5e873.js",
+    "static/js/runtime-main.cd814401.js",
     "static/css/2.0d0b0543.chunk.css",
-    "static/js/2.cc7ac903.chunk.js",
-    "static/css/main.a6d21e85.chunk.css",
-    "static/js/main.0b9887c4.chunk.js"
+    "static/js/2.872f9255.chunk.js",
+    "static/css/main.5d2ffc82.chunk.css",
+    "static/js/main.cce900c0.chunk.js"
   ]
 }
