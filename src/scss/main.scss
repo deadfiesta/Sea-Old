@@ -53,6 +53,9 @@ a {
     height: 100vh;
     background-color: color(gray);
     opacity: 0.5;
+    @include media {
+        display: none;
+    }
 }
 
 .fixed {
@@ -226,9 +229,22 @@ section {
         }
         li {
             @include flex(column) {
-                gap: 2rem;
+                gap: 1rem;
+            }
+            .top-container {
+                @include flex(column) {
+                    gap: 1rem;
+                }
             }
         }
+    }
+    .credit-container {
+        padding: 2rem;
+        background-color: color(neutral, bg);
+        h4 {
+            font-size: 14px;
+            font-weight: 400;
+            color: color(accent);        }
     }
     ul.image-container,
     ul.video-container {
@@ -236,9 +252,11 @@ section {
         grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
         background-color: color(neutral, bg);
         gap: 1rem;
+        padding: 1rem 0;
         li {
             @include flex(column) {
-                gap: 0.25rem;
+                gap: 1rem;
+                align-items: center;
             }
             video,
             .image {
@@ -248,11 +266,10 @@ section {
                 min-height: 12rem;
                 max-height: 14rem;
             }
-            sub {
+            figcaption {
                 opacity: 0.75;
                 font-size: 14px;
                 text-align: center;
-                padding: 0.75rem 0;
             }
         }
     }

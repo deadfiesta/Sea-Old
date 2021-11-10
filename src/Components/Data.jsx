@@ -197,6 +197,10 @@ const content = [
                 anchor: "functional",
                 images: [
                     {
+                        url: "./media/motion/functional03.gif",
+                        caption: "Simple blinking to indicate ready for command",
+                    },
+                    {
                         url: "./media/motion/functional01.gif",
                         caption: "Using buttons to indicate states and progress",
                     },
@@ -322,31 +326,38 @@ const content = [
             {
                 title: "Weight",
                 anchor: "weight",
-                // images: [
-                //     {
-                //         url: "./media/informative/01.gif",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/realism/weight.gif",
+                        caption: "Simple drop-down with items rolling in from top to bottom — almost like gravity pulls them into the UI."
+                    }
+                ],
                 description: "As we know, most objects in the real world have size and weight. These dimensions give an object what is called a center of gravity and this has an influence on how it moves and rotates.",
             },
             {
                 title: "Gravity",
                 anchor: "gravity",
-                // images: [
-                //     {
-                //         url: "./media/expressive/01.gif",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/realism/gravity.gif",
+                        caption: "Applying material design’s depth philosophy to this Google Bank example"
+                    }
+                ],
                 description: "Our devices have two gravitational forces pulling at it — firstly from top to bottom on the Y-axis, and secondly into the depths of the UI on the Z-axis. Google realized very early on that our devices had depth and has built much of material design’s philosophy on what they refer to as elevation.",
             },
             {
                 title: "Action and Reaction",
                 anchor: "purposeful",
-                // videos: [
-                //     {
-                //         url: "./media/emphasis/01.mp4",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/realism/action.gif",
+                        caption: "Button reacts violently to being tapped"
+                    },
+                    {
+                        url: "./media/realism/action2.gif",
+                        caption: "Both functional and natural, a pull-to-refresh example"
+                    }
+                ],
                 description: "Interfaces are reactive by nature. This is especially true when it comes to changes in data, size, color, background and more. The role of animation here is to create the visual cues necessary for letting the user know where they are and what they’re doing.",
             },
 
@@ -392,45 +403,69 @@ const content = [
     {
         topic: "Types of UI Animation",
         anchor: "types",
+        // credits: [
+        //     {
+        //         title: "UI Animation: A Complete Guide For Beginners",
+        //         url: "https://careerfoundry.com/en/blog/ui-design/ui-animation-beginners-guide/",
+        //     }
+        // ],
         subtopics: [
             {
                 title: "Micro-animations",
                 anchor: "webanim",
-                // images: [
-                //     {
-                //         url: "./media/informative/01.gif",
-                //     }
-                // ],
+                videos: [
+                    {
+                        url: "./media/types/microanimation.mp4",
+                    },
+                    {
+                        url: "./media/types/microanimation2.mp4",
+                    },
+                ],
                 description: "Micro-animations work for buttons, links, sliders, icons, and other clickable elements. Micro-animations evoke emotions. They push the user to do simple, specific actions that he could forget or simply do not think about. With micro-animations, it’s possible to explain a lot without using a word.",
             },
             {
                 title: "Loading / Progress",
                 anchor: "loading",
-                // images: [
-                //     {
-                //         url: "./media/expressive/01.gif",
-                //     }
-                // ],
+                videos: [
+                    {
+                        url: "./media/types/loading.mp4",
+                    },
+                    {
+                        url: "./media/types/loading2.mp4",
+                    },
+                    {
+                        url: "./media/types/loading3.mp4",
+                    },
+                ],
                 description: "Loading and progress animations help to keep users informed by demonstrating the process of completing an action, or letting them know how long it will be until the action is completed. No one likes waiting for something to load, especially without an understanding of how long they’ll be waiting for. Progress bars, timelines, and pull-down-to-refresh functions eliminate stress and reinforce the sense that the user is moving forward.",
             },
             {
                 title: "Navigation",
                 anchor: "cssanim",
-                // videos: [
-                //     {
-                //         url: "./media/emphasis/01.mp4",
-                //     }
-                // ],
+                videos: [
+                    {
+                        url: "./media/types/navigation.mp4",
+                    },
+                    {
+                        url: "./media/types/navigation2.mp4",
+                    },
+                ],
                 description: "Navigational animations guide the user through the interface. The more complex or comprehensive a website is, the more crucial navigational animations are in making the website intuitive. By offering prompts such as arrows, hover animations, or swipeable layout elements, the visual hierarchy becomes clearer, and the user can feel confident in where to go next.",
             },
             {
                 title: "Storytelling and Branding",
                 anchor: "storytelling",
-                // videos: [
-                //     {
-                //         url: "./media/emphasis/01.mp4",
-                //     }
-                // ],
+                videos: [
+                    {
+                        url: "./media/types/storytelling.mp4",
+                    },
+                    {
+                        url: "./media/types/storytelling2.mp4",
+                    },
+                    {
+                        url: "./media/types/storytelling3.mp4",
+                    },
+                ],
                 description: "Often found on welcome screens, decorative animations are a fantastic way to strengthen the brand identity and tell a story in a matter of seconds. Animation can be used to attract users to certain brand elements, and for showcasing a product in a fun and engaging way. A classic example of storytelling and branding animation would be an animated logo that instantly lets people know what kind of brand you are.",
             },
 
@@ -443,11 +478,12 @@ const content = [
             {
                 title: "Optimal Duration",
                 anchor: "optimal",
-                // images: [
-                //     {
-                //         url: "./media/informative/01.gif",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/duration/optimal.gif",
+                        caption: "200ms to 500ms seconds is a good range to start with for interface animations"
+                    }
+                ],
                 description: "When elements change their state or position, the duration of the animation should be slow enough to give users the possibility to notice the change, but at the same time quick enough not to cause waiting. 200ms to 500ms seconds is a good range to start with for interface animations. Any animation shorter than 100 ms is instantaneous and won’t be recognized at all. Whereas the animation longer than 1 second would convey a sense of delay and thus be boring for the user.",
             },
             {
@@ -473,11 +509,11 @@ const content = [
             {
                 title: "Large Transition",
                 anchor: "large",
-                // videos: [
-                //     {
-                //         url: "./media/emphasis/01.mp4",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/duration/large.gif",
+                    }
+                ],
                 description: "Animated elements that traverse a large portion of the screen have the longest durations.",
             },
 
@@ -490,44 +526,163 @@ const content = [
             {
                 title: "Ease-in-out / Standard Ease",
                 anchor: "standard",
-                // images: [
-                //     {
-                //         url: "./media/informative/01.gif",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/easing/ease.gif",
+                    }
+                ],
                 description: "Easing helps to make the movement of the object more natural. For the animation not to look mechanical and artificial, the object should move with some acceleration or deceleration — just like all live objects in the physical world. Objects with an ease-in-out gain speed at the beginning and then slowly drop it back to zero. That type of movement is the most frequently used in interface animation. Whenever you doubt what type of motion to use in your animation, use standard curve.",
             },
             {
                 title: "Symmetry / Asymmetry Curve",
                 anchor: "curve",
-                // images: [
-                //     {
-                //         url: "./media/expressive/01.gif",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/easing/symmetry.gif",
+                    }
+                ],
                 description: "According to Material Design Guidelines, it is better to use an asymmetric curve to make the movement look more natural and realistic. The end of the curve must be more emphasized than its beginning, so that the duration of acceleration is shorter than that of slowing down. In this case, the user will pay more attention to the final movement of the element and thus to its new state.",
             },
             {
                 title: "Ease-in / Acceleration",
                 anchor: "acceleration",
-                // videos: [
-                //     {
-                //         url: "./media/emphasis/01.mp4",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/easing/easein.gif",
+                    }
+                ],
                 description: "Ease-in or acceleration curve is the movement that starts slowly and accelerates over time. Ease-in-out is used when the objects move from one part of the screen to another. In such case, animation avoids the eye-catching and dramatic effect.",
             },
             {
                 title: "Ease-out / Deceleration",
                 anchor: "deceleration",
-                // videos: [
-                //     {
-                //         url: "./media/emphasis/01.mp4",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/easing/easeout.gif",
+                    }
+                ],
                 description: "Easing out causes the animation to start more quickly than linear ones, and it also has deceleration at the end. This type of curve should be used when the element emerges on the screen — it flies up on the screen at full speed, gradually slows down until it completely stops. This can also be applied to different cards or objects that appear from the outside of the screen.",
             },
+            {
+                title: "Linear",
+                anchor: "linear",
+                images: [
+                    {
+                        url: "./media/easing/linear.gif",
+                    }
+                ],
+                description: "Linear motion move in a constant speed from the start to the end. Linear motion can, for example, be used only when the object changes its color or transparency. Generally speaking, we can use it for the states when an object does not change its position or it’s intended to be used in a loop.",
+            },
 
+        ]
+    },
+    {
+        topic: "Choreography",
+        anchor: "choreography",
+        subtopics: [
+            {
+                title: "Equal Interaction",
+                anchor: "equal",
+                // images: [
+                //     {
+                //         url: "./media/informative/01.gif",
+                //     }
+                // ],
+                description: "Equal interaction means that the appearance of all objects obeys to one particular rule.",
+            },
+            {
+                title: "Subordinate Interaction",
+                anchor: "subordinate",
+                // images: [
+                //     {
+                //         url: "./media/expressive/01.gif",
+                //     }
+                // ],
+                description: "Subordinate interaction means that we have one central object which attracts all user’s attention, and all other elements are subordinate to it. This type of animation gives the sense of order and draws more attention to the main content. ",
+            }
+        ]
+    },
+    {
+        topic: "Best Practices for UI Animation",
+        anchor: "practices",
+        subtopics: [
+            {
+                title: "Make the Content in Tabs Slide",
+                anchor: "tabs",
+                images: [
+                    {
+                        url: "./media/practices/slide.gif",
+                        caption: "The content on the left fades in and out. The one on the right slides with the tabs."
+                    }
+                ],
+                description: "When you design an interaction like a tab or a fly-out menu, try putting the position of the content relative to the action that opens it. This way you can animate not only the visibility of the content but the position too. Oh, and while you’re at it, add a swipe gesture that takes you from one piece of content to the other.",
+            },
+            {
+                title: "Connect the Shared Elements of a Card",
+                anchor: "connecting",
+                images: [
+                    {
+                        url: "./media/practices/connect.gif",
+                        caption: "The content on the left opens a new screen that slides up. The card on the right expands and fills the screen."
+                    }
+                ],
+                description: "When animating between different states, see if there are any shared elements between them and connect them. With InVision Studio, components that are repeated between two linked screens are automatically connected when you create a Motion transition. This makes prototyping animations a breeze.",
+            },
+            {
+                title: "Use a Cascading Effect in your Content",
+                anchor: "cascading",
+                images: [
+                    {
+                        url: "./media/practices/cascading.gif",
+                        caption: "The cards on the left appear by sliding and fading in. The ones on the right feature the same animation, but each card has a short delay."
+                    }
+                ],
+                description: "To accomplish the waterfall effect, try applying delays to each piece or group of content. Keep the same easing and duration, so it feels consistent. Don’t cascade each little element, though—animate the groups of content. Keep the animation quick and snappy. Google recommends beginning each element no more than 20ms apart. Check out the choreography principle in Material Motion to see more examples.",
+            },
+            {
+                title: "Make the Content Push other Elements Out of the Way",
+                anchor: "pushing",
+                images: [
+                    {
+                        url: "./media/practices/pushing.gif",
+                        caption: "The animation on the left animates on top of the other content. The animation on the right pushes the content out as it grows."
+                    }
+                ],
+                description: "Make the elements in your content aware of their surroundings. This means making the content attract or repel the elements around it.",
+            },
+            {
+                title: "Make Menus Appear in Context",
+                anchor: "menus",
+                images: [
+                    {
+                        url: "./media/practices/context.gif",
+                        caption: "The menu on the left flies in from below. The menu on the right expands from the action that created it."
+                    }
+                ],
+                description: "Great animated menus emerge from the action that created them, growing from the point of touch.",
+            },
+            {
+                title: "Use Buttons to Show Different States",
+                anchor: "button",
+                images: [
+                    {
+                        url: "./media/practices/button.gif",
+                        caption: "The button on the left shows text indicating states. The button on the right uses the container to show different events."
+                    }
+                ],
+                description: "Try using the container of a button to provide visual feedback of a status. For example, you could replace the CTA with a spinner or a loading animation; or you could add an animation to the background showing progress.",
+            },
+            {
+                title: "Bring Attention to Something Important",
+                anchor: "attention",
+                images: [
+                    {
+                        url: "./media/practices/attention.gif",
+                        caption: "The example on the left uses color and position to make an element stand out. The one on the right uses a subtle animation to call the user’s attention."
+                    }
+                ],
+                description: "When the user needs to act on something important, try animating the actions to attract their attention. Start with a subtle animation and increase the intensity (change of size, color, and speed) in relation to how important the action is.",
+            },
         ]
     }
 ]

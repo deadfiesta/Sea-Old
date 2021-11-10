@@ -12,6 +12,11 @@ nav {
     background-color: color(neutral, bg);
     transform: translateX(-100%);
     transition: transform .15s ease-out;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar {
+        display: none;
+    }
     .nav-container {
         margin: 3rem 0;
         width: 100%;
