@@ -5,26 +5,80 @@ const header = [{
 
 const nav = [
     {
-        topic: "UI Motion Principle",
-        anchor: "start",
+        topic: "Motion Principle",
+        anchor: "motion",
         subtopics: [
             {
-                title: "Principle of Functionality",
-                anchor: "functionality"
+                title: "Functional",
+                anchor: "functional"
             },
             {
-                title: "Principle of Value Adding",
-                anchor: "valueadd"
+                title: "Value Adding",
+                anchor: "value"
             },
             {
-                title: "Principle of Realism",
+                title: "Realism",
                 anchor: "realism"
             }
         ]
     },
     {
+        topic: "Principle of Functionality",
+        anchor: "functionality",
+        subtopics: [
+            {
+                title: "Informative",
+                anchor: "informative"
+            },
+            {
+                title: "Expressive",
+                anchor: "expressive"
+            },
+            {
+                title: "Emphasis",
+                anchor: "emphasis"
+            }
+        ]
+    },
+    {
+        topic: "Principle of Value Adding",
+        anchor: "valueadding",
+        subtopics: [
+            {
+                title: "Design Principle",
+                anchor: "principle"
+            },
+            {
+                title: "Brand Personality",
+                anchor: "personality"
+            },
+            {
+                title: "Purposeful",
+                anchor: "purposeful"
+            }
+        ]
+    },
+    {
+        topic: "Principle of Realism",
+        anchor: "realismprinciple",
+        subtopics: [
+            {
+                title: "Weight",
+                anchor: "weight"
+            },
+            {
+                title: "Gravity",
+                anchor: "gravity"
+            },
+            {
+                title: "Action / Reaction",
+                anchor: "action"
+            }
+        ]
+    },
+    {
         topic: "About Web Animation",
-        anchor: "webanim",
+        anchor: "aboutanim",
         subtopics: [
             {
                 title: "Web Animation API",
@@ -43,7 +97,7 @@ const nav = [
     },
     {
         topic: "Types of UI Animation",
-        anchor: "microanim",
+        anchor: "types",
         subtopics: [
             {
                 title: "Micro-animation",
@@ -65,7 +119,7 @@ const nav = [
     },
     {
         topic: "Timing and Spacing",
-        anchor: "optimal",
+        anchor: "timespace",
         subtopics: [
             {
                 title: "Optimal Duration",
@@ -87,7 +141,7 @@ const nav = [
     },
     {
         topic: "Basic of Easings",
-        anchor: "standard",
+        anchor: "basics",
         subtopics: [
             {
                 title: "Ease-in-out / Standard Ease",
@@ -113,7 +167,7 @@ const nav = [
     },
     {
         topic: "Choreography",
-        anchor: "equal",
+        anchor: "choreography",
         subtopics: [
             {
                 title: "Equal Interaction",
@@ -127,7 +181,7 @@ const nav = [
     },
     {
         topic: "Best Practices",
-        anchor: "tabs",
+        anchor: "practices",
         subtopics: [
             {
                 title: "Tabs Sliding",
@@ -190,7 +244,7 @@ const nav = [
 const content = [
     {
         topic: "Motion Principles",
-        anchor: "start",
+        anchor: "motion",
         subtopics: [
             {
                 title: "Functional",
@@ -251,7 +305,7 @@ const content = [
         subtopics: [
             {
                 title: "Informative",
-                anchor: "info",
+                anchor: "informative",
                 images: [
                     {
                         url: "./media/informative/01.gif",
@@ -261,7 +315,7 @@ const content = [
             },
             {
                 title: "Expressive",
-                anchor: "express",
+                anchor: "expressive",
                 images: [
                     {
                         url: "./media/expressive/01.gif",
@@ -284,7 +338,7 @@ const content = [
     },
     {
         topic: "Principle of Value Adding",
-        anchor: "valueadd",
+        anchor: "valueadding",
         subtopics: [
             {
                 title: "Fit in with the Design Principle",
@@ -298,7 +352,7 @@ const content = [
             },
             {
                 title: "Reflects Brand Personality",
-                anchor: "reflects",
+                anchor: "personality",
                 // images: [
                 //     {
                 //         url: "./media/expressive/01.gif",
@@ -321,7 +375,7 @@ const content = [
     },
     {
         topic: "Principle of Realism",
-        anchor: "realism",
+        anchor: "realismprinciple",
         subtopics: [
             {
                 title: "Weight",
@@ -347,7 +401,7 @@ const content = [
             },
             {
                 title: "Action and Reaction",
-                anchor: "purposeful",
+                anchor: "action",
                 images: [
                     {
                         url: "./media/realism/action.gif",
@@ -412,7 +466,7 @@ const content = [
         subtopics: [
             {
                 title: "Micro-animations",
-                anchor: "webanim",
+                anchor: "microanim",
                 videos: [
                     {
                         url: "./media/types/microanimation.mp4",
@@ -441,7 +495,7 @@ const content = [
             },
             {
                 title: "Navigation",
-                anchor: "cssanim",
+                anchor: "navigation",
                 videos: [
                     {
                         url: "./media/types/navigation.mp4",
@@ -473,7 +527,7 @@ const content = [
     },
     {
         topic: "Timing and Spacing",
-        anchor: "timing",
+        anchor: "timespace",
         subtopics: [
             {
                 title: "Optimal Duration",

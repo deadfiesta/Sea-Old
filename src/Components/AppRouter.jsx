@@ -14,7 +14,6 @@ const AppRouter = () => {
     }
     return (
         <>
-
             <Header open={isOpen}>
                 <Hamburger toggled={isOpen} toggle={setOpen} direction="right" />
             </Header>
