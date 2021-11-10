@@ -16,13 +16,16 @@ const Navigation = ({ open }) => {
                         <span className="line"></span>
                     </div>
                     <ul className="menu-container">
+                        <li><h2>Content</h2></li>
                         {nav.map((menu, i) => (
                             <li key={i}>
                                 <h3>{menu.topic}</h3>
                                 <ul className="subtopic-container">
                                     {menu.subtopics.map((submenu, i) => (
                                         <li key={i}>
-                                            {submenu.title}
+                                            <a href={`#${submenu.anchor}`}>
+                                                {submenu.title}
+                                            </a>
                                         </li>
                                     ))}
                                 </ul>

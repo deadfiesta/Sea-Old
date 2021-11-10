@@ -2,8 +2,8 @@ nav.open {
     transform: translateX(0);
 }
 nav {
-    position: absolute;
-    z-index: 5;
+    position: fixed;
+    z-index: 30;
     left: 0;
     top: 0;
     width: 50vw;
@@ -21,6 +21,9 @@ nav {
             gap: 1.5rem;
         }
         li {
+            h2 {
+                color: color(gray);
+            }
             h3 {
                 color: color(gray)
             }
@@ -38,7 +41,8 @@ nav {
 
 @include media {
     nav {
-        position: relative;
+        overflow: hidden;
+        position: sticky;
         width: 296px;
         height: initial;
         transform: none;
