@@ -234,8 +234,8 @@ const nav = [
                 anchor: "audi"
             },
             {
-                title: "Carbon Design System",
-                anchor: "carbon"
+                title: "Carbon Design System by IBM",
+                anchor: "ibm"
             }
         ]
     },
@@ -293,6 +293,9 @@ const content = [
                     },
                     {
                         url: "./media/realism/realism02.gif",
+                    },
+                    {
+                        url: "./media/realism/realism03.gif",
                     }
                 ],
                 description: "People tend to accept artistic license, but they can feel disoriented when movement doesn’t make sense or appears to defy physical laws. Animation supports the essence of actual and real interaction, it creates the level of feelings and perception similar to what people feel when they interact with a physical object in real life.",
@@ -309,6 +312,12 @@ const content = [
                 images: [
                     {
                         url: "./media/informative/01.gif",
+                    },
+                    {
+                        url: "./media/informative/02.gif",
+                    },
+                    {
+                        url: "./media/informative/03.gif",
                     }
                 ],
                 description: "Motion design informs and provide context to users by highlighting relationships between elements in the interface, understanding the cause and effect of an action, and orientate the user within the app. Motion can hint and guide users to availability of an action and reacting by giving a feedback based on the action after.",
@@ -319,6 +328,12 @@ const content = [
                 images: [
                     {
                         url: "./media/expressive/01.gif",
+                    },
+                    {
+                        url: "./media/expressive/02.gif",
+                    },
+                    {
+                        url: "./media/expressive/03.gif",
                     }
                 ],
                 description: "It’s more than visual standards, convincing UI animations can make people feel that the movement they see on the screen is the brand speaking to them. Motion celebrates moments in user journeys and adds character to common interactions.",
@@ -326,9 +341,9 @@ const content = [
             {
                 title: "Emphasis",
                 anchor: "emphasis",
-                videos: [
+                images: [
                     {
-                        url: "./media/emphasis/01.mp4",
+                        url: "./media/emphasis/02.gif",
                     }
                 ],
                 description: "Emphasising is the art of displaying the hierarchy of interaction or information using animation. If a key interaction is embedded in a component that is visually not prominent, that component is in need of emphasis. Emphasising is also useful to highlight the order of a process.",
@@ -353,11 +368,11 @@ const content = [
             {
                 title: "Reflects Brand Personality",
                 anchor: "personality",
-                // images: [
-                //     {
-                //         url: "./media/expressive/01.gif",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/value/04.gif",
+                    }
+                ],
                 description: "Motion design should add or reflect the brand personality and should be able to convey the overall brand tone. It reflects the image of the brand through movements and create a sense of trust and an emotional connection with your users.",
             },
             {
@@ -395,6 +410,14 @@ const content = [
                     {
                         url: "./media/realism/gravity.gif",
                         caption: "Applying material design’s depth philosophy to this Google Bank example"
+                    },
+                    {
+                        url: "./media/realism/gravity2.gif",
+                        caption: "Using drop shadows to imply depth in a 2D space in UI interface"
+                    },
+                    {
+                        url: "./media/realism/gravity3.gif",
+                        caption: "Loading screen animated with real-world effect of gravity"
                     }
                 ],
                 description: "Our devices have two gravitational forces pulling at it — firstly from top to bottom on the Y-axis, and secondly into the depths of the UI on the Z-axis. Google realized very early on that our devices had depth and has built much of material design’s philosophy on what they refer to as elevation.",
@@ -410,6 +433,10 @@ const content = [
                     {
                         url: "./media/realism/action2.gif",
                         caption: "Both functional and natural, a pull-to-refresh example"
+                    },
+                    {
+                        url: "./media/realism/action3.gif",
+                        caption: "Exaggerated reaction of a performed action can entice and create excitement"
                     }
                 ],
                 description: "Interfaces are reactive by nature. This is especially true when it comes to changes in data, size, color, background and more. The role of animation here is to create the visual cues necessary for letting the user know where they are and what they’re doing.",
@@ -474,6 +501,9 @@ const content = [
                     {
                         url: "./media/types/microanimation2.mp4",
                     },
+                    {
+                        url: "./media/types/microanimation3.mp4",
+                    },
                 ],
                 description: "Micro-animations work for buttons, links, sliders, icons, and other clickable elements. Micro-animations evoke emotions. They push the user to do simple, specific actions that he could forget or simply do not think about. With micro-animations, it’s possible to explain a lot without using a word.",
             },
@@ -528,6 +558,12 @@ const content = [
     {
         topic: "Timing and Spacing",
         anchor: "timespace",
+        credits: [
+            {
+                title: "Animation Principles for UX and UI Designers",
+                url: "https://uxplanet.org/animation-that-matters-adding-value-to-your-interface-65496fe4c182"
+            }
+        ],
         subtopics: [
             {
                 title: "Optimal Duration",
@@ -566,6 +602,7 @@ const content = [
                 images: [
                     {
                         url: "./media/duration/large.gif",
+                        caption: "Duration of the animation differs depending on the size of the object and the traveled distance"
                     }
                 ],
                 description: "Animated elements that traverse a large portion of the screen have the longest durations.",
@@ -576,6 +613,12 @@ const content = [
     {
         topic: "The Basics of Easing",
         anchor: "basics",
+        credits: [
+            {
+                title: "The Ultimate Guide to Proper Use of Animation in UX",
+                url: "https://uxdesign.cc/the-ultimate-guide-to-proper-use-of-animation-in-ux-10bd98614fa9",
+            }
+        ],
         subtopics: [
             {
                 title: "Ease-in-out / Standard Ease",
@@ -583,6 +626,7 @@ const content = [
                 images: [
                     {
                         url: "./media/easing/ease.gif",
+                        caption: "Animation with easing looks more natural compared to the linear one"
                     }
                 ],
                 description: "Easing helps to make the movement of the object more natural. For the animation not to look mechanical and artificial, the object should move with some acceleration or deceleration — just like all live objects in the physical world. Objects with an ease-in-out gain speed at the beginning and then slowly drop it back to zero. That type of movement is the most frequently used in interface animation. Whenever you doubt what type of motion to use in your animation, use standard curve.",
@@ -593,6 +637,7 @@ const content = [
                 images: [
                     {
                         url: "./media/easing/symmetry.gif",
+                        caption: "Difference between symmetric and asymmetric standard curve"
                     }
                 ],
                 description: "According to Material Design Guidelines, it is better to use an asymmetric curve to make the movement look more natural and realistic. The end of the curve must be more emphasized than its beginning, so that the duration of acceleration is shorter than that of slowing down. In this case, the user will pay more attention to the final movement of the element and thus to its new state.",
@@ -637,21 +682,31 @@ const content = [
             {
                 title: "Equal Interaction",
                 anchor: "equal",
-                // images: [
-                //     {
-                //         url: "./media/informative/01.gif",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/choreography/equal.gif",
+                        caption: "User’s attention should be guided in one fluid direction"
+                    },
+                    {
+                        url: "./media/choreography/equal2.gif",
+                        caption: "Diagonal appearance for the tabular view of cards"
+                    }
+                ],
                 description: "Equal interaction means that the appearance of all objects obeys to one particular rule.",
             },
             {
                 title: "Subordinate Interaction",
                 anchor: "subordinate",
-                // images: [
-                //     {
-                //         url: "./media/expressive/01.gif",
-                //     }
-                // ],
+                images: [
+                    {
+                        url: "./media/choreography/subordinate.gif",
+                        caption: "It is worth animating only one central object and all the rest subjecting to it."
+                    },
+                    {
+                        url: "./media/choreography/subordinate2.gif",
+                        caption: "The motion of an object that disproportionately changes its size should be arranged along an arc"
+                    }
+                ],
                 description: "Subordinate interaction means that we have one central object which attracts all user’s attention, and all other elements are subordinate to it. This type of animation gives the sense of order and draws more attention to the main content. ",
             }
         ]
@@ -659,6 +714,12 @@ const content = [
     {
         topic: "Best Practices for UI Animation",
         anchor: "practices",
+        credits: [
+            {
+                title: "Good to Great UI Animation Tips",
+                url: "https://uxdesign.cc/good-to-great-ui-animation-tips-7850805c12e5"
+            }
+        ],
         subtopics: [
             {
                 title: "Make the Content in Tabs Slide",
@@ -736,6 +797,92 @@ const content = [
                     }
                 ],
                 description: "When the user needs to act on something important, try animating the actions to attract their attention. Start with a subtle animation and increase the intensity (change of size, color, and speed) in relation to how important the action is.",
+            },
+        ]
+    },
+    {
+        topic: "Design System Resources",
+        anchor: "resources",
+        subtopics: [
+            {
+                title: "Material Design by Google",
+                anchor: "google",
+                link: "https://material.io/design",
+                images: [
+                    {
+                        url: "./media/resources/google.gif",
+                        caption: "Material motion system"
+                    },
+                    {
+                        url: "./media/resources/google2.gif",
+                        caption: "Guide to Material Motion in After Effects"
+                    },
+                    {
+                        url: "./media/resources/google3.gif",
+                        caption: "Welcome to WearOS"
+                    }
+                ],
+                description: "Material Design is a design language developed by Google in 2014. Expanding on the 'cards' that debuted in Google Now, Material Design uses more grid-based layouts, responsive animations and transitions, padding, and depth effects such as lighting and shadows.",
+            },
+            {
+                title: "Human Interface Guidelines by Apple",
+                anchor: "apple",
+                link: "https://developer.apple.com/design/human-interface-guidelines/",
+                images: [
+                    {
+                        url: "./media/resources/apple.jpeg",
+                        caption: "Get in-depth information and UI resources for designing great apps that integrate seamlessly with Apple platforms."
+                    }
+                ],
+                description: "The Human Interface Guidelines — “HIG” for short — offers in-depth information and UI resources for all of Apple’s platforms, including specific technology areas. The HIG is full of information for designers that can help them create more compelling, intuitive, and beautiful experiences and design better apps.",
+            },
+            {
+                title: "Fluent UI by Microsoft",
+                anchor: "microsoft",
+                link: "https://www.microsoft.com/design/fluent/",
+                videos: [
+                    {
+                        url: "./media/resources/microsoft.mp4",
+                        caption: "Fluent System Icons"
+                    },
+                    {
+                        url: "./media/resources/microsoft2.mp4",
+                        caption: "Microsoft Teams Pride Background"
+                    },
+                    {
+                        url: "./media/resources/microsoft3.mp4",
+                        caption: "Pride 2020 Gear"
+                    }
+                ],
+                description: "Fluent is an open-source, cross-platform design system that gives designers and developers the frameworks they need to create engaging product experiences—accessibility, internationalization, and performance included.",
+            },
+            {
+                title: "Audi Design System",
+                anchor: "audi",
+                link: "https://www.audi.com/ci/en/guides/user-interface/introduction.html",
+                images: [
+                    {
+                        url: "./media/resources/audi.jpg",
+                    },
+                ],
+                description: "Audi user interfaces are as varied as their uses – ranging from inspiring websites to applications for a particular service. The aim is to create varied solutions and a well-balanced, system-wide user experience – from the app to the vehicle. The basis for this is provided by a joint set of components, modules and animations.",
+            },
+            {
+                title: "Carbon Design System by IBM",
+                anchor: "ibm",
+                link: "https://www.carbondesignsystem.com/",
+                videos: [
+                    {
+                        url: "./media/resources/ibm.mp4",
+                    },
+                    {
+                        url: "./media/resources/ibm2.mp4",
+                    },
+                    {
+                        url: "./media/resources/ibm3.mp4",
+                    },
+                ],
+                description: "Carbon is IBM’s open source design system for products and digital experiences. With the IBM Design Language as its foundation, the system consists of working code, design tools and resources, human interface guidelines, and a vibrant community of contributors.",
             },
         ]
     }

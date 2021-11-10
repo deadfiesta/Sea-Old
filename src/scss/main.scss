@@ -81,7 +81,7 @@ header {
         }
     }
     @include media {
-        height: 18rem;
+        height: 24rem;
     }
     .header-container {
         z-index: 2;
@@ -214,6 +214,14 @@ section {
             background-color: color(neutral, divider);
         }
     }
+    .link {
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+            color: color(accent);
+        }
+    }
     h2 {
         color: color(accent, sea);
     }
@@ -224,7 +232,7 @@ section {
         @include flex(column) {
             gap: 3rem;
             @include media {
-                gap: 4rem;
+                gap: 6rem;
             }
         }
         li {
@@ -239,8 +247,25 @@ section {
         }
     }
     .credit-container {
+        position: relative;
+        margin-top: 1rem;
         padding: 2rem;
         background-color: color(neutral, bg);
+        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: '';
+            height: .25rem;
+            background-color: color(accent);
+        }
+        @include media {
+            margin-top: 3rem;
+        }
+        span {
+            font-size: 14px;
+        }
         h4 {
             font-size: 14px;
             font-weight: 400;
@@ -269,6 +294,7 @@ section {
             animation-delay: .5s;
         }
         li {
+            padding: 0 .5rem;
             transition: opacity 0.5s ease;
             @include flex(column) {
                 gap: 1rem;
@@ -280,7 +306,7 @@ section {
                 position: relative;
                 overflow: hidden;
                 min-height: 12rem;
-                max-height: 14rem;
+                max-height: 16rem;
             }
             figcaption {
                 opacity: 0.75;

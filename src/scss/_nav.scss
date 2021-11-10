@@ -79,6 +79,12 @@ nav {
         width: 384px;
         height: auto;
         transform: none;
+        &::-webkit-scrollbar {
+            width: .5rem;
+        }
+        &::-webkit-scrollbar-thumb {
+            color: color(neutral, divider);
+        }
         .wrapper {
             display: grid;
             grid-template-columns: repeat(2, auto);

@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import '../scss/main.scss'
 // import { FaDribbble } from "react-icons/fa";
 import { header } from './Data'
-import video from '../Videos/voice-interface.mp4'
+import video from '../Videos/bg.mp4'
 
 
 const Header = ({ open, children }) => {
