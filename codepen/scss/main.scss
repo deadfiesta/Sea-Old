@@ -1,0 +1,126 @@
+//Typography
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+//Variables
+$mobile-breakpoint: 414px;
+$desktop-breakpoint: 1168px;
+$green: #2ecc71;
+$lightgray: #ebedef;
+
+//Mixins
+@mixin media($breakpoint: $desktop-breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content
+    }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 22px;
+  line-height: 32px;
+  @include media($mobile-breakpoint) {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: capitalize;
+  @include media($mobile-breakpoint) {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+sub {
+  color: slategray;
+  .card-width {
+    font-weight: 600;
+  }
+}
+
+p {
+  color: slategray;
+}
+
+
+//Toggle
+.toggle-container {
+    height: 4rem;
+    background-color: #fbfcfc;
+    border-bottom: 1px solid #ecf0f1;
+    .wrapper {
+        color: slategray;
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: flex-end;
+        align-items: center;
+        label.switch {
+            position: relative;
+            top: -1rem;
+            width: 3.5rem;
+            .toggle {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 2rem;
+                width: 3.5rem;
+                border-radius: 1rem;
+                outline: 2px solid $green;
+                background: linear-gradient(to bottom right, #58d68d, $green);
+                transition: all 0.3s ease;
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 1rem;
+                    background-color: white;
+                    transition: all 0.2s ease;
+                    transform: scale(0);
+                }
+                &:after {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    left: 1.6rem;
+                    height: 1.8rem;
+                    width: 1.8rem;
+                    border-radius: 50%;
+                    background-color: white;
+                    transform: translateY(-50%);
+                    box-shadow: 1px 1px 6px 1px rgba(black, 0.1), 0 0 2px 1px rgba(black, 0.1);
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+            input {
+                display: none;
+                &:checked + .toggle {
+                    outline: 2px solid $lightgray;
+                    &:before {
+                        transform: scale(1);
+                    }
+                    &:after {
+                        left: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
