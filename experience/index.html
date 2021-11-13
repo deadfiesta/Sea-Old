@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Report</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/lity.min.css">
+    <link rel="stylesheet" href="./css/fullpage.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="scroll"></div>
+        <div class="mobile-nav">
+            <div class="container">
+                <div class="menu">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="menu">
+                    <li onclick="navclick(this)" data-link="1">Introduction</li>
+                    <li onclick="navclick(this)" data-link="6">Getting Started</li>
+                    <li onclick="navclick(this)" data-link="12">Chat List</li>
+                    <li onclick="navclick(this)" data-link="19">Chatroom</li>
+                    <li onclick="navclick(this)" data-link="26">Proposed Features</li>
+                </ul>
+            </div>
+            <div class="nav-bg">
+                <!-- <div class="bgblur"></div> -->
+            </div>
+        </nav>
+        <div class="replace"></div>
+        <div id="fullpage">
+            <div class="section" cat="0" title="cover">
+                <header class="container" dark-mode="false">
+                    <ul class="cover">
+                        <li class="titles">
+                            <h3>UI/UX Case Study</h3>
+                            <h1>Product analysis and re-imagining the future for SeaTalk</h1>
+                            <p>
+                                Analysing the user experience of SeaTalk (desktop) to weigh them against its business
+                                goals to improve overall business operations and reducing traditionally hand-handled
+                                administrative processes.
+                            </p>
+                            <div class="by">
+                                <div class="avatar">
+                                    <div class="me"></div>
+                                </div>
+                                <div class="name">
+                                    <span>Neo Wen Kiong</span>
+                                    <span>31 March, 2021</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="seatalk">
+                            <!-- <div class="chatroom">
+                                <ul class="title">
+                                    <li></li>
+                                    <li class="titlebar">The High Council <span>Dept.</span></li>
+                                    <li><img src="./images/ic-more.png" alt=""></li>
+                                </ul>
+                                <ul class="chat">
+                                    <li id="time">Today: 9:41 AM</li>
+                                    <li class="dialogue" id="dia01">
+                                        <div class="avatar" id="id01"></div>
+                                        <div class="bubble" id="bubble01">
+                                            <div class="message-left" id="msg01">
+                                                Hey guys, how's the concept art coming along? <span
+                                                    class="mention">@here</span>
+                                            </div>
+                                            <div class="status" id="stat01">
+                                                <span class="name">Elaine Lawrence</span>
+                                                <span class="time">9:41 AM</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dialogue" id="dia02">
+                                        <div class="avatar" id="id02"></div>
+                                        <div class="bubble" id="bubble02">
+                                            <div class="message-left">
+                                                <div class="attachment">
+                                                    <div class="file-container">
+                                                        <div class="file">
+                                                            <img src="./images/file-type-ai.png" alt="">
+                                                        </div>
+                                                        <span class="filename">JLR-logo-v2.ai</span>
+                                                    </div>
+                                                    <div class="fileinfo">
+                                                        <span class="filesize">250KB</span>
+                                                        <span class="filetype">AI</span>
+                                                    </div>
+                                                </div>
+                                                The draft is still in development.
+                                            </div>
+                                            <div class="status" id="stat02">
+                                                <span class="name">Joel Park Jin-Sang</span>
+                                                <span class="time">9:42 AM</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dialogue" id="dia03">
+                                        <div class="bubble" id="bubble03">
+                                            <div class="message-right">
+                                                Looking good! Looking forward to the end product. &#9996;
+                                            </div>
+                                            <div class="status">
+                                                <img src="./images/ic-checkmark.png" alt="">
+                                                <span class="time">9:54 AM</span>
+                                            </div>
+                                        </div>
+                                        <div class="avatar" id="id03"></div>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </li>
+                    </ul>
+                </header>
+            </div>
+            <div class="section" cat="1" title="introduction">
+                <section class="container" dark-mode="false">
+                    <ul class="coverpage">
+                        <li>
+                            <h2>Introduction</h2>
+                        </li>
+                        <li class="subtopics">
+                            <h3>Business Goals</h3>
+                            <span></span>
+                            <h3>User Goals</h3>
+                            <span></span>
+                            <h3>Presentation Outline</h3>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="section" cat="1" title="business goals">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="split">
+                        <ul class="content">
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="text">
+                                    <h4>Simplicity</h4>
+                                    <p>Approachable user design with easy-to-use functionalities.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="text">
+                                    <h4>Seamless</h4>
+                                    <p>Internal integrations within the app and some degree of external integration with
+                                        third-party platforms.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="text">
+                                    <h4>Sustainable</h4>
+                                    <p>Save time and money so businesses can focus theirs resources to iron out business
+                                        operations for stability and permanence.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="titles">
+                            <li>
+                                <h3>Introducing the 3 'S'</h3>
+                                <h2>&#128084; Business Goals</h2>
+                                <hr>
+                                <p>
+                                    Understanding SeaTalk business goals for their consumers. Simplifying into 3
+                                    keywords by
+                                    deconstructing SeaTalk’s slogan
+                                </p>
+                                <span>"One-stop for work"</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="1" title="user goals">
+                <section class="user-goals container" dark-mode="false">
+                    <div data-type="layout" class="split">
+                        <ul class="titles">
+                            <li>
+                                <h3>Understanding the 3 'E'</h3>
+                                <h2>&#127919; User Goals</h2>
+                                <hr>
+                                <p>
+                                    Reviewing the experience as a productivity and collaborative platform
+                                </p>
+                            </li>
+                        </ul>
+                        <ul class="content">
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="text">
+                                    <h4>Effortlessness</h4>
+                                    <h3>How easy was it to use?</h3>
+                                    <p>The need for SeaTalk to be as intuitive as possible is essential as our target
+                                        audience are average tech consumers who may not be “app-savvy”. The last thing
+                                        we
+                                        want is to intimidate our users and drop our app at first sight.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="text">
+                                    <h4>Effectiveness</h4>
+                                    <h3>How well of a job did it do?</h3>
+                                    <p>Features in SeaTalk should add value whenever possible. This means giving the
+                                        users
+                                        an end result better than their desired expectation of the action performed.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="text">
+                                    <h4>Efficiency</h4>
+                                    <h3>How fast to get the job done?</h3>
+                                    <p>The nature of any productivity app like SeaTalk should assist users to accomplish
+                                        more but with less work in less time. Every action should be seamless;
+                                        simplified
+                                        and autonomous, cutting down as many steps as possible.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="1" title="outline">
+                <section class="flow container" dark-mode=false>
+                    <div data-type="layout" class="half">
+                        <ul class="titles">
+                            <li>
+                                <h2>The Outline</h2>
+                            </li>
+                        </ul>
+                        <ul class="content">
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-download"></i>
+                                </div>
+                                <h4>Getting Started</h4>
+                                <p>From installation to onboarding</p>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-swatchbook"></i>
+                                </div>
+                                <h4>General Overview</h4>
+                                <p>Design styles and color palette</p>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-th-list"></i>
+                                </div>
+                                <h4>Chat List</h4>
+                                <p>Existing and new features related within the chat list panel</p>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                                <h4>Chatroom</h4>
+                                <p>Existing and new features related within the chatroom window</p>
+                            </li>
+                            <li>
+                                <div class="icon-container">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h4>Proposed features</h4>
+                                <p>Other features not mentioned in other categories that I think may be helpful and go a
+                                    long way</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="2" title="started">
+                <section class="container" dark-mode="false">
+                    <ul class="coverpage">
+                        <li>
+                            <h2>Getting Started</h2>
+                        </li>
+                        <li class="subtopics">
+                            <h3>Installation</h3>
+                            <span></span>
+                            <h3>General Design Style</h3>
+                            <span></span>
+                            <h3>Onboarding</h3>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="section" cat="2" title="quote">
+                <section class="quotes container" dark-mode="true">
+                    <ul>
+                        <li>
+                            A user interface is a like a joke. If you have to explain it, it's not that good.
+                        </li>
+                        <li>
+                            Martin Leblanc
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="section" cat="2" title="overview">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>01</h5>
+                            </li>
+                            <li class="flex"><span class="emoji cool"></span><span class="label"></span></li>
+                            <li>
+                                <h2 class="title">Staying organised with a clean and minimal interface</h2>
+                            </li>
+                            <li>
+                                <p>Clear and direct with the essentials upfront. Good contrast and accessibility while
+                                    maintaining an organised interface.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <img src="./images/st-window-old.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="2" title="style rework">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>02</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Slight color palette and style rework
+                                </h2>
+                            </li>
+                            <li>
+                                <p>Observing the design trends, modern designs are adopting saturated colors and simpler
+                                    flat geometric shapes for a modern, clean and colorful aesthetic.</p>
+                            </li>
+                            <li>
+                                <div class="article-links" onclick="openme(this)" data-link="ui-design-trend">
+                                    <span class="links">A guide of UI design trends for 2021</span>
+                                    <sub>uxdesign.cc</sub>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/morph.webm" id="morph" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="2" title="animation">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>03</h5>
+                            </li>
+                            <li class="flex"><span class="emoji cool"></span><span class="label"></span></li>
+                            <li>
+                                <h2 class="title">Preloading animation</h2>
+                            </li>
+                            <li>
+                                <p>Loading animation is a wonderful way to convey a brand concept, distract attention
+                                    when waiting. Why not entertain the user while they wait?</p>
+                            </li>
+                            <li>
+                                <div class="article-links" onclick="openme(this)" data-link="loading-animation">
+                                    <span class="links">Everything you need to know about loading animations</span>
+                                    <sub>medium.com</sub>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable" onclick="openme(this)" id="loading-sea"
+                            data-type="image/gif">
+                            <!-- <video src="./videos/searchflow.webm" id="searchflow" playsinline muted loop></video> -->
+                            <img src="./images/loading-sea.gif" alt="">
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="2" title="guided tour">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>04</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">A brief guided tour for onboarding
+                                </h2>
+                            </li>
+                            <li>
+                                <p>A simple optional guided tour on first launch can assist and orientate the user
+                                    around the interface especially during the onboarding process. A simple guide to get
+                                    the user started right away.</p>
+                            </li>
+                            <li>
+                                <div class="article-links" onclick="openme(this)" data-link="product-tour">
+                                    <span class="links">What is the best UX/UI pattern for your product tour?</span>
+                                    <sub>appecues.com</sub>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/tour.webm" id="tour" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="3" title="chatlist">
+                <section class="container" dark-mode="false">
+                    <ul class="coverpage">
+                        <li>
+                            <h2>Chat List</h2>
+                        </li>
+                        <li class="subtopics">
+                            <h3>Features that are located in the chat list panel</h3>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="section" cat="3" title="flow">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>05</h5>
+                            </li>
+                            <li class="flex"><span class="emoji cool"></span><span class="label"></span></li>
+                            <li>
+                                <h2 class="title">The flow from searching messages to the chat</h2>
+                            </li>
+                            <li>
+                                <p>The auto focus and the little wiggle at the end is subtle but very helpful to bring
+                                    attention to the specific chat bubble where the result was found.</p>
+                            </li>
+                            <li>
+                                <div class="article-links" onclick="openme(this)" data-link="search-interface">
+                                    <span class="links">Search interface: 20 things to consider</span>
+                                    <sub>uxplanet.org</sub>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/searchflow.webm" id="searchflow" data-type="video/webm"
+                                onclick="openme(this)" playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="3" title="modal search">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>06</h5>
+                            </li>
+                            <li class="flex"><span class="emoji cool"></span><span class="label"></span></li>
+                            <li>
+                                <h2 class="title">Modal windows for search result and adding new contacts/chat</h2>
+                            </li>
+                            <li>
+                                <p>Modals are a great way to avoid interrupting the user's workflow from the main window
+                                    while drawing attention to the new information on screen. Users can multitask and
+                                    easily return to their original task at hand.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/modal.webm" id="modal" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="3" title="collapse chatlist">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>07</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Collapsible Chat List</h2>
+                            </li>
+                            <li>
+                                <p>The option to collapse the chat list to free up screen real estate for more important
+                                    windows. Responsive resizing should close the chat list past a break point.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/collapse.webm" id="collapse" data-type="video/webm"
+                                onclick="openme(this)" playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="3" title="status availability">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>08</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Visual indicator for status availability</h2>
+                            </li>
+                            <li>
+                                <p>When you send a message, it’s very useful to know whether or not it will be read
+                                    right away. Presence status in chat gives you this capability. Managing user's
+                                    expectations of responsiveness.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/availability.webm" id="availability" data-type="video/webm"
+                                onclick="openme(this)" playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="3" title="more options">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>09</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Hover state triggers a "more-option" menu</h2>
+                            </li>
+                            <li>
+                                <p>Ease of access for option menu than having to do an extra right click. Raise
+                                    awareness to users that more options are available at the same time.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/hover.webm" id="hover" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="3" title="conditional muting">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>10</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Conditional muting options</h2>
+                            </li>
+                            <li>
+                                <p>Giving users the options to be notified on different scenarios and conditions. i.e.
+                                    push notifications on tagged only etc.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/muting.webm" id="muting" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="4" title="chatroom">
+                <section class="container" dark-mode="false">
+                    <ul class="coverpage">
+                        <li>
+                            <h2>Chatroom</h2>
+                        </li>
+                        <li class="subtopics">
+                            <h3>Features that are related or located in the chatroom window</h3>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="section" cat="4" title="quick reply">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>11</h5>
+                            </li>
+                            <li class="flex"><span class="emoji cool"></span><span class="label"></span></li>
+                            <li>
+                                <h2 class="title">Quick reply menu on hover</h2>
+                            </li>
+                            <li>
+                                <p>Quickly reply to a specific text (especially helpful in group chats). No fuss no
+                                    muss.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/replyhover.webm" id="replyhover" data-type="video/webm"
+                                onclick="openme(this)" playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="4" title="bookmark">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>06</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Bookmarking messages</h2>
+                            </li>
+                            <li>
+                                <p>Let the user bookmark a message for reference in the future. Unlike “later” feature,
+                                    it’s a saved message instead of a reminder for following up.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/bookmark.webm" id="bookmark" data-type="video/webm"
+                                onclick="openme(this)" playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="4" title="combined forward">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>12</h5>
+                            </li>
+                            <li class="flex"><span class="emoji cool"></span><span class="label"></span></li>
+                            <li>
+                                <h2 class="title">Combined forward text sent as chat history object</h2>
+                            </li>
+                            <li>
+                                <p>Full details are embedded along with the messages. They’re easy to refer to and they
+                                    don’t flood the chat room unnecessarily.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <img src="./images/combinedforward.png" alt="">
+                            <!-- <video src="./videos/replyhover.webm" id="replyhover" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video> -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="4" title="single forward">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>13</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Source of origin for single forwarded text</h2>
+                            </li>
+                            <li>
+                                <p>Providing context of the chat for the recipient. Sending forwarded text in the same
+                                    fashion as any ordinary text can be confusing to the recipient.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/forward.webm" id="forward" data-type="video/webm"
+                                onclick="openme(this)" playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="4" title="max width">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>14</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Reducing chat bubble max width</h2>
+                            </li>
+                            <li>
+                                <p>Reducing the horizontal travelling distance of the eyes when reading long messages
+                                    when the app is expanded or in full view.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/maxwidth.webm" id="maxwidth" data-type="video/webm"
+                                onclick="openme(this)" playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="4" title="type aware">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>15</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Typing awareness indicator</h2>
+                            </li>
+                            <li>
+                                <p>Humanising communication and facilitating the linguistics of conversational
+                                    turn-taking without impinging on each other. TDLR: Prevent interruption.</p>
+                            </li>
+                            <li>
+                                <div class="article-links" onclick="openme(this)" data-link="typing-awareness">
+                                    <span class="links">Why the typing awareness indicator is the worst</span>
+                                    <sub>bustle.com</sub>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/typing.webm" id="typing" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="5" title="features">
+                <section class="container" dark-mode="false">
+                    <ul class="coverpage">
+                        <li>
+                            <h2>Afterthought Features</h2>
+                        </li>
+                        <li class="subtopics">
+                            <h3>Secondary features that may be helpful and go a long way</h3>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="section" cat="5" title="inbox">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>16</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Notification Inbox</h2>
+                            </li>
+                            <li>
+                                <p>Consolidated notifications regarding any attention required for the user specifically
+                                    whenever the user was mentioned. This allows user to have an overview at a glance
+                                    quickly.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/inbox.webm" id="inbox" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="5" title="image">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>17</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Send images as original file or compressed</h2>
+                            </li>
+                            <li>
+                                <p>Giving the user the option to send an image file in original file to retain quality
+                                    as lossy compression can result in color degradation. This potentially can cause an
+                                    issue for sharing color sensitive work.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/image.webm" id="image" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="5" title="@here">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>18</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">An @here mention for group chat</h2>
+                            </li>
+                            <li>
+                                <p>A type of mention that only notifies everyone except those who are offline and do not
+                                    suppress an @here mention from a group chat.</p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/here.webm" id="here" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="section" cat="5" title="edit message">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="grid">
+                        <ul>
+                            <li>
+                                <h5>19</h5>
+                            </li>
+                            <li class="flex"><span class="emoji gem"></span><span class="label proposed"></span></li>
+                            <li>
+                                <h2 class="title">Edit chat and showing revision</h2>
+                            </li>
+                            <li>
+                                <p>Correct typos and revise text to look better especially when that message is pinned.
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="media-container clickable">
+                            <video src="./videos/edit.webm" id="edit" data-type="video/webm" onclick="openme(this)"
+                                playsinline muted loop></video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- <div class="section" cat="5" title="quote">
+                <section class="quotes container" dark-mode="true">
+                    <ul>
+                        <li>
+                            Good design is as little design as possible.
+                        </li>
+                        <li>
+                            Dieter Rams
+                        </li>
+                    </ul>
+                </section>
+            </div> -->
+            <div class="section" cat="5" title="end">
+                <section class="quotes container" dark-mode="true">
+                    <div class="svg" id="confetti"></div>
+                    <ul>
+                        <li class="center">
+                            Thank you for your attention! <br> &#127881;
+                        </li>
+                        <li class="center">
+                            The End
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="section" cat="5" title="end">
+                <section class="container" dark-mode="false">
+                    <div data-type="layout" class="half">
+                        <ul class="title">
+                            <li>
+                                <h5>Powered By</h5>
+                            </li>
+                        </ul>
+                        <ul class="content">
+                            <li>
+                                <div class="icon"></div>
+                                <h4>fullpageJS</h4>
+                                <p>Single page scroll Javascript Plugin</p>
+                            </li>
+                            <li>
+                                <div class="icon"></div>
+                                <h4>GSAP</h4>
+                                <sub>GreenSock Animation Platform</sub>
+                                <p>JavaScript tools for building HTML5 animation</p>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                </div>
+                                <h4>jQuery</h4>
+                                <p>JavaScript library that simplifies JavaScript programming</p>
+                            </li>
+                            <li>
+                                <div class="icon"></div>
+                                <h4>Porkbun</h4>
+                                <p>Free .design domain for the first year!</p>
+                            </li>
+                            <li>
+                                <div class="icon"></div>
+                                <h4>GitHub</h4>
+                                <p>Host and where you can find a ton of great, fun and free stuff!</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- <div class="noise"></div>
+    <div class="ball"></div> -->
+        <div class="js" style="display: none;">
+            <script src="./js/jquery-3.6.0.min.js"></script>
+            <script src="./js/fullpage.min.js"></script>
+            <script src="./js/fullpage.extensions.min.js"></script>
+            <script src="./js/lity.min.js"></script>
+            <script src="./js/gsap.min.js"></script>
+            <script src="./js/ScrollTrigger.min.js"></script>
+            <script src="./js/TextPlugin.min.js"></script>
+            <script src="https://kit.fontawesome.com/b6a315a43e.js" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+            <script src="./js/script.js"></script>
+            <!-- <script src="./js/anim.js"></script> -->
+        </div>
+        <footer></footer>
+        <figure></figure>
+    </main>
+</body>
+
+</html>

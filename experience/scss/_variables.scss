@@ -1,0 +1,76 @@
+$colors: (
+  black: (
+    base: #333,
+    full: #000,
+    light: #40444d,
+  ),
+  grey: (
+    base: #adbfc9,
+    light: #c0cbda,
+    lighter: #f3f3f7,
+    dark: #636364,
+  ),
+  light: (
+    base: #fff,
+    dark: #ecedf1,
+  ),
+  primary: (
+    base: #1b92f5,
+    light: #f3f9fe,
+  ),
+  seatalk: (
+    base: #f2f2f6,
+    light: #f8f8fa,
+    dark: #2F354D,
+  ),
+  brands: (
+    dribbble: #CB2B69,
+  ),
+  green: (
+    base: #1DC690,
+  ),
+  red: (
+    base: #ff5e5b,
+  ),
+  purple: (
+    base: #580aff,
+  ),
+);
+
+$fontweights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+);
+
+$breakpoints: (
+  s: 414px,
+  m: 768px,
+  l: 1024px,
+  xl: 1400px,
+);
+
+$radius: 0.5rem;
+
+@function color($color, $tone: "base") {
+  @return map-get(map-get($colors, $color), $tone);
+}
+
+@function get-me($map, $list...) {
+  @each $key in $list {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+@mixin device-size($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn 'No value could be retrieved from `#{breakpoint}`.' + 'Available breakpoints are: #{map-keys($breakpoints)}';
+  }
+}

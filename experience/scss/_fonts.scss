@@ -1,0 +1,18 @@
+@mixin fontface($weight) {
+    font-family: 'Sofia Pro';
+    src: url('../fonts/sf#{$weight}.eot');
+    src: url('../fonts/sf#{$weight}.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/sf#{$weight}.woff2') format('woff2'),
+    url('../fonts/sf#{$weight}.woff') format('woff'),
+    url('../fonts/sf#{$weight}.ttf') format('truetype'),
+    url('../fonts/sf#{$weight}.svg#svgFontName') format('svg');
+    font-weight: $weight;
+    font-style: normal;
+}
+
+$fontweights: (300, 400, 500, 600, 700);
+@each $weight in $fontweights {
+    @font-face {
+        @include fontface(#{$weight})
+    }
+}
