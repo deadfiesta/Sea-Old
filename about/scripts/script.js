@@ -42,7 +42,7 @@ function appendContent(html) {
         <h4>Hello There</h4>\
         <div class="title-container"><h2>I Bring Designs to&nbsp;</h2><h1>Life</h1></div>\
         <ul class="fields"><li>#<span class="typing"></span></li></ul>\
-        <p>I have worked at National University of Singapore for 3 years as a visual designer. I mainly worked with software engineers to\
+        <p>I have worked as a designer for 4.5 years. I mainly worked with software engineers to\
         create high fidelity mobile and desktop app mockups for commercial and government entities.</p>\
         <ul class="companies"><li><object data="./images/logos_nus.svg"></object></li>\
         <li><object data="./images/logos_red-jasper.svg"></object></li>\
