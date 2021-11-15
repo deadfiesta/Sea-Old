@@ -1,0 +1,843 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$light-bg: #dce3e5;
+$gray: #91a4b0;
+$behance: #0056ff;
+$primary-color: #4361ee;
+$secondary-color: #ff0a54;
+$dark-color: #1b1b1e;
+$green: #2dcc70;
+$red: #ff006e;
+$yellow: #8338ec;
+$blue: #3a86ff;
+$background-color: linear-gradient(to top, #f2f3f4, #fff);
+$border-radius: 0.25em;
+$mobile: 414px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1400px;
+$ultrawide: 2000px;
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin ultrawide {
+  @media (min-width: #{$ultrawide}) {
+    @content;
+  }
+}
+
+body,
+html {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: $dark-color;
+  background-color: $dark-color;
+  background-image: $background-color;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+%bgfullpage {
+  width: 100%;
+  min-height: 100%;
+}
+%bgcover {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+%centerstuff {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%easeback {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: white;
+}
+
+a {
+  color: inherit;
+}
+
+.typed-cursor {
+  opacity: 1;
+  animation: blinking 0.7s infinite;
+  @keyframes blinking {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.script-container {
+  display: none;
+}
+.abs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  object-fit: contain;
+}
+.passthrough {
+  pointer-events: none;
+}
+.multiply-container {
+  pointer-events: none;
+  z-index: 20;
+  background-color: $dark-color;
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+}
+.multiply-container.faded {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.multiply-container.none {
+  display: none;
+}
+.init-container {
+  background-color: black;
+  z-index: 50;
+}
+.fade-container {
+  z-index: 20;
+}
+.bg-container {
+  z-index: 10;
+}
+.black {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: all 0.1s ease;
+}
+.black.faded {
+  opacity: 0;
+  transition: all 0.3s ease;
+  mix-blend-mode: multiply;
+}
+.video-container {
+  width: 100vw;
+  height: 100vh;
+  @extend %centerstuff;
+  background-color: black;
+  video {
+    @extend %bgfullpage;
+    object-fit: cover;
+    &:focus {
+      outline: none;
+      object-fit: contain;
+    }
+  }
+  #rj {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  .v002 {
+    pointer-events: all;
+  }
+  .bg01 {
+    @extend %bgfullpage;
+    @extend %bgcover;
+    background-image: url("../images/aboutbg.jpg");
+  }
+}
+.website-bg {
+  @extend %bgfullpage;
+  @extend %bgcover;
+}
+#aarc-web {
+  background-image: url("../images/aarc.jpg");
+}
+#fleet-web {
+  background-image: url("../images/fleet.jpg");
+}
+#lim-web {
+  background-image: url("../images/limandrew.jpg");
+}
+#indoor-web {
+  background-image: url("../images/indoor.jpg");
+}
+
+.website-bg {
+  z-index: 20;
+  display: none;
+}
+.glass-container {
+  @extend %centerstuff;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 40;
+  #glassmorphism {
+    overflow: hidden;
+    position: relative;
+    @extend %centerstuff;
+    width: 90%;
+    height: 95%;
+    max-height: 550px;
+    max-width: 350px;
+    stroke: 2px;
+    background-image: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.025)
+    );
+    border-radius: 1em;
+    backdrop-filter: blur(15px);
+    border: 2px ridge rgba($light-bg, $alpha: 0.25);
+    box-shadow: 0 0.1em 1em rgba($dark-color, $alpha: 0.15);
+    // transition: all .5s ease;
+    transform-origin: top;
+    animation: enter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    @include tablet {
+      height: 65%;
+      min-height: 650px;
+      max-width: $laptop;
+      max-height: none;
+    }
+    @keyframes enter {
+      from {
+        opacity: 0;
+        transform: translateY(-10em);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .content-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 20;
+      @extend %centerstuff;
+    }
+    .texture {
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      background-image: url("../images/texture.png");
+      opacity: 0.075;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    #content-state {
+      height: 100%;
+      @extend %centerstuff;
+    }
+    #content {
+      height: 90%;
+      max-width: 360px;
+      max-height: 500px;
+      @include tablet {
+        height: 85%;
+        max-width: none;
+        max-height: none;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      color: white;
+      z-index: 20;
+      ul {
+        pointer-events: all;
+      }
+      ul.projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        li {
+          width: 40%;
+          margin: 0.5em 1%;
+          @include tablet {
+            width: 22.5%;
+          }
+          .web-thumbnails {
+            cursor: pointer;
+            border-radius: $border-radius;
+            width: 100%;
+            height: 6em;
+            box-shadow: 0 0.1em 1em rgba($dark-color, $alpha: 0.5);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            @extend %easeback;
+            @include tablet {
+              height: 10em;
+            }
+            &:hover {
+              transform: scale(1.1);
+              @extend %easeback;
+            }
+          }
+          .project-thumbnails {
+            cursor: pointer;
+            border-radius: $border-radius;
+            width: 100%;
+            height: 6em;
+            overflow: hidden;
+            box-shadow: 0 0.1em 1em rgba($dark-color, $alpha: 0.5);
+            @extend %bgcover;
+            @extend %easeback;
+            @include tablet {
+              height: 10em;
+            }
+            &:hover {
+              transform: scale(1.1);
+              @extend %easeback;
+            }
+            video {
+              @extend %bgcover;
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          #fleet {
+            background-image: url("../images/proj-fleet.jpg");
+          }
+          #suite {
+            background-image: url("../images/proj-suite.jpg");
+          }
+          #retail {
+            background-image: url("../images/proj-retail.jpg");
+          }
+          #fit {
+            background-image: url("../images/proj-fit.jpg");
+          }
+          #aarc {
+            background-image: url("../images/aarc.jpg");
+          }
+          #fleetmgmt {
+            background-image: url("../images/fleet.jpg");
+          }
+          #indoor {
+            background-image: url("../images/indoor.jpg");
+          }
+          #limandrew {
+            background-image: url("../images/limandrew.jpg");
+          }
+          #setup01 {
+            background-image: url("../images/setup-01.JPG");
+          }
+          #setup02 {
+            background-image: url("../images/setup-02.JPG");
+          }
+          #setup03 {
+            background-image: url("../images/setup-05.jpg");
+          }
+        }
+      }
+      h4 {
+        font-weight: $semibold;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        font-size: 1em;
+        opacity: 0.5;
+      }
+      .title-container {
+        display: flex;
+        align-items: center;
+        h2 {
+          font-size: 2em;
+          font-weight: $medium;
+          @include laptop {
+            font-size: 3em;
+          }
+        }
+        h1 {
+          font-size: 2em;
+          font-weight: $semibold;
+          @include laptop {
+            font-size: 3em;
+          }
+        }
+      }
+      p {
+        font-weight: $light;
+        letter-spacing: 0.025em;
+        font-size: 0.75em;
+        width: 80%;
+        text-align: center;
+        opacity: 1;
+        @include tablet {
+          font-size: 1em;
+        }
+        @include laptop {
+          font-size: 1.1em;
+          line-height: 1.6em;
+        }
+      }
+    }
+  }
+  #glassmorphism.home {
+    height: 75% !important;
+    @include tablet {
+      height: 65% !important;
+    }
+  }
+}
+
+.minifier-container {
+  pointer-events: all;
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  .minify-icon-container {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: rgba($light-bg, $alpha: 0.15);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    &:hover {
+      // box-shadow: 0 0 0 .1em inset rgba($light-bg, $alpha: 1.0);
+      box-shadow: 0 0 1em inset rgba($light-bg, $alpha: 0.5);
+      background-color: rgba($light-bg, $alpha: 0.35);
+      transition: all 0.3s ease;
+    }
+    .icon {
+      height: auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-0.25em) scale(0.65);
+      transition: all 0.3s ease;
+    }
+    .icon.up {
+      transform: translateY(0.25em) scale(0.65);
+      transition: all 0.3s ease;
+      .line.left {
+        transform: translateX(0.35em) rotate(-45deg);
+        transition: all 0.3s ease;
+      }
+      .line.right {
+        transform: translateX(-0.35em) rotate(45deg);
+        transition: all 0.3s ease;
+      }
+    }
+    .line {
+      height: 0.25em;
+      border-radius: 0.125em;
+      width: 47.5%;
+      background-color: $light-bg;
+    }
+    .line.left {
+      transform-origin: top left;
+      transform: translateX(0.55em) rotate(45deg);
+      transition: all 0.3s ease;
+    }
+
+    .line.right {
+      transform-origin: top right;
+      transform: translateX(-0.55em) rotate(-45deg);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+//home
+.home #content {
+  max-height: 350px !important;
+  @include tablet {
+    max-height: none;
+  }
+  .title-container {
+    font-size: .8em;
+  }
+  .avatar-container {
+    display: none;
+    position: relative;
+    height: 96px;
+    width: 96px;
+    margin: 2em 0;
+    &:hover:after {
+      transform: translateX(-50%) translateY(-50%) scale(1.5);
+      opacity: 0;
+      border: 0 solid $light-bg;
+      transition: all 0.3s ease;
+    }
+    &:hover .img {
+      transform: scale(1.25);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    &:hover .rot-bg {
+      opacity: 0;
+      transition: all .3s ease;
+    }
+    &:hover .rot-bg-front {
+      opacity: 0;
+      transition: all .3s ease;
+    }
+    @include laptop {
+      display: grid;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(1.05);
+      border: 0.25em solid $light-bg;
+      transition: all 0.3s ease;
+    }
+    .img {
+      z-index: 2;
+      pointer-events: all;
+      @extend %bgcover;
+      background-image: url("../images/neo-wen-kiong-clear.png");
+      height: 96px;
+      width: 96px;
+      border-radius: 50%;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .rot-bg-front {
+      z-index: 3;
+      opacity: .5;
+      position: absolute;
+      mix-blend-mode: lighten;
+      @extend %bgcover;
+      background-image: url("../images/rot-bg.jpg");
+      height: 96px;
+      width: 96px;
+      transition: all .3s ease;
+      border-radius: 50%;
+      animation: rotating 20s linear infinite;
+    }
+    .rot-bg {
+      z-index: 1;
+      position: absolute;
+      @extend %bgcover;
+      background-image: url("../images/rot-bg.jpg");
+      height: 96px;
+      width: 96px;
+      border-radius: 50%;
+      transition: all .3s ease;
+      animation: rotating 20s linear infinite;
+      @keyframes rotating {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+  p {
+    margin: 1em 0;
+    @include tablet {
+      margin: 2em 0;
+    }
+  }
+  ul.fields {
+    display: flex;
+    flex-direction: row;
+    @include tablet {
+      align-items: center;
+      margin: 2em 0 0.5em;
+    }
+    li {
+      cursor: text;
+      font-size: 1em;
+      background-color: rgba($secondary-color, $alpha: 1);
+      font-size: 0.75em;
+      height: 2.5em;
+      margin: 0 0.25em;
+      padding: 0 1em;
+      height: 2.2em;
+      border-radius: 1.1em;
+      // border: groove 2px rgba($light-bg, $alpha: .5);
+      @extend %centerstuff;
+      @include tablet {
+        font-size: 1.1em;
+      }
+    }
+  }
+  ul.companies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    li {
+      object {
+        height: 2em;
+        padding: 0.25em;
+        opacity: 0.55;
+        transition: all 0.3s ease;
+        border-radius: $border-radius;
+        @include tablet {
+          height: 5em;
+          padding: 1em;
+        }
+        &:hover {
+          opacity: 1;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+}
+//work
+.work #content {
+  .view-more {
+    cursor: pointer;
+    pointer-events: all;
+    background-color: rgba($light-bg, $alpha: 0.15);
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+    @include tablet {
+      font-size: 1em;
+    }
+    &:hover {
+      background-color: rgba($light-bg, $alpha: 0.25);
+      transition: all 0.3s ease;
+    }
+    &:hover .fas {
+      transform: translateX(0);
+      transition: all 0.3s ease;
+    }
+    .be-container {
+      @extend %centerstuff;
+      border-radius: $border-radius;
+      padding: 0.5em;
+      background-color: $behance;
+    }
+    h3 {
+      margin: 0 1em;
+      font-size: 1em;
+      font-weight: $medium;
+    }
+    .fab {
+      font-size: 1.15em;
+    }
+    .fas {
+      transform: translateX(-0.35em);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+//animated
+.animated #content {
+  ul.animated {
+    display: flex;
+    flex-wrap: wrap;
+    @extend %centerstuff;
+    width: 80%;
+    @include tablet {
+      width: 90%;
+    }
+    li {
+      margin: 0.25em;
+      transition: all 0.3s ease;
+      @include tablet {
+        margin: 0.75em;
+      }
+      &:hover {
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+      }
+      .animated-logo-container {
+        cursor: pointer;
+        border-radius: $border-radius;
+        overflow: hidden;
+        width: 7em;
+        height: 5em;
+        @include tablet {
+          width: 12em;
+          height: 8em;
+        }
+        video {
+          @extend %bgcover;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .view-more {
+    cursor: pointer;
+    pointer-events: all;
+    background-color: rgba($light-bg, $alpha: 0.15);
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+    @include tablet {
+      font-size: 1em;
+    }
+    &:hover {
+      background-color: rgba($light-bg, $alpha: 0.25);
+      transition: all 0.3s ease;
+    }
+    &:hover .fas {
+      transform: translateX(0);
+      transition: all 0.3s ease;
+    }
+    .yt-container {
+      @extend %centerstuff;
+      border-radius: $border-radius;
+      padding: 0.5em;
+      background-color: $secondary-color;
+    }
+    h3 {
+      margin: 0 1em;
+      font-size: 1em;
+      font-weight: $medium;
+    }
+    .fab {
+      font-size: 1.15em;
+    }
+    .fas {
+      transform: translateX(-0.35em);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.frontend #content {
+  height: 50%;
+  .view-more {
+    cursor: pointer;
+    pointer-events: all;
+    background-color: rgba($light-bg, $alpha: 0.15);
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+    @include tablet {
+      font-size: 1em;
+    }
+    &:hover {
+      background-color: rgba($light-bg, $alpha: 0.25);
+      transition: all 0.3s ease;
+    }
+    &:hover .fa-angle-right {
+      transform: translateX(.25em);
+      transition: all 0.3s ease;
+    }
+    .fa-container {
+      @extend %centerstuff;
+      border-radius: $border-radius;
+      padding: 0.5em;
+      background-color: $primary-color;
+    }
+    h3 {
+      margin: 0 0 0 1em;
+      font-size: 1em;
+      font-weight: $medium;
+    }
+    .fa-angle-right {
+      padding-left: .75em;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.pctech #content {
+  .glorious {
+    font-weight: $semibold;
+  }
+  .view-more {
+    cursor: pointer;
+    pointer-events: all;
+    background-color: rgba($light-bg, $alpha: 0.15);
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+    @include tablet {
+      font-size: 1em;
+    }
+    &:hover {
+      background-color: rgba($light-bg, $alpha: 0.25);
+      transition: all 0.3s ease;
+    }
+    &:hover .fas {
+      transform: translateX(0);
+      transition: all 0.3s ease;
+    }
+    .fa-container {
+      @extend %centerstuff;
+      border-radius: $border-radius;
+      padding: 0.5em;
+      background-color: $yellow;
+    }
+    h3 {
+      margin: 0 1em;
+      font-size: 1em;
+      font-weight: $medium;
+    }
+    .fab {
+      font-size: 1.15em;
+    }
+    .fa-angle-right {
+      transform: translateX(-0.35em);
+      transition: all 0.3s ease;
+    }
+  }
+}
