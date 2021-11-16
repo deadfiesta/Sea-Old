@@ -33,6 +33,17 @@ const Navigation = ({ open }) => {
     })
 
     useEffect(() => {
+
+        const isInViewport = (element) => {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            )
+        }
+
         const alltopics = document.querySelectorAll('.subtopics')
 
         let options = {
@@ -43,7 +54,10 @@ const Navigation = ({ open }) => {
         let observer = new IntersectionObserver((entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    document.querySelector(`.${entry.target.id}`).classList.add('selected')
+                    let selected = document.querySelector(`.${entry.target.id}`)
+                    selected.classList.add('selected')
+                    !isInViewport(selected) && selected.scrollIntoView();
+                    
                 } else {
                     document.querySelector(`.${entry.target.id}`).classList.remove('selected')
                 }
