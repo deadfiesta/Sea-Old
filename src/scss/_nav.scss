@@ -87,7 +87,7 @@ nav {
         }
         .wrapper {
             display: grid;
-            grid-template-columns: repeat(2, auto);
+            grid-template-columns: auto 1fr;
             gap: 2rem;
         }
         .nav-container.pinned {

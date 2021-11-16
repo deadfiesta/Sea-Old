@@ -1,10 +1,11 @@
 import React from 'react'
+import '../scss/main.scss'
+import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom'
 import { useState } from 'react'
 import Header from './Header'
-import Navigation from './Navigation'
+import ContentLayout from './ContentLayout'
 import { Spin as Hamburger } from 'hamburger-react'
-import Scrium from './Scrium'
-import Content from './Content'
+
 
 const AppRouter = () => {
 
@@ -12,17 +13,29 @@ const AppRouter = () => {
     const closeMenu = () => {
         setOpen(false)
     }
+
     return (
         <>
-            <Header open={isOpen}>
-                <Hamburger toggled={isOpen} toggle={setOpen} direction="right" />
-            </Header>
-            <div className="content">
-                <Navigation open={isOpen} />
-                {isOpen && <Scrium click={closeMenu} />}
-                <Content />
-            </div>
+            <Router>
+                <Header open={isOpen}>
+                    <Hamburger toggled={isOpen} toggle={setOpen} direction="right" />
+                </Header>
+                <Routes>
+                    <Route path="/" element={<ContentContainer />}>
+                        <Route path="/" element={<ContentLayout open={isOpen} close={closeMenu} />} />
+                        <Route path="/coral" element={<ContentLayout open={isOpen} close={closeMenu} />} />
+                    </Route>
+                </Routes>
+            </Router>
         </>
+    )
+}
+
+const ContentContainer = () => {
+    return (
+        <div className="content">
+            <Outlet />
+        </div>
     )
 }
 

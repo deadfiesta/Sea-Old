@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import '../scss/main.scss'
 // import { FaDribbble } from "react-icons/fa";
 import { header } from './Data'
-import video from '../Videos/bg.mp4'
+// import video from '../Videos/bg.mp4'
 
 
 const Header = ({ open, children }) => {
@@ -49,10 +49,10 @@ const Header = ({ open, children }) => {
 
             <div className="headerbg-container">
                 <div className="header-video-container">
-                    <video className="video-content" autoPlay playsInline muted loop id="header-video">
+                    {/* <video className="video-content" autoPlay playsInline muted loop id="header-video">
                         <source src={video} type="video/mp4" />
                         Your browser does not support the video tag.
-                    </video>
+                    </video> */}
                 </div>
                 {/* <a href="https://dribbble.com/shots/15886164-Voice-morphing-interface-Natural" rel="noopener noreferrer" target="_blank" className="source dribbble"><FaDribbble />Voice Morphing Interface by Gleb Kuznetsov</a> */}
             </div>

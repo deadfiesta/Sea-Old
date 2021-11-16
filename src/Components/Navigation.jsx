@@ -1,9 +1,9 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { nav } from './Data'
 
-const Navigation = ({ open }) => {
+const Navigation = ({ data, open }) => {
 
+    let nav = data;
 
     useEffect(()=> {
         const anchors = document.querySelectorAll('ul.subtopic-container li span');

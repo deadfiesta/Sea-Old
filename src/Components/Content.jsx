@@ -1,10 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { content } from './Data'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 
-const Content = () => {
+const Content = ({ data }) => {
+
+    const content = data;
 
     useEffect(() => {
         const images = document.querySelectorAll('.image-container, .video-container');
@@ -66,7 +67,7 @@ const Content = () => {
                                                 <li className="video" key={i}>
                                                     <Zoom zoomMargin={96}>
                                                         <video autoPlay playsInline muted loop className="video-content">
-                                                            <source src={`${video.url}`} type="video/mp4" />
+                                                            <source src={`./motion/${video.url}`} type="video/mp4" />
                                                             Your browser does not support the video tag.
                                                         </video>
                                                     </Zoom>
@@ -78,6 +79,8 @@ const Content = () => {
                                             ))}
                                         </ul>
                                     }
+
+
 
 
                                 </div>
