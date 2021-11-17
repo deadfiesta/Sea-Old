@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.63aec2bb.chunk.css",
-    "main.js": "/static/js/main.4142ddfc.chunk.js",
-    "main.js.map": "/static/js/main.4142ddfc.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.782c82a3.js",
-    "runtime-main.js.map": "/static/js/runtime-main.782c82a3.js.map",
-    "static/css/2.0d0b0543.chunk.css": "/static/css/2.0d0b0543.chunk.css",
-    "static/js/2.72d91798.chunk.js": "/static/js/2.72d91798.chunk.js",
-    "static/js/2.72d91798.chunk.js.map": "/static/js/2.72d91798.chunk.js.map",
-    "static/js/3.399c200f.chunk.js": "/static/js/3.399c200f.chunk.js",
-    "static/js/3.399c200f.chunk.js.map": "/static/js/3.399c200f.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.0d0b0543.chunk.css.map": "/static/css/2.0d0b0543.chunk.css.map",
-    "static/css/main.63aec2bb.chunk.css.map": "/static/css/main.63aec2bb.chunk.css.map",
-    "static/js/2.72d91798.chunk.js.LICENSE.txt": "/static/js/2.72d91798.chunk.js.LICENSE.txt",
-    "static/media/main.scss": "/static/media/me.2bc2bcf6.png"
+    "main.css": "/motion/static/css/main.c4156434.chunk.css",
+    "main.js": "/motion/static/js/main.4142ddfc.chunk.js",
+    "main.js.map": "/motion/static/js/main.4142ddfc.chunk.js.map",
+    "runtime-main.js": "/motion/static/js/runtime-main.f1ef78bd.js",
+    "runtime-main.js.map": "/motion/static/js/runtime-main.f1ef78bd.js.map",
+    "static/css/2.0d0b0543.chunk.css": "/motion/static/css/2.0d0b0543.chunk.css",
+    "static/js/2.72d91798.chunk.js": "/motion/static/js/2.72d91798.chunk.js",
+    "static/js/2.72d91798.chunk.js.map": "/motion/static/js/2.72d91798.chunk.js.map",
+    "static/js/3.399c200f.chunk.js": "/motion/static/js/3.399c200f.chunk.js",
+    "static/js/3.399c200f.chunk.js.map": "/motion/static/js/3.399c200f.chunk.js.map",
+    "index.html": "/motion/index.html",
+    "static/css/2.0d0b0543.chunk.css.map": "/motion/static/css/2.0d0b0543.chunk.css.map",
+    "static/css/main.c4156434.chunk.css.map": "/motion/static/css/main.c4156434.chunk.css.map",
+    "static/js/2.72d91798.chunk.js.LICENSE.txt": "/motion/static/js/2.72d91798.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/motion/static/media/me.2bc2bcf6.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.782c82a3.js",
+    "static/js/runtime-main.f1ef78bd.js",
     "static/css/2.0d0b0543.chunk.css",
     "static/js/2.72d91798.chunk.js",
-    "static/css/main.63aec2bb.chunk.css",
+    "static/css/main.c4156434.chunk.css",
     "static/js/main.4142ddfc.chunk.js"
   ]
 }
