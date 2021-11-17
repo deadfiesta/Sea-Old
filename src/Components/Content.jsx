@@ -18,10 +18,13 @@ const Content = ({ data }) => {
 
         let observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
-                let box = document.getElementById(entry.target.id).childNodes;
-                entry.isIntersecting
-                    ? box.forEach(b => b.classList.remove('hidden'))
-                    : box.forEach(b => b.classList.add('hidden'))
+                let box = document.getElementById(entry.target.id);
+                if (box !== null) {
+                    entry.isIntersecting
+                        ? box.childNodes.forEach(b => b.classList.remove('hidden'))
+                        : box.childNodes.forEach(b => b.classList.add('hidden'))
+                }
+
             })
         }, options)
 
@@ -42,11 +45,11 @@ const Content = ({ data }) => {
                             <li key={i} >
                                 <div className="top-container">
 
-                                    {subtopic.link !== undefined 
-                                    ?<h3 className="subtopics link" onClick={()=>window.open(subtopic.link)} id={subtopic.anchor}>{subtopic.title}</h3>
-                                    :<h3 className="subtopics" id={subtopic.anchor}>{subtopic.title}</h3>
+                                    {subtopic.link !== undefined
+                                        ? <h3 className="subtopics link" onClick={() => window.open(subtopic.link)} id={subtopic.anchor}>{subtopic.title}</h3>
+                                        : <h3 className="subtopics" id={subtopic.anchor}>{subtopic.title}</h3>
                                     }
-                                    
+
                                     {subtopic.images !== undefined &&
                                         <ul className="image-container" id={`${subtopic.anchor}-images`}>
                                             {subtopic.images.map((image, i) => (
@@ -67,7 +70,7 @@ const Content = ({ data }) => {
                                                 <li className="video" key={i}>
                                                     <Zoom zoomMargin={96}>
                                                         <video autoPlay playsInline muted loop className="video-content">
-                                                            <source src={`./motion/${video.url}`} type="video/mp4" />
+                                                            <source src={`${video.url}`} type="video/mp4" />
                                                             Your browser does not support the video tag.
                                                         </video>
                                                     </Zoom>

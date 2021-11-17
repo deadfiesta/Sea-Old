@@ -21,18 +21,6 @@ const Navigation = ({ data, open }) => {
     })
 
     useEffect(() => {
-        const scrolling = () => {
-            const navy = document.querySelector('nav');
-            if (window.scrollY > navy.offsetTop) {
-                navy.childNodes[0].classList.add('pinned');
-            } else {
-                navy.childNodes[0].classList.remove('pinned')
-            }
-        }
-        window.onscroll = scrolling;
-    })
-
-    useEffect(() => {
 
         const isInViewport = (element) => {
             const rect = element.getBoundingClientRect();

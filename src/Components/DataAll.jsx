@@ -1,6 +1,6 @@
 const header = [{
     title: "UI Animation for Sea Coral",
-    updated: "November 10, 2021",
+    updated: "November 17, 2021",
 }];
 
 const nav = [
@@ -253,12 +253,32 @@ const nav = [
                     },
                     {
                         title: "Tabs",
-                        anchor: "tab"
+                        anchor: "tabs"
+                    },
+                ]
+            },
+            {
+                topic: "Medium Elements",
+                anchor: "medium",
+                subtopics: [
+                    {
+                        title: "Modals",
+                        anchor: "modal"
+                    },
+                ]
+            },
+            {
+                topic: "Small Elements",
+                anchor: "small",
+                subtopics: [
+                    {
+                        title: "Drop Down List",
+                        anchor: "drop"
                     },
                     {
-                        title: "Modal",
-                        anchor: "modal"
-                    }
+                        title: "Buttons",
+                        anchor: "button"
+                    },
                 ]
             },
         ]
@@ -939,7 +959,7 @@ const content = [
                     },
                     {
                         title: "Tabs",
-                        anchor: "tab",
+                        anchor: "tabs",
                         videos: [
                             {
                                 url: "./media/tabs/tab1.mp4",
@@ -956,22 +976,70 @@ const content = [
                         ],
                         description: "Tabs enable users to jump to their target section quickly.",
                     },
+
+                ]
+            },
+            {
+                topic: "Medium Elements",
+                anchor: "medium",
+                subtopics: [
                     {
-                        title: "Modal",
+                        title: "Modals",
                         anchor: "modal",
-                        images: [
+                        videos: [
                             {
-                                url: "./media/realism/realism01.gif",
+                                url: "./media/modals/modal1.mp4",
+                                caption: "View More Info on SSH Proxy"
                             },
                             {
-                                url: "./media/realism/realism02.gif",
+                                url: "./media/modals/modal2.mp4",
+                                caption: "Delete Warning Modal"
                             },
                             {
-                                url: "./media/realism/realism03.gif",
-                            }
+                                url: "./media/modals/modal3.mp4",
+                                caption: "Confirmation Modal"
+                            },
                         ],
-                        description: "People tend to accept artistic license, but they can feel disoriented when movement doesn’t make sense or appears to defy physical laws. Animation supports the essence of actual and real interaction, it creates the level of feelings and perception similar to what people feel when they interact with a physical object in real life.",
+                        description: "A modal is a window that appears on top of a parent screen. It’s called ‘modal’ because it creates a mode that disables the parent screen but keeps it visible. Users must interact with the modal to return to the main screen.",
                     }
+
+                ]
+            },
+            {
+                topic: "Small Elements",
+                anchor: "small",
+                subtopics: [
+                    {
+                        title: "Drop Down List",
+                        anchor: "drop",
+                        videos: [
+                            {
+                                url: "./media/dropdown/dropdown1.mp4",
+                                caption: "View More Options"
+                            },
+                            {
+                                url: "./media/dropdown/dropdown2.mp4",
+                                caption: "Support and Help"
+                            },
+                            {
+                                url: "./media/dropdown/dropdown3.mp4",
+                                caption: "Account Option"
+                            },
+                        ],
+                        description: "A dropdown menu is a design pattern letting you display a list of contents, navigation points, and functions without flooding the user with many options simultaneously. Users find a list of options when they click the menu label or hover the cursor over it, and can select one of these options by clicking on the appropriate content name.",
+                    },
+                    {
+                        title: "Buttons",
+                        anchor: "button",
+                        videos: [
+                            {
+                                url: "./media/buttons/button1.mp4",
+                                caption: "View More Options"
+                            },
+                        ],
+                        description: "Material Design uses a ripple effect to give users feedback in a simple, elegant way.",
+                    }
+
                 ]
             },
 

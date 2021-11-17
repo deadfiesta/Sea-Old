@@ -14,6 +14,17 @@ const AppRouter = () => {
         setOpen(false)
     }
 
+    const scrolling = () => {
+        const navy = document.querySelector('nav');
+        if (window.scrollY > navy.offsetTop) {
+          navy.childNodes[0].classList.add('pinned');
+        } else {
+          navy.childNodes[0].classList.remove('pinned')
+        }
+      }
+
+      window.addEventListener("scroll", scrolling)
+
     return (
         <>
             <Router>

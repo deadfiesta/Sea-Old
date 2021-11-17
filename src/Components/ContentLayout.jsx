@@ -8,6 +8,7 @@ import { content } from './DataAll'
 
 const ContentLayout = ({ open, close }) => {
 
+
   let navData, contentData;
 
   const location = useLocation().pathname;
