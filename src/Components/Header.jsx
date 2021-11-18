@@ -104,6 +104,8 @@ const Header = ({ open, children }) => {
                     <div className="box" id="box3" />
                     <div className="box" id="box4" />
                     <div className="box" id="box5" />
+                    <div className="box" id="box6" />
+                    <div className="box" id="box7" />
                     {/* <video className="video-content" autoPlay playsInline muted loop id="header-video">
                         <source src={video} type="video/mp4" />
                         Your browser does not support the video tag.

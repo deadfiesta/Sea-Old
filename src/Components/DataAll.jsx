@@ -985,15 +985,15 @@ const content = [
                         videos: [
                             {
                                 url: "./media/tabs/tab1.mp4",
-                                caption: "Tab in a Drawer Preview for an Instance"
+                                caption: "[SealCloud] Tab in a Drawer Preview for an Instance"
                             },
                             {
                                 url: "./media/tabs/tab2.mp4",
-                                caption: "Cluster Overview Tabs"
+                                caption: "[SealCloud] Cluster Overview Tabs"
                             },
                             {
                                 url: "./media/tabs/tab3.mp4",
-                                caption: "Instance Page View"
+                                caption: "[SealCloud] Instance Page View"
                             },
                         ],
                         description: "Tabs enable users to jump to their target section quickly.",

@@ -207,7 +207,7 @@ header {
         }
     }
     $multiplier: 50;
-    @for $i from 1 to 6 {
+    @for $i from 1 to 8 {
         @keyframes move#{$i} {
             $random: random();
             0% {
@@ -252,7 +252,7 @@ header {
             }
         }
         #box#{$i} {
-            $size: (random(12) * $multiplier + 120) + px;
+            $size: (random(12) * $multiplier + 180) + px;
             $smallsize: (random(10) * $multiplier + 48) + px;
             top: 0;
             left: (random(100)) + px;
@@ -261,20 +261,21 @@ header {
             background-color: color(accent, coral#{$i});
             // transform-origin: top left;
             animation: move#{$i} ease-in-out alternate infinite;
-            animation-duration: (random(10) * 3) + s;
+            animation-duration: (random(10) * 5) + s;
             @include media {
-                top: (random(2) * $multiplier) + px;
+                top: (random(2)-.5 * $multiplier) + px;
                 left: (random(500) - 200) + px;
-                width: $size;
-                height: $size;
+                width: $size - #{$i}*random();
+                height: $size - #{$i}*random();
             }
         }
     }
     .header-video-container {
         position: relative;
         .box {
+            opacity: .85;
             border-radius: 50%;
-            filter: blur(2rem);
+            filter: blur(1rem);
             position: absolute;
             transition: all 1s ease;
         }
