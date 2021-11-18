@@ -9,6 +9,7 @@ const content = [
             {
                 topic: "Motion Principles",
                 anchor: "motion",
+                image: "./media/motion/functional01.gif",
                 subtopics: [
                     {
                         title: "Functional",

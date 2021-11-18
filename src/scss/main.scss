@@ -270,7 +270,7 @@ header {
             animation: move#{$i} ease-in-out alternate infinite;
             animation-duration: (random(20) * 5) + s;
             @include media {
-                top: (random(2)-.5 * $multiplier) + px;
+                top: (random(2)-0.5 * $multiplier) + px;
                 left: (random(500) - 200) + px;
                 width: $size;
                 height: $size;
@@ -326,10 +326,14 @@ main {
     }
 }
 
-section {
+.section-container,
+.end-container {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+}
+
+section {
     @include flex(column) {
         gap: 2rem;
     }

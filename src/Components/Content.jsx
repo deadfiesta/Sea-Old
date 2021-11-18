@@ -2,12 +2,32 @@ import React from 'react'
 import { useEffect } from 'react'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
+// import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 
-const Content = ({ topicId, data }) => {
-
+const Content = ({ topicId, data, onclick }) => {
 
     let content = Array(data[topicId]);
+
+    // const [prevContent, setPrevContent] = useState(false)
+    // const [nextContent, setNextContent] = useState(false)
+
+    // const [prevId, setPrevId] = useState(0)
+    // const [nextId, setNextId] = useState(0)
+
+    // useEffect(()=> {
+
+    //     setPrevId(topicId - 1 )
+    //     setNextId(topicId + 1)
+
+    //     if (prevId >= 0) { setPrevContent(Array(data[prevId])) } else { setPrevContent(false) }
+    //     if (nextId < data.length) { setNextContent(Array(data[nextId])) } else { setNextContent(false) }
+
+    // }, [topicId, data, nextId, prevId])
+
+
+
+
 
 
     useEffect(() => {
@@ -39,7 +59,7 @@ const Content = ({ topicId, data }) => {
     return (
         <main>
             {content.map((heading, i) => (
-                <section key={i} id={heading.anchor}>
+                <section className="section-container" key={i} id={heading.anchor}>
                     <h2>{heading.topic}</h2>
                     <ul className="subtopic-container">
                         {heading.subtopics.map((subtopic, i) => (
@@ -101,10 +121,39 @@ const Content = ({ topicId, data }) => {
                             ))}
                         </div>
                     }
+                        {/* <div className="end-container flex middle">
+                            {console.log(prevContent)}
+                            {prevContent
+                                && prevContent.map((content, i) => (
+                                    <PrevNextContainer key={i} direction={'prev'} click={onclick} anchor={content.anchor} image={content.image !== undefined ? content.image : ''} title={content.topic} paragraph={content.subtopics[0].description} topic={prevId} />
+                                ))
+                            }
+                        </div> */}
+
                 </section>
             ))}
+
+
+
         </main>
     )
 }
+
+
+// const PrevNextContainer = ({ direction, click, anchor, topic, image, title, paragraph }) => {
+//     return (
+//         <div topic={topic} onClick={click} className="prevnext-container">
+//             <div className="title-container">
+//                 {direction === 'next' ? <MdArrowForwardIos /> : <MdArrowBackIosNew />} <h3>Previous</h3>
+//             </div>
+//             <div anchor={anchor} className="image-container">
+//                 <img key={image} src={image} className="image" alt="" />
+//             </div>
+//             <h2>{title}</h2>
+//             <p>{paragraph}</p>
+//         </div>
+//     )
+// }
+
 
 export default Content
