@@ -4,12 +4,19 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Navigation = ({ onclick, highlight, data, open }) => {
 
-    let nav = data;
+    let nav = data
+    const menuHeight = 48
 
-    useEffect(()=> {
+    useEffect(() => {
+        document.querySelectorAll('.subtopic-container').forEach(sub => sub.style.height = 0)
         let li = document.querySelectorAll('.menu')
         li.forEach(l => l.classList.remove('active'))
         li[highlight].classList.add('active')
+
+        let subcontain = li[highlight].childNodes[1]
+        let len = subcontain.childNodes.length * menuHeight
+        subcontain.style.height = `${len}px`;
+
 
         let h3 = document.querySelectorAll('.menu-header')
         h3.forEach(h => h.classList.remove('active'))
@@ -35,13 +42,13 @@ const Navigation = ({ onclick, highlight, data, open }) => {
         const scrolling = () => {
             const navy = document.querySelector('nav');
             if (window.scrollY > navy.offsetTop) {
-              navy.childNodes[0].classList.add('pinned');
+                navy.childNodes[0].classList.add('pinned');
             } else {
-              navy.childNodes[0].classList.remove('pinned')
+                navy.childNodes[0].classList.remove('pinned')
             }
-          }
+        }
 
-          window.addEventListener("scroll", scrolling)
+        window.addEventListener("scroll", scrolling)
     })
 
     // useEffect(() => {
@@ -89,14 +96,17 @@ const Navigation = ({ onclick, highlight, data, open }) => {
     const [top, setTop] = useState(0);
     const [height, setHeight] = useState(0);
 
-    useEffect(()=> {
-        let selected = document.querySelector('.menu-header.active');
-        setTop(
-            selected.offsetTop - document.querySelector('.menu-container').offsetTop
-        )
-        setHeight(
-            selected.clientHeight
-        )
+    useEffect(() => {
+        setInterval(() => {
+            let selected = document.querySelector('.menu-header.active');
+            setTop(
+                selected.offsetTop - document.querySelector('.menu-container').offsetTop
+            )
+            setHeight(
+                selected.clientHeight
+            )
+        }, 500)
+
     }, [highlight])
 
     return (

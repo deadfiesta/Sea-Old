@@ -33,7 +33,6 @@ nav {
     }
     .menu.active {
         .subtopic-container {
-            height: initial;
             li {
                 opacity: 1;
                 transform: translateY(0);
@@ -121,15 +120,19 @@ nav {
     .subtopic-container {
         font-size: 14px;
         @include flex(column);
-        height: 0rem;
+        height: 0;
         overflow-y: hidden;
         transition: all 0.2s ease;
         li {
+            @include flex {
+                align-items: center;
+            }
             --delay: 0.025s;
+            height: 3rem;
             opacity: 0;
             transform: translateY(-10%);
             transition: all 0.2s ease-out;
-            padding: 0.5rem 2rem;
+            padding: 0 2rem;
         }
         @for $i from 1 to 10 {
             li:nth-child(#{$i}) {
@@ -144,8 +147,9 @@ nav {
         --width: 396px;
         position: relative;
         width: var(--width);
-        height: auto;
+        min-height: calc(100vh - 24rem);
         transform: none;
+        background-color: color(neutral, bg);
         &::-webkit-scrollbar {
             width: 0.5rem;
         }
@@ -162,6 +166,7 @@ nav {
             height: 100vh;
             width: var(--width);
             overflow-y: scroll;
+            background-color: color(neutral, bg);
         }
         .nav-container {
             top: 0;
@@ -175,7 +180,7 @@ nav {
                 height: 28px;
                 width: 4px;
                 background-color: color(accent, sea);
-                transition: all 0.3s ease-in-out;
+                transition: all .8s cubic-bezier(.47,0,.17,1);
             }
         }
     }

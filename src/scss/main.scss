@@ -253,10 +253,11 @@ header {
                         #{random(3) * $multiplier + px},
                         #{random(4) * $multiplier + px}
                     )
-                    scale(#{random(20) * 1 / $multiplier + 1}) rotateZ(#{random(360)}deg);
+                    scale(#{random(50) * 1 / $multiplier + 1}) rotateZ(#{random(360)}deg);
             }
         }
         #box#{$i} {
+            filter: blur(#{random()}rem);
             $size: (random(18) * $multiplier + 180) + px;
             $smallsize: (random(10) * $multiplier + 48) + px;
             top: 0;
@@ -280,7 +281,6 @@ header {
         position: relative;
         .box {
             border-radius: 50%;
-            filter: blur(1rem);
             position: absolute;
             transition: all 1s ease;
         }
