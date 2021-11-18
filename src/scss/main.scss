@@ -211,30 +211,34 @@ header {
         @keyframes move#{$i} {
             $random: random();
             0% {
+                opacity: random();
                 transform: translate3d(
-                        #{random(2) - $random * $multiplier + px},
+                        #{random(8) - $random * $multiplier + px},
                         #{random(4) * $multiplier + px},
                         #{random(2) * $multiplier + px}
                     )
                     scale(#{random(20) * 1 / $multiplier + 1}) rotateZ(#{random(360)}deg);
             }
             25% {
+                opacity: random();
                 transform: translate3d(
-                        #{random(8) * $multiplier + px},
+                        #{random(20) * $multiplier + px},
                         #{random(1) * $multiplier + px},
                         #{random(4) * $multiplier + px}
                     )
                     scale(#{random(20) * 1 / $multiplier + 1});
             }
             50% {
+                opacity: random();
                 transform: translate3d(
-                        #{random(15) - $random * $multiplier + px},
+                        #{random(50) - $random * $multiplier + px},
                         #{random(8) * $multiplier + px},
                         #{random(5) * $multiplier + px}
                     )
                     scale(#{random(20) * 1 / $multiplier + 1}) rotateZ(#{random(360)}deg);
             }
             75% {
+                opacity: random();
                 transform: translate3d(
                         #{random(5) * $multiplier + px},
                         #{random(7) - $random * $multiplier + px},
@@ -243,6 +247,7 @@ header {
                     scale(#{random(20) * 1 / $multiplier + 1});
             }
             100% {
+                opacity: random();
                 transform: translate3d(
                         #{random(9) - $random * $multiplier + px},
                         #{random(3) * $multiplier + px},
@@ -252,28 +257,28 @@ header {
             }
         }
         #box#{$i} {
-            $size: (random(12) * $multiplier + 180) + px;
+            $size: (random(18) * $multiplier + 180) + px;
             $smallsize: (random(10) * $multiplier + 48) + px;
             top: 0;
+            opacity: random();
             left: (random(100)) + px;
             width: $smallsize;
             height: $smallsize;
             background-color: color(accent, coral#{$i});
             // transform-origin: top left;
             animation: move#{$i} ease-in-out alternate infinite;
-            animation-duration: (random(10) * 5) + s;
+            animation-duration: (random(20) * 5) + s;
             @include media {
                 top: (random(2)-.5 * $multiplier) + px;
                 left: (random(500) - 200) + px;
-                width: $size - #{$i}*random();
-                height: $size - #{$i}*random();
+                width: $size;
+                height: $size;
             }
         }
     }
     .header-video-container {
         position: relative;
         .box {
-            opacity: .85;
             border-radius: 50%;
             filter: blur(1rem);
             position: absolute;
@@ -306,7 +311,7 @@ main.fade-in {
             opacity: 1;
         }
     }
-    animation: fadeIn .5s ease;
+    animation: fadeIn 1s ease forwards;
 }
 main {
     @include flex(column) {

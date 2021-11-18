@@ -54,8 +54,8 @@ const Content = ({ topicId, data }) => {
                                         <ul className="image-container" id={`${subtopic.anchor}-images`}>
                                             {subtopic.images.map((image, i) => (
                                                 <li key={i}>
-                                                    <Zoom zoomMargin={96}>
-                                                        <img className="image" media="(max-width: 300px)" height="224px" src={`${image.url}`} alt="" />
+                                                    <Zoom zoomMargin={128}>
+                                                        <img key={image.url} className="image" media="(max-width: 300px)" height="224px" src={`${image.url}`} alt="" />
                                                     </Zoom>
                                                     {image.caption !== undefined &&
                                                         <figcaption className="caption">{image.caption}</figcaption>
@@ -68,8 +68,8 @@ const Content = ({ topicId, data }) => {
                                         <ul className="video-container" id={`${subtopic.anchor}-videos`}>
                                             {subtopic.videos.map((video, i) => (
                                                 <li className="video" key={i}>
-                                                    <Zoom zoomMargin={96}>
-                                                        <video autoPlay playsInline muted loop className="video-content">
+                                                    <Zoom zoomMargin={128}>
+                                                        <video key={video.url} autoPlay playsInline muted loop className="video-content">
                                                             <source src={`${video.url}`} type="video/mp4" />
                                                             Your browser does not support the video tag.
                                                         </video>

@@ -21,7 +21,7 @@ const PageResearch = ({ open, close }) => {
     document.querySelector('main').classList.add('fade-in')
     setInterval(()=> {
       document.querySelector('main').classList.remove('fade-in')
-    }, 250)
+    }, 2000)
   }, [topicIndex])
 
   return (

@@ -252,6 +252,14 @@ const nav = [
                         anchor: "skeleton"
                     },
                     {
+                        title: "Page",
+                        anchor: "page"
+                    },
+                    {
+                        title: "Side Menu",
+                        anchor: "side"
+                    },
+                    {
                         title: "Drawers",
                         anchor: "drawers"
                     },
@@ -320,15 +328,15 @@ const content = [
                         anchor: "value",
                         videos: [
                             {
-                                url: "./media/value/loading01.webm",
+                                url: "./media/value/loading01.mp4",
                                 caption: "Communicating status and providing feedback"
                             },
                             {
-                                url: "./media/value/loading02.webm",
+                                url: "./media/value/loading02.mp4",
                                 caption: "Enhancing the sense of direct manipulation"
                             },
                             {
-                                url: "./media/value/loading03.webm",
+                                url: "./media/value/loading03.mp4",
                                 caption: "Helping people to see the results of their actions"
                             },
                         ],
@@ -954,12 +962,27 @@ const content = [
                         description: "The skeleton screen is a version of the user interface that mimics the page's layout. The skeleton loading screen shows the page in a shape similar to the actual content as it is loading and becoming available",
                     },
                     {
+                        title: "Page",
+                        anchor: "page",
+                        videos: [
+                            {
+                                url: "./media/page/page1.mp4",
+                                caption: "[Review System] Page Reload",
+                            },
+                        ],
+                        description: "The skeleton screen is a version of the user interface that mimics the page's layout. The skeleton loading screen shows the page in a shape similar to the actual content as it is loading and becoming available",
+                    },
+                    {
                         title: "Side Menu",
                         anchor: "side",
                         videos: [
                             {
                                 url: "./media/sidemenu/sidemenu1.mp4",
                                 caption: "[SealCloud] Side Menu Expand",
+                            },
+                            {
+                                url: "./media/sidemenu/sidemenu2.mp4",
+                                caption: "[Review System] Side Menu Expand on Small Screen",
                             },
                         ],
                         description: "Left navigation facilitates a vertical scanning direction, this greatly improves speed, it also requires fewer visual fixations so we can see multiple navigation links at the same time.",
@@ -1011,15 +1034,15 @@ const content = [
                         videos: [
                             {
                                 url: "./media/modals/modal1.mp4",
-                                caption: "View More Info on SSH Proxy"
+                                caption: "[SealCloud] View More Info on SSH Proxy"
                             },
                             {
                                 url: "./media/modals/modal2.mp4",
-                                caption: "Delete Warning Modal"
+                                caption: "[SealCloud] Delete Warning Modal"
                             },
                             {
                                 url: "./media/modals/modal3.mp4",
-                                caption: "Confirmation Modal"
+                                caption: "[SealCloud] Confirmation Modal"
                             },
                         ],
                         description: "A modal is a window that appears on top of a parent screen. It’s called ‘modal’ because it creates a mode that disables the parent screen but keeps it visible. Users must interact with the modal to return to the main screen.",
@@ -1037,15 +1060,15 @@ const content = [
                         videos: [
                             {
                                 url: "./media/dropdown/dropdown1.mp4",
-                                caption: "View More Options"
+                                caption: "[SeaCloud] View More Options"
                             },
                             {
                                 url: "./media/dropdown/dropdown2.mp4",
-                                caption: "Support and Help"
+                                caption: "[SealCloud] Support and Help"
                             },
                             {
                                 url: "./media/dropdown/dropdown3.mp4",
-                                caption: "Account Option"
+                                caption: "[SealCloud] Account Option"
                             },
                         ],
                         description: "A dropdown menu is a design pattern letting you display a list of contents, navigation points, and functions without flooding the user with many options simultaneously. Users find a list of options when they click the menu label or hover the cursor over it, and can select one of these options by clicking on the appropriate content name.",
