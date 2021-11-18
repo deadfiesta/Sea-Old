@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react';
 import '../scss/main.scss'
 // import { FaDribbble } from "react-icons/fa";
-import { header } from './Data'
+import { header } from './DataAll'
 // import video from '../Videos/bg.mp4'
 
 
@@ -38,17 +38,15 @@ const Header = ({ open, children }) => {
         }
 
         setUnderlineWidth(
-            document.querySelector('.active').clientWidth
+            document.querySelector('.active') !== null && document.querySelector('.active').clientWidth
         )
         setUnderlineX(
-            document.querySelector('.active').offsetLeft
+            document.querySelector('.active') !== null && document.querySelector('.active').offsetLeft
         )
     }
 
     useEffect(() => {
-        
         update()
-
     })
 
 

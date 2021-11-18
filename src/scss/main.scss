@@ -33,6 +33,19 @@ a {
     }
 }
 
+.flex-container {
+    @include flex;
+}
+.center {
+    justify-content: center;
+}
+.middle {
+    align-items: center;
+}
+.between {
+    justify-content: space-between;
+}
+
 .dribbble {
     background-color: color(accent, dribbble);
 }
@@ -64,8 +77,9 @@ a {
 
 .content {
     @include media {
+        min-height: calc(100vh - 24rem);
         display: grid;
-        grid-template-columns: 384px auto;
+        grid-template-columns: auto 1fr;
     }
 }
 
@@ -85,7 +99,7 @@ header {
         height: 24rem;
     }
     .header-container {
-        z-index: 2;
+        z-index: 20;
         height: 100%;
         @include flex {
             align-items: center;
@@ -124,63 +138,62 @@ header {
             justify-content: flex-end;
             gap: 2rem;
         }
-    }
-    .bottom-container {
-        @include flex {
-            align-items: center;
-            gap: 1rem;
-        }
-        .avatar-container {
-            overflow: hidden;
-            border-radius: 1rem;
-            width: 2rem;
-            .bg-image {
-                width: 100%;
-                padding-top: 100%;
-                background: color(neutral, bg) url("../Images/me.png") center center / cover no-repeat;
-            }
-        }
-        p {
-            font-size: 12px;
-            color: color(neutral);
-            @include media {
-                font-size: 14px;
-                line-height: 22px;
-            }
-        }
-    }
-    .tabs-container {
-        @include media {
-            background-color: rgba(color(neutral), 0.25);
-        }
-        ul.tabs {
-            color: color(neutral);
-            @include media {
-                background: none;
-            }
+        .bottom-container {
             @include flex {
-                gap: 3rem;
+                align-items: center;
+                gap: 1rem;
             }
-            li {
-                padding: 1rem 0;
-                @include media {
-                    padding: 1.5rem 0;
+            .avatar-container {
+                overflow: hidden;
+                border-radius: 1rem;
+                width: 2rem;
+                .bg-image {
+                    width: 100%;
+                    padding-top: 100%;
+                    background: color(neutral, bg) url("../Images/me.png") center center / cover no-repeat;
                 }
             }
-            span.underline {
-                position: absolute;
-                height: 4px;
-                bottom: 0;
-                background-color: color(accent);
-                transition: all .2s ease;
+            p {
+                font-size: 12px;
+                color: color(neutral);
+                @include media {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        }
+        .tabs-container {
+            position: relative;
+            @include media {
+                background-color: rgba(color(neutral), 0.25);
+            }
+            ul.tabs {
+                color: color(neutral);
+                @include media {
+                    background: none;
+                }
+                @include flex {
+                    gap: 3rem;
+                }
+                li {
+                    padding: 1rem 0;
+                    @include media {
+                        padding: 1.5rem 0;
+                    }
+                }
+                span.underline {
+                    position: absolute;
+                    height: 4px;
+                    bottom: 0;
+                    background-color: color(accent);
+                    transition: all 0.2s ease;
+                }
             }
         }
     }
+
     .headerbg-container {
         @include absolute;
-        @include media(max) {
-            display: none;
-        }
         .source {
             font-size: 12px;
             color: color(neutral);
@@ -193,34 +206,68 @@ header {
             }
         }
     }
-    $multiplier: 40;
+    $multiplier: 50;
     @for $i from 1 to 6 {
         @keyframes move#{$i} {
+            $random: random();
             0% {
-                transform: translate3d(#{random(2)*$multiplier + px} , #{random(2)*$multiplier + px} , #{random(2)*$multiplier + px}) scale(#{random(20) * 1/$multiplier + 1}) rotateZ(#{random(360)}deg)
+                transform: translate3d(
+                        #{random(2) - $random * $multiplier + px},
+                        #{random(4) * $multiplier + px},
+                        #{random(2) * $multiplier + px}
+                    )
+                    scale(#{random(20) * 1 / $multiplier + 1}) rotateZ(#{random(360)}deg);
             }
             25% {
-                transform: translate3d(#{random(4)*$multiplier + px} , #{random(3)*$multiplier + px} , #{random(4)*$multiplier + px}) scale(#{random(20) * 1/$multiplier + 1})
+                transform: translate3d(
+                        #{random(8) * $multiplier + px},
+                        #{random(1) * $multiplier + px},
+                        #{random(4) * $multiplier + px}
+                    )
+                    scale(#{random(20) * 1 / $multiplier + 1});
             }
             50% {
-                transform: translate3d(#{random(5)*$multiplier + px} , #{random(4)*$multiplier + px} , #{random(5)*$multiplier + px}) scale(#{random(20) * 1/$multiplier + 1}) rotateZ(#{random(360)}deg)
+                transform: translate3d(
+                        #{random(15) - $random * $multiplier + px},
+                        #{random(8) * $multiplier + px},
+                        #{random(5) * $multiplier + px}
+                    )
+                    scale(#{random(20) * 1 / $multiplier + 1}) rotateZ(#{random(360)}deg);
             }
             75% {
-                transform: translate3d(#{random(4)*$multiplier + px} , #{random(2)*$multiplier + px} , #{random(6)*$multiplier + px}) scale(#{random(20) * 1/$multiplier + 1})
+                transform: translate3d(
+                        #{random(5) * $multiplier + px},
+                        #{random(7) - $random * $multiplier + px},
+                        #{random(6) * $multiplier + px}
+                    )
+                    scale(#{random(20) * 1 / $multiplier + 1});
             }
             100% {
-                transform: translate3d(#{random(2)*$multiplier + px} , #{random(3)*$multiplier + px} , #{random(4)*$multiplier + px}) scale(#{random(20) * 1/$multiplier + 1}) rotateZ(#{random(360)}deg)
+                transform: translate3d(
+                        #{random(9) - $random * $multiplier + px},
+                        #{random(3) * $multiplier + px},
+                        #{random(4) * $multiplier + px}
+                    )
+                    scale(#{random(20) * 1 / $multiplier + 1}) rotateZ(#{random(360)}deg);
             }
         }
         #box#{$i} {
-            $size: (random(16)*$multiplier + 160) + px;
-            top: (random(2)*$multiplier) + px;
-            left: (random(1000)) + px;
-            width: $size;
-            height: $size;
+            $size: (random(12) * $multiplier + 120) + px;
+            $smallsize: (random(10) * $multiplier + 48) + px;
+            top: 0;
+            left: (random(100)) + px;
+            width: $smallsize;
+            height: $smallsize;
             background-color: color(accent, coral#{$i});
             // transform-origin: top left;
-            animation: move#{$i} 20s ease alternate infinite; 
+            animation: move#{$i} ease-in-out alternate infinite;
+            animation-duration: (random(10) * 3) + s;
+            @include media {
+                top: (random(2) * $multiplier) + px;
+                left: (random(500) - 200) + px;
+                width: $size;
+                height: $size;
+            }
         }
     }
     .header-video-container {
@@ -249,6 +296,17 @@ h1.home-title {
     }
 }
 
+main.fade-in {
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    animation: fadeIn .5s ease;
+}
 main {
     @include flex(column) {
         gap: 3rem;
@@ -347,6 +405,7 @@ section {
         background-color: color(neutral, bg);
         gap: 1rem;
         padding: 1rem 0;
+        width: 100%;
         @keyframes setToInvisible {
             from {
                 visibility: visible;
@@ -355,24 +414,11 @@ section {
                 visibility: hidden;
             }
         }
-        @keyframes setToNone {
-            from {
-                display: initial;
-            }
-            to {
-                display: none;
-            }
-        }
         li.hidden {
             opacity: 0;
             transition: opacity 0.3s ease;
             animation: setToInvisible 0.1s forwards;
             animation-delay: 0.2s;
-            .video-container,
-            .image-container {
-                animation: setToNone .1s forwards;
-                animation-delay: .2s;
-            }
         }
         li {
             padding: 0 0.5rem;
@@ -386,8 +432,7 @@ section {
                 background: color(neutral, bg) center center / contain no-repeat;
                 position: relative;
                 overflow: hidden;
-                height: 22rem;
-                width: 100%;
+                max-height: 19rem;
                 object-fit: contain;
             }
             figcaption {

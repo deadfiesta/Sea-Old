@@ -3,9 +3,11 @@ import { useEffect } from 'react'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 
-const Content = ({ data }) => {
+const Content = ({ topicId, data }) => {
 
-    const content = data;
+
+    let content = Array(data[topicId]);
+
 
     useEffect(() => {
         const images = document.querySelectorAll('.image-container, .video-container');
@@ -13,7 +15,6 @@ const Content = ({ data }) => {
         let options = {
             root: null,
             threshold: .5,
-            // rootMargin: "-150px 0px"
         }
 
         let observer = new IntersectionObserver((entries, observer) => {
@@ -36,7 +37,6 @@ const Content = ({ data }) => {
 
     return (
         <main>
-
             {content.map((heading, i) => (
                 <section key={i} id={heading.anchor}>
                     <h2>{heading.topic}</h2>
@@ -82,9 +82,6 @@ const Content = ({ data }) => {
                                             ))}
                                         </ul>
                                     }
-
-
-
 
                                 </div>
 

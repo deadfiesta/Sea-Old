@@ -248,6 +248,10 @@ const nav = [
                 anchor: "large",
                 subtopics: [
                     {
+                        title: "Skeleton",
+                        anchor: "skeleton"
+                    },
+                    {
                         title: "Drawers",
                         anchor: "drawers"
                     },
@@ -316,15 +320,15 @@ const content = [
                         anchor: "value",
                         videos: [
                             {
-                                url: "./media/value/loading01.mp4",
+                                url: "./media/value/loading01.webm",
                                 caption: "Communicating status and providing feedback"
                             },
                             {
-                                url: "./media/value/loading02.mp4",
+                                url: "./media/value/loading02.webm",
                                 caption: "Enhancing the sense of direct manipulation"
                             },
                             {
-                                url: "./media/value/loading03.mp4",
+                                url: "./media/value/loading03.webm",
                                 caption: "Helping people to see the results of their actions"
                             },
                         ],
@@ -939,20 +943,38 @@ const content = [
                 anchor: "large",
                 subtopics: [
                     {
+                        title: "Skeleton",
+                        anchor: "skeleton",
+                        videos: [
+                            {
+                                url: "./media/skeleton/skeleton1.mp4",
+                                caption: "[SealCloud] Refresh Loading Skeleton",
+                            },
+                        ],
+                        description: "The skeleton screen is a version of the user interface that mimics the page's layout. The skeleton loading screen shows the page in a shape similar to the actual content as it is loading and becoming available",
+                    },
+                    {
+                        title: "Side Menu",
+                        anchor: "side",
+                        videos: [
+                            {
+                                url: "./media/sidemenu/sidemenu1.mp4",
+                                caption: "[SealCloud] Side Menu Expand",
+                            },
+                        ],
+                        description: "Left navigation facilitates a vertical scanning direction, this greatly improves speed, it also requires fewer visual fixations so we can see multiple navigation links at the same time.",
+                    },
+                    {
                         title: "Drawers",
                         anchor: "drawers",
                         videos: [
                             {
-                                url: "./media/drawers/drawer1.mov",
-                                caption: "Side Menu Expand",
+                                url: "./media/drawers/drawer1.mp4",
+                                caption: "[SealCloud] View Instance Detail",
                             },
                             {
                                 url: "./media/drawers/drawer2.mp4",
-                                caption: "View Instance Detail",
-                            },
-                            {
-                                url: "./media/drawers/drawer3.mp4",
-                                caption: "Binding Elastic IPs to Instance",
+                                caption: "[SealCloud] Add Data Disk Drawer",
                             },
                         ],
                         description: "Drawers are panels that slide in and out from the right. They help users complete tasks faster and in context.",
