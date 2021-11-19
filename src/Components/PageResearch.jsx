@@ -17,7 +17,7 @@ const PageResearch = ({ open, close }) => {
 
 
   return (
-    <div className="content">
+    <>
       <Navigation onclick={change} highlight={topicIndex} data={contentData} open={open} />
       {
         open
@@ -25,7 +25,7 @@ const PageResearch = ({ open, close }) => {
       }
       <Content topicId={topicIndex} data={contentData} onclick={change} />
       
-    </div>
+    </>
   )
 }
 

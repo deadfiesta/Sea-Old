@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 // import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
@@ -41,31 +42,31 @@ const Content = ({ topicId, data, onclick }) => {
     // }, [topicId])
 
 
-    // useEffect(() => {
-    //     const images = document.querySelectorAll('.image-container, .video-container');
+    useEffect(() => {
+        const images = document.querySelectorAll('.image-container, .video-container');
 
-    //     let options = {
-    //         root: null,
-    //         threshold: .5,
-    //     }
+        let options = {
+            root: null,
+            threshold: .5,
+        }
 
-    //     let observer = new IntersectionObserver((entries, observer) => {
-    //         entries.forEach(entry => {
-    //             let box = document.getElementById(entry.target.id);
-    //             if (box !== null) {
-    //                 entry.isIntersecting
-    //                     ? box.childNodes.forEach(b => b.classList.remove('hidden'))
-    //                     : box.childNodes.forEach(b => b.classList.add('hidden'))
-    //             }
+        let observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                let box = document.getElementById(entry.target.id);
+                if (box !== null) {
+                    entry.isIntersecting
+                        ? box.childNodes.forEach(b => b.classList.remove('hidden'))
+                        : box.childNodes.forEach(b => b.classList.add('hidden'))
+                }
 
-    //         })
-    //     }, options)
+            })
+        }, options)
 
-    //     images.forEach(el => {
-    //         observer.observe(el)
-    //     })
+        images.forEach(el => {
+            observer.observe(el)
+        })
 
-    // })
+    })
 
     return (
         <main>
@@ -101,7 +102,7 @@ const Content = ({ topicId, data, onclick }) => {
                                             {subtopic.videos.map((video, i) => (
                                                 <li className="video" key={i}>
                                                     <Zoom zoomMargin={128}>
-                                                        <video key={video.url} autoPlay playsInline muted loop className="video-content">
+                                                        <video key={video.url} playsInline muted loop className="video-content">
                                                             <source src={`${video.url}`} type="video/mp4" />
                                                             Your browser does not support the video tag.
                                                         </video>
@@ -138,12 +139,8 @@ const Content = ({ topicId, data, onclick }) => {
                             ))
                         }
                     </div> */}
-
                 </section>
             ))}
-
-
-
         </main>
     )
 }
