@@ -76,6 +76,7 @@ a {
 }
 
 .content {
+    min-height: calc(100vh - 12rem);
     @include media {
         min-height: calc(100vh - 24rem);
         display: grid;
@@ -302,17 +303,6 @@ h1.home-title {
     }
 }
 
-main.fade-in {
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-    animation: fadeIn 1s ease forwards;
-}
 main {
     @include flex(column) {
         gap: 3rem;

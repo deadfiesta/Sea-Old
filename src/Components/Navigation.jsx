@@ -38,18 +38,16 @@ const Navigation = ({ onclick, highlight, data, open }) => {
         })
     })
 
-    useEffect(() => {
-        const scrolling = () => {
-            const navy = document.querySelector('nav');
-            if (window.scrollY > navy.offsetTop) {
-                navy.childNodes[0].classList.add('pinned');
-            } else {
-                navy.childNodes[0].classList.remove('pinned')
-            }
+    const scrolling = () => {
+        const navy = document.querySelector('nav');
+        if (window.scrollY > navy.offsetTop) {
+            navy.childNodes[0].classList.add('pinned');
+        } else {
+            navy.childNodes[0].classList.remove('pinned')
         }
+    }
 
-        window.addEventListener("scroll", scrolling)
-    })
+    window.addEventListener("scroll", scrolling)
 
     // useEffect(() => {
 
@@ -93,24 +91,31 @@ const Navigation = ({ onclick, highlight, data, open }) => {
 
     // })
 
-    const [top, setTop] = useState(0);
-    const [height, setHeight] = useState(0);
+    const [property, setProperty] = useState(
+        {
+            top: 0,
+            height: 0,
+        }
+    )
 
     useEffect(() => {
         setInterval(() => {
             let selected = document.querySelector('.menu-header.active');
-            setTop(
-                selected.offsetTop - document.querySelector('.menu-container').offsetTop
-            )
-            setHeight(
-                selected.clientHeight
-            )
-        }, 500)
+            selected !== null
+                &&
+                setProperty({
+                    top: selected.offsetTop - document.querySelector('.menu-container').offsetTop,
+                    height: selected.clientHeight
+                })
+        })
+
+        return() => {
+            setProperty({})
+        }
 
     }, [highlight])
 
     return (
-
         <nav className={open ? "open" : null}>
             <div className="nav-container">
                 <div className="title-container">
@@ -121,8 +126,8 @@ const Navigation = ({ onclick, highlight, data, open }) => {
                     <div className="line-container">
                         <span className="line" style={
                             {
-                                top: top,
-                                height: `${height}px`,
+                                top: property.top,
+                                height: `${property.height}px`,
                             }
                         }></span>
                     </div>

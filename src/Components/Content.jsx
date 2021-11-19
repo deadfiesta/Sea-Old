@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 // import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
@@ -9,52 +8,64 @@ const Content = ({ topicId, data, onclick }) => {
 
     let content = Array(data[topicId]);
 
-    // const [prevContent, setPrevContent] = useState(false)
-    // const [nextContent, setNextContent] = useState(false)
+    // let prevId = topicId--
+    // let nextId = topicId++
+
+    // let prevContent = Array(data[prevId])
+    // let nextContent = Array(data[nextId])
+
+    // console.log(prevContent)
+    // console.log(nextContent)
+
+    // let prevContent, nextContent
 
     // const [prevId, setPrevId] = useState(0)
     // const [nextId, setNextId] = useState(0)
 
-    // useEffect(()=> {
+    // useEffect(() => {
 
-    //     setPrevId(topicId - 1 )
+    //     setPrevId(topicId - 1)
     //     setNextId(topicId + 1)
 
-    //     if (prevId >= 0) { setPrevContent(Array(data[prevId])) } else { setPrevContent(false) }
-    //     if (nextId < data.length) { setNextContent(Array(data[nextId])) } else { setNextContent(false) }
+    //     if (prevId >= 0) {
+    //         prevContent = Array(data[prevId])
+    //     } else {
+    //         prevContent = Array(data[0])
+    //     }
+    //     if (nextId < data.length) {
+    //         nextContent = Array(data[nextId])
+    //     } else {
+    //         nextContent = Array(data[data.length])
+    //     }
 
-    // }, [topicId, data, nextId, prevId])
+    // }, [topicId])
 
 
+    // useEffect(() => {
+    //     const images = document.querySelectorAll('.image-container, .video-container');
 
+    //     let options = {
+    //         root: null,
+    //         threshold: .5,
+    //     }
 
+    //     let observer = new IntersectionObserver((entries, observer) => {
+    //         entries.forEach(entry => {
+    //             let box = document.getElementById(entry.target.id);
+    //             if (box !== null) {
+    //                 entry.isIntersecting
+    //                     ? box.childNodes.forEach(b => b.classList.remove('hidden'))
+    //                     : box.childNodes.forEach(b => b.classList.add('hidden'))
+    //             }
 
+    //         })
+    //     }, options)
 
-    useEffect(() => {
-        const images = document.querySelectorAll('.image-container, .video-container');
+    //     images.forEach(el => {
+    //         observer.observe(el)
+    //     })
 
-        let options = {
-            root: null,
-            threshold: .5,
-        }
-
-        let observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                let box = document.getElementById(entry.target.id);
-                if (box !== null) {
-                    entry.isIntersecting
-                        ? box.childNodes.forEach(b => b.classList.remove('hidden'))
-                        : box.childNodes.forEach(b => b.classList.add('hidden'))
-                }
-
-            })
-        }, options)
-
-        images.forEach(el => {
-            observer.observe(el)
-        })
-
-    })
+    // })
 
     return (
         <main>
@@ -112,7 +123,7 @@ const Content = ({ topicId, data, onclick }) => {
                             </li>
                         ))}
                     </ul>
-                    {heading.credits !== undefined &&
+                    {/* {heading.credits !== undefined &&
                         <div className="credit-container">
                             {heading.credits.map((credit, i) => (
                                 <div className="credit" key={i}>
@@ -120,15 +131,13 @@ const Content = ({ topicId, data, onclick }) => {
                                 </div>
                             ))}
                         </div>
-                    }
-                        {/* <div className="end-container flex middle">
-                            {console.log(prevContent)}
-                            {prevContent
-                                && prevContent.map((content, i) => (
-                                    <PrevNextContainer key={i} direction={'prev'} click={onclick} anchor={content.anchor} image={content.image !== undefined ? content.image : ''} title={content.topic} paragraph={content.subtopics[0].description} topic={prevId} />
-                                ))
-                            }
-                        </div> */}
+                    } */}
+                    {/* <div className="end-container flex middle">
+                        {prevContent.map((content, i) => (
+                                <PrevNextContainer key={i} direction={'prev'} click={onclick} anchor={content.anchor} image={content.image !== undefined ? content.image : ''} title={content.topic} paragraph={content.subtopics[0].description} topic={prevId} />
+                            ))
+                        }
+                    </div> */}
 
                 </section>
             ))}

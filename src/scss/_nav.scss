@@ -42,7 +42,7 @@ nav {
             .menu-header {
                 cursor: default;
                 color: color(accent, sea);
-                background-color: rgba(color(accent), 0.1);
+                background-color: rgba(color(gray, secondary), 0.1);
                 h3 {
                     color: color(accent, sea);
                 }
@@ -73,7 +73,7 @@ nav {
     }
     .menu-header.active {
         color: color(accent, sea);
-        background-color: rgba(color(accent), 0.1);
+        background-color: rgba(color(gray, secondary), 0.1);
         h3 {
             color: color(accent, sea);
         }

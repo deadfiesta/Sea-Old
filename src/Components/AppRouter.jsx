@@ -35,9 +35,9 @@ const AppRouter = () => {
 
 const ContentContainer = () => {
     return (
-        <div className="content">
+        <>
             <Outlet />
-        </div>
+        </>
     )
 }
 
