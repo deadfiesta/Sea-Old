@@ -222,13 +222,11 @@ section {
             justify-content: space-between;
         }
         .prevnext-container {
-            
             flex: 1;
             &:hover {
                 color: color(accent, sea);
                 .title-container {
                     gap: .5rem;
-                    
                 }
             }
         }

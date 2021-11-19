@@ -15,7 +15,6 @@ const PageResearch = ({ open, close }) => {
     setTopicIndex(Number(e.currentTarget.attributes.topic.nodeValue))
   }
 
-
   return (
     <>
       <Navigation onclick={change} highlight={topicIndex} data={contentData} open={open} />
