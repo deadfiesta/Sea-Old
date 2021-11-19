@@ -23,8 +23,9 @@ const PageResearch = ({ open, close }) => {
         open
         && <Scrium click={close} />
       }
-      <Content topicId={topicIndex} data={contentData} onclick={change} />
-      
+      <Content topicId={topicIndex} data={contentData} />
+
+
     </>
   )
 }

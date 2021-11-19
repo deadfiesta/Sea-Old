@@ -5,41 +5,9 @@ import 'react-medium-image-zoom/dist/styles.css'
 // import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 
-const Content = ({ topicId, data, onclick }) => {
+const Content = ({ topicId, data }) => {
 
     let content = Array(data[topicId]);
-
-    // let prevId = topicId--
-    // let nextId = topicId++
-
-    // let prevContent = Array(data[prevId])
-    // let nextContent = Array(data[nextId])
-
-    // console.log(prevContent)
-    // console.log(nextContent)
-
-    // let prevContent, nextContent
-
-    // const [prevId, setPrevId] = useState(0)
-    // const [nextId, setNextId] = useState(0)
-
-    // useEffect(() => {
-
-    //     setPrevId(topicId - 1)
-    //     setNextId(topicId + 1)
-
-    //     if (prevId >= 0) {
-    //         prevContent = Array(data[prevId])
-    //     } else {
-    //         prevContent = Array(data[0])
-    //     }
-    //     if (nextId < data.length) {
-    //         nextContent = Array(data[nextId])
-    //     } else {
-    //         nextContent = Array(data[data.length])
-    //     }
-
-    // }, [topicId])
 
 
     useEffect(() => {
@@ -102,7 +70,7 @@ const Content = ({ topicId, data, onclick }) => {
                                             {subtopic.videos.map((video, i) => (
                                                 <li className="video" key={i}>
                                                     <Zoom zoomMargin={128}>
-                                                        <video key={video.url} playsInline muted loop className="video-content">
+                                                        <video key={video.url} autoPlay playsInline muted loop className="video-content">
                                                             <source src={`${video.url}`} type="video/mp4" />
                                                             Your browser does not support the video tag.
                                                         </video>
@@ -139,6 +107,7 @@ const Content = ({ topicId, data, onclick }) => {
                             ))
                         }
                     </div> */}
+
                 </section>
             ))}
         </main>
