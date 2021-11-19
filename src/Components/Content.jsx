@@ -1,47 +1,19 @@
 import React from 'react'
-import { useEffect } from 'react'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-// import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 
-const Content = ({ topicId, data }) => {
+const Content = ({ topicId, data, onclick }) => {
 
-    let content = Array(data[topicId]);
-
-
-    useEffect(() => {
-        const images = document.querySelectorAll('.image-container, .video-container');
-
-        let options = {
-            root: null,
-            threshold: .5,
-        }
-
-        let observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                let box = document.getElementById(entry.target.id);
-                if (box !== null) {
-                    entry.isIntersecting
-                        ? box.childNodes.forEach(b => b.classList.remove('hidden'))
-                        : box.childNodes.forEach(b => b.classList.add('hidden'))
-                }
-
-            })
-        }, options)
-
-        images.forEach(el => {
-            observer.observe(el)
-        })
-
-    })
+    let content = Array(data[topicId])
 
     return (
-        <main>
+        <div className="content-container">
             {content.map((heading, i) => (
                 <section className="section-container" key={i} id={heading.anchor}>
                     <h2>{heading.topic}</h2>
-                    <ul className="subtopic-container">
+                    <ul className="subsection-container">
                         {heading.subtopics.map((subtopic, i) => (
                             <li key={i} >
                                 <div className="top-container">
@@ -92,7 +64,7 @@ const Content = ({ topicId, data }) => {
                             </li>
                         ))}
                     </ul>
-                    {/* {heading.credits !== undefined &&
+                    {heading.credits !== undefined &&
                         <div className="credit-container">
                             {heading.credits.map((credit, i) => (
                                 <div className="credit" key={i}>
@@ -100,35 +72,43 @@ const Content = ({ topicId, data }) => {
                                 </div>
                             ))}
                         </div>
-                    } */}
-                    {/* <div className="end-container flex middle">
-                        {prevContent.map((content, i) => (
-                                <PrevNextContainer key={i} direction={'prev'} click={onclick} anchor={content.anchor} image={content.image !== undefined ? content.image : ''} title={content.topic} paragraph={content.subtopics[0].description} topic={prevId} />
-                            ))
-                        }
-                    </div> */}
+                    }
 
                 </section>
             ))}
-        </main>
+            <section>
+                <div className="section-container more-container">
+                    {(topicId - 1) >= 0 && Array(data[topicId - 1]).map((content, i) => (
+                        <PrevNextContainer key={i} direction={'prev'} click={onclick} anchor={content.anchor} image={content.image !== undefined ? content.image : ''} title={content.topic} paragraph={content.subtopics[0].description} topic={(topicId - 1) < 0 ? 0 : (topicId - 1)} />
+                    ))
+                    }
+                    {(topicId + 1) < data.length && Array(data[topicId + 1]).map((content, i) => (
+                        <PrevNextContainer key={i} direction={'next'} click={onclick} anchor={content.anchor} image={content.image !== undefined ? content.image : ''} title={content.topic} paragraph={content.subtopics[0].description} topic={(topicId + 1) < data.length ? (topicId + 1) : 0} />
+                    ))
+                    }
+                </div>
+            </section>
+        </div>
     )
 }
 
 
-// const PrevNextContainer = ({ direction, click, anchor, topic, image, title, paragraph }) => {
-//     return (
-//         <div topic={topic} onClick={click} className="prevnext-container">
-//             <div className="title-container">
-//                 {direction === 'next' ? <MdArrowForwardIos /> : <MdArrowBackIosNew />} <h3>Previous</h3>
-//             </div>
-//             <div anchor={anchor} className="image-container">
-//                 <img key={image} src={image} className="image" alt="" />
-//             </div>
-//             <h2>{title}</h2>
-//             <p>{paragraph}</p>
-//         </div>
-//     )
-// }
+const PrevNextContainer = ({ direction, click, anchor, topic, image, title, paragraph }) => {
+    return (
+        <div className={direction === 'next' ? "next-container prevnext-container " : "prev-container prevnext-container "}>
+            <div className="nextprev-content" >
+                <div className="title-container" onClick={click} topic={topic}>
+                    {direction === 'next' ? <MdArrowForwardIos /> : <MdArrowBackIosNew />} <h3>{direction === 'next' ? "Next Up" : "Previous"}</h3>
+                </div>
+                <h2>{title}</h2>
+                <div anchor={anchor} className="image-container" onClick={click} topic={topic}>
+                    <img key={image} src={image} className="image" alt="" />
+                </div>
+                {/* <p className="description">{paragraph}</p> */}
+            </div>
+        </div>
+    )
+}
 
 
 export default Content

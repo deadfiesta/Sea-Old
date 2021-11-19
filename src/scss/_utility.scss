@@ -1,0 +1,20 @@
+.flex-container {
+  @include flex;
+}
+.center {
+  justify-content: center;
+}
+.middle {
+  align-items: center;
+}
+.between {
+  justify-content: space-between;
+}
+
+.dribbble {
+  background-color: color(accent, dribbble);
+}
+
+.fixed {
+  position: fixed;
+}

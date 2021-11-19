@@ -1,0 +1,218 @@
+header {
+  position: relative;
+  height: 12rem;
+  background-color: color(accent, sea);
+  overflow: hidden;
+  @include flex {
+      align-items: flex-end;
+
+      @include media {
+          align-items: flex-end;
+      }
+  }
+  @include media {
+      height: 24rem;
+  }
+  .header-container {
+      z-index: 20;
+      height: 100%;
+      @include flex {
+          align-items: center;
+      }
+      @include media {
+          background-image: linear-gradient(rgba(black, 0), rgba(black, 0.75));
+      }
+  }
+  .hamburger-container.open {
+      color: color(accent, sea);
+      background-color: rgba(color(accent, sea), 0);
+  }
+  .hamburger-container.fixed {
+      top: 3rem;
+      background-color: color(accent, sea);
+  }
+  .hamburger-container {
+      top: 0;
+      padding: 0.25rem;
+      margin-left: 1rem;
+      color: color(neutral);
+      transition: all 0.3s ease;
+      @include media {
+          display: none;
+      }
+  }
+  .text-container {
+      width: 100vw;
+      height: 100%;
+      z-index: 2;
+      @include flex(column) {
+          justify-content: flex-end;
+          gap: 0.5rem;
+      }
+      @include media {
+          justify-content: flex-end;
+          gap: 2rem;
+      }
+      .bottom-container {
+          @include flex {
+              align-items: center;
+              gap: 1rem;
+          }
+          .avatar-container {
+              overflow: hidden;
+              border-radius: 1rem;
+              width: 2rem;
+              .bg-image {
+                  width: 100%;
+                  padding-top: 100%;
+                  background: color(neutral, bg) url("../Images/me.png") center center / cover no-repeat;
+              }
+          }
+          p {
+              font-size: 12px;
+              color: color(neutral);
+              @include media {
+                  font-size: 14px;
+                  line-height: 22px;
+              }
+          }
+      }
+      .tabs-container {
+          position: relative;
+          @include media {
+              background-color: rgba(color(neutral), 0.25);
+          }
+          ul.tabs {
+              color: color(neutral);
+              @include media {
+                  background: none;
+              }
+              @include flex {
+                  gap: 3rem;
+              }
+              li {
+                  padding: 1rem 0;
+                  @include media {
+                      padding: 1.5rem 0;
+                  }
+              }
+              span.underline {
+                  position: absolute;
+                  height: 4px;
+                  bottom: 0;
+                  background-color: color(accent);
+                  transition: all 0.2s ease;
+              }
+          }
+      }
+  }
+
+  .headerbg-container {
+      @include absolute;
+      .source {
+          font-size: 12px;
+          color: color(neutral);
+          @include absolute {
+              z-index: 3;
+              top: initial;
+              left: initial;
+              bottom: 3rem;
+              right: 3rem;
+          }
+      }
+  }
+  $multiplier: 50;
+  @for $i from 1 to 8 {
+      @keyframes move#{$i} {
+          $random: random();
+          0% {
+              opacity: random();
+              transform: translate3d(
+                      #{random(8) - $random * $multiplier + px},
+                      #{random(4) * $multiplier + px},
+                      #{random(2) * $multiplier + px}
+                  )
+                  scale(#{random(20) * 1 / $multiplier + 1}) rotateZ(#{random(360)}deg);
+          }
+          25% {
+              opacity: random();
+              transform: translate3d(
+                      #{random(20) * $multiplier + px},
+                      #{random(1) * $multiplier + px},
+                      #{random(4) * $multiplier + px}
+                  )
+                  scale(#{random(20) * 1 / $multiplier + 1});
+          }
+          50% {
+              opacity: random();
+              transform: translate3d(
+                      #{random(50) - $random * $multiplier + px},
+                      #{random(8) * $multiplier + px},
+                      #{random(5) * $multiplier + px}
+                  )
+                  scale(#{random(20) * 1 / $multiplier + 1}) rotateZ(#{random(360)}deg);
+          }
+          75% {
+              opacity: random();
+              transform: translate3d(
+                      #{random(5) * $multiplier + px},
+                      #{random(7) - $random * $multiplier + px},
+                      #{random(6) * $multiplier + px}
+                  )
+                  scale(#{random(20) * 1 / $multiplier + 1});
+          }
+          100% {
+              opacity: random();
+              transform: translate3d(
+                      #{random(9) - $random * $multiplier + px},
+                      #{random(3) * $multiplier + px},
+                      #{random(4) * $multiplier + px}
+                  )
+                  scale(#{random(50) * 1 / $multiplier + 1}) rotateZ(#{random(360)}deg);
+          }
+      }
+      #box#{$i} {
+          filter: blur(#{random()}rem);
+          $size: (random(18) * $multiplier + 180) + px;
+          $smallsize: (random(10) * $multiplier + 48) + px;
+          top: 0;
+          opacity: random();
+          left: (random(100)) + px;
+          width: $smallsize;
+          height: $smallsize;
+          background-color: color(accent, coral#{$i});
+          // transform-origin: top left;
+          animation: move#{$i} ease-in-out alternate infinite;
+          animation-duration: (random(20) * 5) + s;
+          @include media {
+              top: (random(2)-0.5 * $multiplier) + px;
+              left: (random(500) - 200) + px;
+              width: $size;
+              height: $size;
+          }
+      }
+  }
+  .header-video-container {
+      position: relative;
+      .box {
+          border-radius: 50%;
+          position: absolute;
+          transition: all 1s ease;
+      }
+  }
+}
+
+.video-content {
+  width: 100%;
+  height: auto;
+}
+
+h1.home-title {
+  color: color(neutral);
+  font-size: 1.125rem;
+  line-height: 2rem;
+  @include media {
+      font-size: 4rem;
+      line-height: 6rem;
+  }
+}

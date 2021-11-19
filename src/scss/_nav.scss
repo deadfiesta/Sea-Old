@@ -34,6 +34,7 @@ nav {
     .menu.active {
         .subtopic-container {
             li {
+                color: color(gray);
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -131,7 +132,7 @@ nav {
             height: 3rem;
             opacity: 0;
             transform: translateY(-10%);
-            transition: all 0.2s ease-out;
+            transition: all 0.3s ease-out;
             padding: 0 2rem;
         }
         @for $i from 1 to 10 {
@@ -180,7 +181,7 @@ nav {
                 height: 28px;
                 width: 4px;
                 background-color: color(accent, sea);
-                transition: all .8s cubic-bezier(.47,0,.17,1);
+                transition: all .6s cubic-bezier(.47,0,.17,1);
             }
         }
     }

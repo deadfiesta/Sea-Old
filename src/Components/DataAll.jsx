@@ -70,6 +70,7 @@ const content = [
             {
                 topic: "Principle of Functionality",
                 anchor: "functionality",
+                image: "./media/informative/02.gif",
                 subtopics: [
                     {
                         title: "Informative",
@@ -119,6 +120,7 @@ const content = [
             {
                 topic: "Principle of Value Adding",
                 anchor: "valueadding",
+                image: "./media/value/04.gif",
                 subtopics: [
                     {
                         title: "Fit in with the Design Principle",

@@ -4,6 +4,13 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Navigation = ({ onclick, highlight, data, open }) => {
 
+    const [property, setProperty] = useState(
+        {
+            top: 0,
+            height: 0,
+        }
+    )
+
     let nav = data
     const menuHeight = 48
 
@@ -16,7 +23,6 @@ const Navigation = ({ onclick, highlight, data, open }) => {
         let subcontain = li[highlight].childNodes[1]
         let len = subcontain.childNodes.length * menuHeight
         subcontain.style.height = `${len}px`;
-
 
         let h3 = document.querySelectorAll('.menu-header')
         h3.forEach(h => h.classList.remove('active'))
@@ -36,7 +42,7 @@ const Navigation = ({ onclick, highlight, data, open }) => {
                 )
             })
         })
-    })
+    }, [])
 
     const scrolling = () => {
         const navy = document.querySelector('nav');
@@ -91,27 +97,27 @@ const Navigation = ({ onclick, highlight, data, open }) => {
 
     // })
 
-    const [property, setProperty] = useState(
-        {
-            top: 0,
-            height: 0,
-        }
-    )
+    const updateLinePos = () => {
+        let selected = document.querySelector('.menu-header.active')
+        selected !== null
+            &&
+            setProperty({
+                top: selected.offsetTop - document.querySelector('.menu-container').offsetTop,
+                height: selected.clientHeight
+            })
+    }
 
     useEffect(() => {
-        setInterval(() => {
-            let selected = document.querySelector('.menu-header.active');
-            selected !== null
-                &&
-                setProperty({
-                    top: selected.offsetTop - document.querySelector('.menu-container').offsetTop,
-                    height: selected.clientHeight
-                })
-        })
+        setTimeout(() => {
+            updateLinePos();
+        }, 300)
 
-        return() => {
-            setProperty({})
-        }
+        // return () => {
+        //     setProperty({
+        //         top: 0,
+        //         height: 0,
+        //     })
+        // }
 
     }, [highlight])
 
