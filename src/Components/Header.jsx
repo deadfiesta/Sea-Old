@@ -7,10 +7,17 @@ import { content } from './DataAll'
 
 const Header = ({ open, children }) => {
 
+    const updated = new Date(document.lastModified)
+
+    const date = updated.getDate()
+    const month = updated.getMonth()
+    const year = updated.getFullYear()
+
+    console.log(`${date} ${month} ${year}`)
+
     const pathname = useLocation().pathname;
 
     const contentData = content[0];
-    console.log(contentData.tabs)
 
     const [underlineWidth, setUnderlineWidth] = useState(0)
     const [underlineX, setUnderlineX] = useState(0);
@@ -23,19 +30,10 @@ const Header = ({ open, children }) => {
             ? burger.current.classList.add('fixed')
             : burger.current.classList.remove('fixed')
         )
-
-        document.querySelector('li.tab').classList.remove('active')
-        switch (pathname) {
-            case "/":
-                document.getElementById('research').classList.add('active')
-                break;
-            case "/coral":
-                document.getElementById('coral').classList.add('active');
-                break;
-            default:
-                document.querySelector('li.tab').classList.remove('active')
-                break;
-        }
+        document.querySelectorAll('.tab').forEach((tab => {
+            tab.classList.remove('active')
+            tab.getAttribute('anchor') === pathname && tab.classList.add('active')
+        }))
 
         setUnderlineWidth(
             document.querySelector('.active') !== null && document.querySelector('.active').clientWidth
@@ -49,9 +47,16 @@ const Header = ({ open, children }) => {
         update()
     })
 
-
     window.onscroll = update;
     window.onresize = update;
+
+    let boxes = []
+
+    for (let i=1; i<8; i++) {
+        let box = i.toString()
+        boxes.push(box)
+    }
+
     return (
         <header ref={limit}>
             <div className="header-container">
@@ -76,7 +81,7 @@ const Header = ({ open, children }) => {
                     <div className="tabs-container wrapper">
                         <ul className="tabs">
                             {contentData.tabs.map((tab, i) => (
-                                <li className="tab" key={i} id={tab.id}>
+                                <li className="tab" anchor={tab.anchor} key={i} id={tab.id}>
                                     <Link to={tab.anchor}>
                                         {tab.title}
                                     </Link>
@@ -97,19 +102,10 @@ const Header = ({ open, children }) => {
 
             <div className="headerbg-container">
                 <div className="header-video-container">
-                    <div className="box" id="box1" />
-                    <div className="box" id="box2" />
-                    <div className="box" id="box3" />
-                    <div className="box" id="box4" />
-                    <div className="box" id="box5" />
-                    <div className="box" id="box6" />
-                    <div className="box" id="box7" />
-                    {/* <video className="video-content" autoPlay playsInline muted loop id="header-video">
-                        <source src={video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video> */}
+                    {boxes.map((box, i) => (
+                        <div className="box" key={i} id={`box${box}`} />
+                    ))}
                 </div>
-                {/* <a href="https://dribbble.com/shots/15886164-Voice-morphing-interface-Natural" rel="noopener noreferrer" target="_blank" className="source dribbble"><FaDribbble />Voice Morphing Interface by Gleb Kuznetsov</a> */}
             </div>
         </header>
     )

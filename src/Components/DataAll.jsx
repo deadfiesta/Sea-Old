@@ -13,10 +13,15 @@ const content = [
                 anchor: "/"
             },
             {
-                title: "Coral Components",
+                title: "Coral Component",
                 id: "coral",
                 anchor: "/coral"
-            }
+            },
+            {
+                title: "Mock Up",
+                id: "mockup",
+                anchor: "/mockup"
+            },
         ]
     },
     {

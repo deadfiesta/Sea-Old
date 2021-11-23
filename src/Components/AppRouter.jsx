@@ -26,6 +26,7 @@ const AppRouter = () => {
                     <Route path="/" element={<ContentContainer />}>
                         <Route path="/" element={<PageResearch open={isOpen} close={closeMenu} />} />
                         <Route path="/coral" element={<PageCoral open={isOpen} close={closeMenu} />} />
+                        <Route path="/mockup" element={<PageCoral open={isOpen} close={closeMenu} />} />
                     </Route>
                 </Routes>
             </Router>
