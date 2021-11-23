@@ -9,7 +9,7 @@ const PageCoral = ({ open, close }) => {
 
   const [topicIndex, setTopicIndex] = useState(0)
 
-  let contentData = content[0].coral;
+  let contentData = content[1].coral;
 
   const change = (e) => {
     setTopicIndex(Number(e.currentTarget.attributes.topic.nodeValue))

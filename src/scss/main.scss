@@ -146,6 +146,30 @@ section {
             }
         }
     }
+    .caption-container {
+        @include flex {
+            gap: .5rem;
+            align-items: center;
+        }
+        .type {
+            border-radius: .25rem;
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 22px;
+            padding: 0 .5rem;
+            background-color: color(gray, secondary);
+            color: color(neutral);
+        }
+        .type.sealcloud {
+            background-color: color(accent, sea);
+        }
+        .type.itcenter {
+            background-color: color(accent, itcenter);
+        }
+        .type.investmentsystem {
+            background-color: color(accent);
+        }
+    }
     .credit-container {
         position: relative;
         margin-top: 1rem;
@@ -178,7 +202,7 @@ section {
         grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
         background-color: color(neutral, bg);
         gap: 1rem;
-        padding: 1rem 0;
+        padding: 1rem;
         width: 100%;
         @keyframes setToInvisible {
             from {

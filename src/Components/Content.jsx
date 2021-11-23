@@ -1,4 +1,6 @@
 import React from 'react'
+import { useEffect } from 'react';
+import { useLocation } from 'react-router';
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
@@ -6,7 +8,34 @@ import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 const Content = ({ topicId, data, onclick }) => {
 
+    let pathname = useLocation().pathname
+
     let content = Array(data[topicId])
+
+    useEffect(() => {
+        const options = {
+            threshold: 1,
+            rootMargin: "0px"
+        }
+
+        let observer = new IntersectionObserver((entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.play()
+                } else {
+                    let isPlaying = entry.target.currentTime > 0 && !entry.target.paused && !entry.target.ended && entry.target.readyState > entry.target.HAVE_CURRENT_DATA //check if video is playing
+                    isPlaying && entry.target.pause()
+                }
+            })
+        }), options)
+
+        const videos = document.querySelectorAll('.video-content');
+
+        videos.forEach((video => {
+            observer.observe(video)
+        }))
+    }, [pathname])
+
 
     return (
         <div className="content-container">
@@ -15,7 +44,7 @@ const Content = ({ topicId, data, onclick }) => {
                     <h2>{heading.topic}</h2>
                     <ul className="subsection-container">
                         {heading.subtopics.map((subtopic, i) => (
-                            <li key={i} >
+                            <li key={i} className={subtopic.anchor} >
                                 <div className="top-container">
 
                                     {subtopic.link !== undefined
@@ -47,8 +76,11 @@ const Content = ({ topicId, data, onclick }) => {
                                                             Your browser does not support the video tag.
                                                         </video>
                                                     </Zoom>
-                                                    {video.caption !== undefined &&
-                                                        <figcaption className="caption">{video.caption}</figcaption>
+                                                    {video.caption !== undefined
+                                                        && <div className="caption-container">
+                                                            {video.type !== undefined 
+                                                            && <figcaption className={`type ${video.type.toLowerCase().replace(/\s/g, '')}`}>{video.type}</figcaption>}
+                                                            <figcaption className="caption">{video.caption}</figcaption></div>
                                                     }
                                                 </li>
 
@@ -94,8 +126,15 @@ const Content = ({ topicId, data, onclick }) => {
 
 
 const PrevNextContainer = ({ direction, click, anchor, topic, image, title, paragraph }) => {
+    const scrollToTop = (xCoord = 0, yCoord = 200) => {
+        window.scrollTo({
+            top: yCoord,
+            left: xCoord,
+            behavior: 'instant'
+        })
+    }
     return (
-        <div className={direction === 'next' ? "next-container prevnext-container " : "prev-container prevnext-container "}>
+        <div onClick={scrollToTop} className={direction === 'next' ? "next-container prevnext-container " : "prev-container prevnext-container "}>
             <div className="nextprev-content" >
                 <div className="title-container" onClick={click} topic={topic}>
                     {direction === 'next' ? <MdArrowForwardIos /> : <MdArrowBackIosNew />} <h3>{direction === 'next' ? "Next Up" : "Previous"}</h3>

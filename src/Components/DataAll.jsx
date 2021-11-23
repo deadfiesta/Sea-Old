@@ -1,9 +1,24 @@
-const header = [{
-    title: "UI Animation for Sea Coral",
-    updated: "November 17, 2021",
-}];
-
 const content = [
+    {
+        header: [
+            {
+                title: "UI Animation for Sea Coral",
+                updated: "November 23, 2021",
+            }
+        ],
+        tabs: [
+            {
+                title: "Research",
+                id: "research",
+                anchor: "/"
+            },
+            {
+                title: "Coral Components",
+                id: "coral",
+                anchor: "/coral"
+            }
+        ]
+    },
     {
         research: [
             {
@@ -665,7 +680,8 @@ const content = [
                         videos: [
                             {
                                 url: "./media/skeleton/skeleton1.mp4",
-                                caption: "[SealCloud] Refresh Loading Skeleton",
+                                type: "SealCloud",
+                                caption: "Refresh Loading Skeleton",
                             },
                         ],
                         description: "The skeleton screen is a version of the user interface that mimics the page's layout. The skeleton loading screen shows the page in a shape similar to the actual content as it is loading and becoming available",
@@ -676,7 +692,8 @@ const content = [
                         videos: [
                             {
                                 url: "./media/page/page1.mp4",
-                                caption: "[Review System] Page Reload",
+                                type: "Review System",
+                                caption: "Page Reload",
                             },
                         ],
                         description: "The skeleton screen is a version of the user interface that mimics the page's layout. The skeleton loading screen shows the page in a shape similar to the actual content as it is loading and becoming available",
@@ -687,11 +704,23 @@ const content = [
                         videos: [
                             {
                                 url: "./media/sidemenu/sidemenu1.mp4",
-                                caption: "[SealCloud] Side Menu Expand",
+                                type: "SealCloud",
+                                caption: "Side Menu Expand",
                             },
                             {
                                 url: "./media/sidemenu/sidemenu2.mp4",
-                                caption: "[Review System] Side Menu Expand on Small Screen",
+                                type: "Review System",
+                                caption: "Side Menu Expand on Small Screen",
+                            },
+                            {
+                                url: "./media/sidemenu/sidemenu3.mp4",
+                                type: "IT Center",
+                                caption: "Side Menu Collapse",
+                            },
+                            {
+                                url: "./media/sidemenu/sidemenu4.mp4",
+                                type: "Investment System",
+                                caption: "Side Menu Collapse",
                             },
                         ],
                         description: "Left navigation facilitates a vertical scanning direction, this greatly improves speed, it also requires fewer visual fixations so we can see multiple navigation links at the same time.",
@@ -702,11 +731,13 @@ const content = [
                         videos: [
                             {
                                 url: "./media/drawers/drawer1.mp4",
-                                caption: "[SealCloud] View Instance Detail",
+                                type: "SealCloud",
+                                caption: "View Instance Detail",
                             },
                             {
                                 url: "./media/drawers/drawer2.mp4",
-                                caption: "[SealCloud] Add Data Disk Drawer",
+                                type: "SealCloud",
+                                caption: "Add Data Disk Drawer",
                             },
                         ],
                         description: "Drawers are panels that slide in and out from the right. They help users complete tasks faster and in context.",
@@ -717,15 +748,23 @@ const content = [
                         videos: [
                             {
                                 url: "./media/tabs/tab1.mp4",
-                                caption: "[SealCloud] Tab in a Drawer Preview for an Instance"
+                                type: "SealCloud",
+                                caption: "Tab in a Drawer Preview for an Instance"
                             },
                             {
                                 url: "./media/tabs/tab2.mp4",
-                                caption: "[SealCloud] Cluster Overview Tabs"
+                                type: "SealCloud",
+                                caption: "Cluster Overview Tabs"
                             },
                             {
                                 url: "./media/tabs/tab3.mp4",
-                                caption: "[SealCloud] Instance Page View"
+                                type: "SealCloud",
+                                caption: "Instance Page View"
+                            },
+                            {
+                                url: "./media/tabs/tab4.mp4",
+                                type: "Investment System",
+                                caption: "Post Deals Intake"
                             },
                         ],
                         description: "Tabs enable users to jump to their target section quickly.",
@@ -738,20 +777,33 @@ const content = [
                 anchor: "medium",
                 subtopics: [
                     {
-                        title: "Modals",
+                        title: "Modals / Dialogs                    ",
                         anchor: "modal",
                         videos: [
                             {
                                 url: "./media/modals/modal1.mp4",
-                                caption: "[SealCloud] View More Info on SSH Proxy"
+                                type: "SealCloud",
+                                caption: "View More Info on SSH Proxy"
                             },
                             {
                                 url: "./media/modals/modal2.mp4",
-                                caption: "[SealCloud] Delete Warning Modal"
+                                type: "SealCloud",
+                                caption: "Delete Warning Modal"
                             },
                             {
                                 url: "./media/modals/modal3.mp4",
-                                caption: "[SealCloud] Confirmation Modal"
+                                type: "SealCloud",
+                                caption: "Confirmation Modal"
+                            },
+                            {
+                                url: "./media/modals/modal4.mp4",
+                                type: "IT Center",
+                                caption: "Leave Page Confirmation"
+                            },
+                            {
+                                url: "./media/modals/modal5.mp4",
+                                type: "IT Center",
+                                caption: "Apply for Multiple Assets"
                             },
                         ],
                         description: "A modal is a window that appears on top of a parent screen. It’s called ‘modal’ because it creates a mode that disables the parent screen but keeps it visible. Users must interact with the modal to return to the main screen.",
@@ -769,14 +821,17 @@ const content = [
                         videos: [
                             {
                                 url: "./media/dropdown/dropdown1.mp4",
-                                caption: "[SeaCloud] View More Options"
+                                type: "SealCloud",
+                                caption: "View More Options"
                             },
                             {
                                 url: "./media/dropdown/dropdown2.mp4",
+                                type: "SealCloud",
                                 caption: "[SealCloud] Support and Help"
                             },
                             {
                                 url: "./media/dropdown/dropdown3.mp4",
+                                type: "SealCloud",
                                 caption: "[SealCloud] Account Option"
                             },
                         ],
@@ -788,7 +843,8 @@ const content = [
                         videos: [
                             {
                                 url: "./media/buttons/button1.mp4",
-                                caption: "View More Options"
+                                type: "SealCloud",
+                                caption: "Side Menu Button"
                             },
                         ],
                         description: "Material Design uses a ripple effect to give users feedback in a simple, elegant way.",
@@ -797,8 +853,13 @@ const content = [
                 ]
             },
 
+        ],
+        mockup: [
+            {
+
+            }
         ]
     }
 ]
 
-export { header, content }
+export { content }

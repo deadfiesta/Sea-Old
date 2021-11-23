@@ -9,7 +9,7 @@ const PageResearch = ({ open, close }) => {
 
   const [topicIndex, setTopicIndex] = useState(0)
 
-  let contentData = content[0].research
+  let contentData = content[1].research
 
   const change = (e) => {
     setTopicIndex(Number(e.currentTarget.attributes.topic.nodeValue))

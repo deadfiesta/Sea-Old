@@ -2,18 +2,18 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react';
 import '../scss/main.scss'
-// import { FaDribbble } from "react-icons/fa";
-import { header } from './DataAll'
-// import video from '../Videos/bg.mp4'
+import { content } from './DataAll'
 
 
 const Header = ({ open, children }) => {
 
     const pathname = useLocation().pathname;
 
+    const contentData = content[0];
+    console.log(contentData.tabs)
+
     const [underlineWidth, setUnderlineWidth] = useState(0)
     const [underlineX, setUnderlineX] = useState(0);
-
 
     const burger = useRef();
     const limit = useRef();
@@ -62,7 +62,7 @@ const Header = ({ open, children }) => {
 
                     <div className="top-container wrapper">
                         <h1 className="home-title">
-                            {header[0].title}
+                            {contentData.header[0].title}
                         </h1>
                     </div>
 
@@ -70,21 +70,19 @@ const Header = ({ open, children }) => {
                         <div className="avatar-container">
                             <div className="bg-image" id="me"></div>
                         </div>
-                        <p>Last Updated:<br />{header[0].updated}</p>
+                        <p>Last Updated:<br />{contentData.header[0].updated}</p>
                     </div>
 
                     <div className="tabs-container wrapper">
                         <ul className="tabs">
-                            <li className="tab" id="research">
-                                <Link to="/">
-                                    Research
-                                </Link>
-                            </li>
-                            <li className="tab" id="coral">
-                                <Link to="/coral">
-                                    Coral
-                                </Link>
-                            </li>
+                            {contentData.tabs.map((tab, i) => (
+                                <li className="tab" key={i} id={tab.id}>
+                                    <Link to={tab.anchor}>
+                                        {tab.title}
+                                    </Link>
+                                </li>
+                            ))}
+                           
                             <span className="underline" style={
                                 {
                                     left: underlineX,
