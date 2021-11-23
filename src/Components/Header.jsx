@@ -7,14 +7,6 @@ import { content } from './DataAll'
 
 const Header = ({ open, children }) => {
 
-    const updated = new Date(document.lastModified)
-
-    const date = updated.getDate()
-    const month = updated.getMonth()
-    const year = updated.getFullYear()
-
-    console.log(`${date} ${month} ${year}`)
-
     const pathname = useLocation().pathname;
 
     const contentData = content[0];

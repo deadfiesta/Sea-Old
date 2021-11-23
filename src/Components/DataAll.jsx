@@ -1,9 +1,22 @@
+const lastUpdated = () => {
+    const updated = new Date(document.lastModified)
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    const day = updated.getDay()
+    const date = updated.getDate()
+    const month = updated.getMonth()
+    const year = updated.getFullYear()
+    return (
+        `${months[month]} ${date}, ${year}, ${days[day]}`
+    )
+}
+
 const content = [
     {
         header: [
             {
                 title: "UI Animation for Sea Coral",
-                updated: "November 23, 2021",
+                updated: lastUpdated(),
             }
         ],
         tabs: [
