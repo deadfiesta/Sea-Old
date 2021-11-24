@@ -78,8 +78,8 @@ const Content = ({ topicId, data, onclick }) => {
                                                     </Zoom>
                                                     {video.caption !== undefined
                                                         && <div className="caption-container">
-                                                            {video.type !== undefined 
-                                                            && <figcaption className={`type ${video.type.toLowerCase().replace(/\s/g, '')}`}>{video.type}</figcaption>}
+                                                            {video.type !== undefined
+                                                                && <figcaption className={`type ${video.type.toLowerCase().replace(/\s/g, '')}`}>{video.type}</figcaption>}
                                                             <figcaption className="caption">{video.caption}</figcaption></div>
                                                     }
                                                 </li>
@@ -87,12 +87,15 @@ const Content = ({ topicId, data, onclick }) => {
                                             ))}
                                         </ul>
                                     }
-
+                                    {subtopic.component !== undefined &&
+                                        <div className="mockup">{subtopic.component}</div>
+                                    }
                                 </div>
-
-                                <div className="bottom-container">
-                                    <p>{subtopic.description}</p>
-                                </div>
+                                {subtopic.description !== undefined &&
+                                    <div className="bottom-container">
+                                        <p>{subtopic.description}</p>
+                                    </div>
+                                }
                             </li>
                         ))}
                     </ul>

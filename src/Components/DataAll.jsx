@@ -1,7 +1,9 @@
+import { Animation, Image } from './Coral/Skeleton'
+
 const lastUpdated = () => {
     const updated = new Date(document.lastModified)
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     const day = updated.getDay()
     const date = updated.getDate()
     const month = updated.getMonth()
@@ -784,6 +786,11 @@ const content = [
                                 type: "Investment System",
                                 caption: "Post Deals Intake"
                             },
+                            {
+                                url: "./media/tabs/tab5.mp4",
+                                type: "IT Center",
+                                caption: "Ticket Details Activity"
+                            },
                         ],
                         description: "Tabs enable users to jump to their target section quickly.",
                     },
@@ -795,7 +802,7 @@ const content = [
                 anchor: "medium",
                 subtopics: [
                     {
-                        title: "Modals / Dialogs                    ",
+                        title: "Modals / Dialogs",
                         anchor: "modal",
                         videos: [
                             {
@@ -874,7 +881,30 @@ const content = [
         ],
         mockup: [
             {
-
+                topic: "Skeleton",
+                anchor: "skeleton",
+                subtopics: [
+                    {
+                        title: "Animation",
+                        anchor: "skelanim",
+                        component: <Animation />,
+                    },
+                    {
+                        title: "Image",
+                        anchor: "skelimage",
+                        component: <Image />,
+                    },
+                    {
+                        title: "Avatar Circle",
+                        anchor: "skelavatar",
+                        component: "",
+                    },
+                    {
+                        title: "Content Rectangle",
+                        anchor: "skelavatar",
+                        component: "",
+                    },
+                ]
             }
         ]
     }

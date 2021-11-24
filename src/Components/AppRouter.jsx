@@ -7,6 +7,7 @@ import Header from './Header'
 import { Spin as Hamburger } from 'hamburger-react'
 import PageResearch from './PageResearch'
 import PageCoral from './PageCoral'
+import PageMockup from './PageMockup'
 
 
 const AppRouter = () => {
@@ -26,7 +27,7 @@ const AppRouter = () => {
                     <Route path="/" element={<ContentContainer />}>
                         <Route path="/" element={<PageResearch open={isOpen} close={closeMenu} />} />
                         <Route path="/coral" element={<PageCoral open={isOpen} close={closeMenu} />} />
-                        <Route path="/mockup" element={<PageCoral open={isOpen} close={closeMenu} />} />
+                        <Route path="/mockup" element={<PageMockup open={isOpen} close={closeMenu} />} />
                     </Route>
                 </Routes>
             </Router>

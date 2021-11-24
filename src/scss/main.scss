@@ -4,6 +4,7 @@
 @import "./utility";
 @import "./nav";
 @import "./header";
+@import "./coral";
 
 * {
     padding: 0;
@@ -299,6 +300,25 @@ section {
             @include flex {
                 justify-content: flex-start;
             }
+        }
+    }
+    button.view-code {
+        font-family: inherit;
+        font-size: 14px;
+        color: color(accent);
+        cursor: pointer;
+        border: 1px solid color(neutral, divider);
+        display: inline-block;
+        width: fit-content;
+        padding: .75rem 1rem;
+        background: none;
+        border-radius: .25rem;
+        transition: background-color .1s ease;
+        &:hover {
+            background-color: color(neutral, bg)
+        }
+        &:active {
+            background-color: darken(color(neutral, bg), 5%)
         }
     }
 }

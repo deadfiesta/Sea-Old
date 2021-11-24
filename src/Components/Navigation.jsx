@@ -44,59 +44,6 @@ const Navigation = ({ onclick, highlight, data, open }) => {
         })
     }, [])
 
-    const scrolling = () => {
-        const navy = document.querySelector('nav');
-        if (window.scrollY > navy.offsetTop) {
-            navy.childNodes[0].classList.add('pinned');
-        } else {
-            navy.childNodes[0].classList.remove('pinned')
-        }
-    }
-
-    window.addEventListener("scroll", scrolling)
-
-    // useEffect(() => {
-
-    //     const isInViewport = (element) => {
-    //         const rect = element.getBoundingClientRect();
-    //         return (
-    //             rect.top >= 0 &&
-    //             rect.left >= 0 &&
-    //             rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    //             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    //         )
-    //     }
-
-    //     const alltopics = document.querySelectorAll('.subtopics')
-
-    //     let options = {
-    //         root: null,
-    //         threshold: 1,
-    //         // rootMargin: "-250px 0px"
-    //     }
-    //     let observer = new IntersectionObserver((entries => {
-    //         entries.forEach(entry => {
-    //             if (entry.isIntersecting) {
-    //                 let selected = document.querySelector(`.${entry.target.id}`)
-    //                 if (selected !== null) {
-    //                     selected.classList.add('selected')
-    //                     // !isInViewport(selected) && selected.scrollIntoView();
-    //                 }
-
-
-    //             } else {
-    //                 let selected = document.querySelector(`.${entry.target.id}`)
-    //                 selected !== null && selected.classList.remove('selected')
-    //             }
-    //         })
-    //     }), options)
-
-    //     alltopics.forEach(topic => {
-    //         observer.observe(topic)
-    //     })
-
-    // })
-
     const updateLinePos = () => {
         let selected = document.querySelector('.menu-header.active')
         selected !== null
@@ -111,13 +58,6 @@ const Navigation = ({ onclick, highlight, data, open }) => {
         setTimeout(() => {
             updateLinePos();
         }, 300)
-
-        // return () => {
-        //     setProperty({
-        //         top: 0,
-        //         height: 0,
-        //     })
-        // }
 
     }, [highlight])
 

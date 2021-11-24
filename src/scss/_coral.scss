@@ -1,0 +1,46 @@
+.coral {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Arial', 'PingFang SC', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  sub {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  h1 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  h1 {
+    font-weight: 700;
+  }
+  h2, h3 {
+    font-weight: 500;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(242, 243, 244, 0) 30%,
+    #E0E2E5 50%,
+    rgba(242, 243, 244, 0) 70%,
+  ), #F2F3F4;
+  background-size: 200% 100%;
+  animation: wave 1s linear infinite;
+  @keyframes wave {
+    from {
+      background-position: 50%;
+    }
+    to {
+      background-position: -150%;
+    }
+  }
+}
