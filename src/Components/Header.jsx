@@ -18,10 +18,10 @@ const Header = ({ open, children }) => {
     const limit = useRef();
     const update = () => {
 
-        (window.pageYOffset > limit.current.offsetHeight
-            ? burger.current.classList.add('fixed')
-            : burger.current.classList.remove('fixed')
-        )
+        // (window.pageYOffset > limit.current.offsetHeight
+        //     ? burger.current.classList.add('fixed')
+        //     : burger.current.classList.remove('fixed')
+        // )
         document.querySelectorAll('.tab').forEach((tab => {
             tab.classList.remove('active')
             tab.getAttribute('anchor') === pathname && tab.classList.add('active')

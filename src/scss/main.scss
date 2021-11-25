@@ -47,7 +47,7 @@ a {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 25;
+    z-index: 15;
     width: 100vw;
     height: 100vh;
     background-color: color(gray);
@@ -85,9 +85,6 @@ a {
 .section-container {
     @include flex(column) {
         gap: 3rem;
-        @include media {
-            gap: 4rem;
-        }
     }
     padding: 1.5rem;
     @include media {
@@ -303,12 +300,15 @@ section {
         }
     }
     button.view-code {
+        @include flex {
+            align-items: center;
+            gap: .25rem;
+        }
         font-family: inherit;
         font-size: 14px;
         color: color(accent);
         cursor: pointer;
         border: 1px solid color(neutral, divider);
-        display: inline-block;
         width: fit-content;
         padding: .75rem 1rem;
         background: none;
@@ -319,6 +319,26 @@ section {
         }
         &:active {
             background-color: darken(color(neutral, bg), 5%)
+        }
+        &:disabled {
+            background-color: color(neutral, bg);
+            cursor: not-allowed;
+            filter: saturate(0)
+        }
+    }
+    button.view-code.reload {
+        &:disabled {
+            svg {
+                animation: rotate 1100ms ease forwards;
+                @keyframes rotate {
+                    from {
+                        transform: rotate(0)
+                    }
+                    to {
+                        transform: rotate(720deg);
+                    }
+                }
+            }
         }
     }
 }

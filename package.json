@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "faker": "^5.5.3",
     "hamburger-react": "^2.4.1",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.2",

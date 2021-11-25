@@ -3,10 +3,12 @@ import styled from "styled-components";
 const Pre = styled.pre`
 text-align: left;
 padding: 1rem .5rem;
+
 `;
 
 const Line = styled.div`
-display: table-row;
+display: flex;
+align-items: center;
 `;
 
 const LineNo = styled.span`
@@ -77,7 +79,7 @@ const theme = {
     types: ["function", "selector", "doctype"],
     style: {
       color: "rgb(153, 76, 195)",
-      fontStyle: "italic"
+      // fontStyle: "italic"
     }
   }, {
     types: ["class-name"],

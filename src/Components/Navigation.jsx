@@ -67,7 +67,7 @@ const Navigation = ({ onclick, highlight, data, open }) => {
                 <div className="title-container">
                     <h2>Content</h2>
                 </div>
-                <div className="wrapper">
+                <div className="nav-wrapper">
 
                     <div className="line-container">
                         <span className="line" style={

@@ -1,5 +1,5 @@
 .coral {
-  font-family: 'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Arial', 'PingFang SC', sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Segoe UI", "Arial", "PingFang SC", sans-serif;
   font-size: 14px;
   line-height: 20px;
   sub {
@@ -21,26 +21,160 @@
   h1 {
     font-weight: 700;
   }
-  h2, h3 {
+  h2,
+  h3 {
     font-weight: 500;
   }
 }
 
-.animated-gradient {
-  background: linear-gradient(
-    to right,
-    rgba(242, 243, 244, 0) 30%,
-    #E0E2E5 50%,
-    rgba(242, 243, 244, 0) 70%,
-  ), #F2F3F4;
+.mockup-container {
+  overflow: hidden;
+  border-radius: 0.25rem;
+  border: 1px solid color(neutral, divider);
+  padding: 1rem;
+  @include media {
+    padding: 3rem;
+  }
+}
+
+.mockup-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  @include media {
+    gap: 3rem;
+  }
+}
+
+.skeleton {
+  background-color: #f2f3f4;
+}
+.skeleton.gradient {
+  background: linear-gradient(to right, #e0e2e5 30%, rgba(242, 243, 244, 0) 50%, #e0e2e5 70%), #f2f3f4;
+}
+
+.skeleton.gradient.waving {
   background-size: 200% 100%;
-  animation: wave 1s linear infinite;
+  animation: wave 1000ms linear infinite;
   @keyframes wave {
     from {
-      background-position: 50%;
+      background-position: 0%;
     }
     to {
-      background-position: -150%;
+      background-position: -200%;
+    }
+  }
+}
+
+.skeleton.pulsing {
+  --skeleton-default: #f2f3f4;
+  --skeleton-color: #e0e2e5;
+  animation: pulsing 1000ms linear infinite;
+  @keyframes pulsing {
+    0% {
+      background-color: #f2f3f4;
+    }
+    50% {
+      background-color: #e0e2e5;
+    }
+    100% {
+      background-color: #f2f3f4;
+    }
+  }
+}
+
+.skeleton-wrap {
+  @include flex(column) {
+    gap: 0.5rem;
+  }
+  figcaption {
+    display: block;
+    text-align: center;
+  }
+  figcaption.label {
+    opacity: 0.75;
+    font-size: 14px;
+  }
+}
+
+.skeleton.remove {
+  color: rgba(color(neutral), 0)
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  th {
+    font-weight: 600;
+    color: color(gray);
+    background-color: color(neutral, bg)
+  }
+  th,
+  td {
+    position: relative;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 1rem;
+    border-bottom: 1px solid color(neutral, divider);
+    @media (max-width: 760px) {
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(5) {
+        display: none;
+      }
+    }
+    @media (max-width: 820px) {
+      &:nth-child(2),
+      &:nth-child(5) {
+        display: none;
+      }
+    }
+    span {
+      display: block;
+    }
+  }
+}
+
+ul.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  @include media {
+    gap: 3rem;
+  }
+  li.card-container {
+    border-radius: .25rem;
+    border: 1px solid color(neutral, divider);
+    .info-container {
+      flex: 1;
+      @include flex(column) {
+        justify-content: stretch;
+      }
+    }
+    .product-container {
+      padding: 1rem 2rem .5rem 2rem;
+    }
+    .description-container {
+      flex: 1 0;
+      font-size: 14px;
+      line-height: 24px;
+      padding: .5rem 2rem 1rem 2rem;
+    }
+    .img-container {
+      padding: 2rem;
+      border-bottom: 1px solid color(neutral, divider)
+    }
+    .img {
+      border-radius: .25rem;
+      display: block;
+      width: 120px;
+      height: 120px;
+      background: color(neutral, bg) center center / cover no-repeat;
+    }
+    .footer-container {
+      font-size: 12px;
+      background-color: color(neutral, bg);
+      padding: 1rem 2rem;
     }
   }
 }

@@ -8,7 +8,6 @@ nav {
     top: 0;
     width: 80vw;
     height: 100vh;
-    max-width: 396px;
     overflow-y: scroll;
     background-color: color(neutral, bg);
     transform: translateX(-100%);
@@ -17,6 +16,9 @@ nav {
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
         display: none;
+    }
+    @include media("max") {
+        max-width: calc(100% - 3rem - 56px);
     }
     .nav-container {
         @include flex(column) {
@@ -145,7 +147,7 @@ nav {
 
 @include media {
     nav {
-        --width: 396px;
+        --width: 288px;
         position: sticky;
         width: var(--width);
         min-height: calc(100vh - 24rem);
@@ -157,9 +159,16 @@ nav {
         &::-webkit-scrollbar-thumb {
             color: color(neutral, divider);
         }
-        .wrapper {
+        .nav-wrapper {
             display: grid;
             grid-template-columns: auto 1fr;
+        }
+        .menu-header {
+            padding: 1rem 3rem;
+        }
+        .subtopic-container li {
+            padding: 1rem 3rem;
+            line-height: 18px;
         }
         .line-container {
             position: relative;

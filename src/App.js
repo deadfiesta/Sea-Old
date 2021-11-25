@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="App">
-      <AppRouter />
+      <AppRouter className="dark" />
     </div>
   );
 }

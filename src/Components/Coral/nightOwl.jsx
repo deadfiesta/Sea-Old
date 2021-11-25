@@ -4,7 +4,8 @@ const Pre = styled.pre`
 font-size: 14px;
 line-height: 24px;
 text-align: left;
-padding: 1rem .5rem;
+padding: 1rem 1.5rem;
+border-radius: .5rem;
 `;
 
 const Line = styled.div`
@@ -94,7 +95,7 @@ const theme = {
       types: ["selector", "doctype"],
       style: {
         color: "rgb(199, 146, 234)",
-        fontStyle: "italic",
+        // fontStyle: "italic",
       },
     },
     {

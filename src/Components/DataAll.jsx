@@ -1,4 +1,4 @@
-import { Animation, Image } from './Coral/Skeleton'
+import { Animation, Image, Avatar, Rectangle, Sample } from './Coral/Skeleton'
 
 const lastUpdated = () => {
     const updated = new Date(document.lastModified)
@@ -883,6 +883,12 @@ const content = [
             {
                 topic: "Skeleton",
                 anchor: "skeleton",
+                credits: [
+                    {
+                        title: "What You Should Know About Skeleton Screen",
+                        url: "https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a"
+                    }
+                ],
                 subtopics: [
                     {
                         title: "Animation",
@@ -890,19 +896,24 @@ const content = [
                         component: <Animation />,
                     },
                     {
-                        title: "Image",
+                        title: "Square",
                         anchor: "skelimage",
                         component: <Image />,
                     },
                     {
-                        title: "Avatar Circle",
+                        title: "Circle",
                         anchor: "skelavatar",
-                        component: "",
+                        component: <Avatar />,
                     },
                     {
-                        title: "Content Rectangle",
+                        title: "Rectangle",
                         anchor: "skelavatar",
-                        component: "",
+                        component: <Rectangle />,
+                    },
+                    {
+                        title: "Sample",
+                        anchor: "skelsamplle",
+                        component: <Sample />,
                     },
                 ]
             }
