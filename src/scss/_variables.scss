@@ -1,0 +1,21 @@
+$breakpoint: 1024px;
+$radius: .25rem;
+
+$colors: (
+  accent: (
+    primary: #25CED1,
+    secondary: #7161EF,
+    tertiary: #EA526F,
+  ),
+  gray: (
+    primary: #212529,
+    secondary: #6C757D,
+  ),
+  neutral: (
+    primary: #fff,
+    divider: #DEE2E6,
+  ),
+  bg: (
+    primary: #F8F9FA,
+  )
+)

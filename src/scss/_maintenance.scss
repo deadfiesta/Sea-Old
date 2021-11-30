@@ -1,0 +1,50 @@
+section#general-maintenance {
+  background: radial-gradient(121.06% 88.81% at 50% 0%, #F8F9FA 0%, #F7F9FA 48.96%, rgba(248, 249, 250, 0) 48.97%, rgba(255, 255, 255, 0) 100%);
+  padding-bottom: 3rem;
+  @include media {
+    padding-bottom: 6rem;
+  }
+  .content-container {
+    @include media {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+  }
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: .25rem;
+    .image {
+      height: 100%;
+      background: color(bg) url("../img/living-01-full.jpg") center center / cover no-repeat;
+    }
+  }
+  ul.cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    li {
+      cursor: default;
+      background-color: color(neutral);
+      border: 1px solid color(neutral, divider);
+      border-radius: .25rem;
+      padding: 1.5rem;
+      transition: all .15s ease;
+      &:hover {
+        box-shadow: 0 0 1rem rgba(color(gray), 0.05), 5px 0.5rem 32rem rgba(color(gray), 0.1);
+      }
+      @include flex(column) {
+        gap: 1rem;
+        @include media {
+          gap: 2.5rem;
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+  h3 {
+    color: color(gray);
+  }
+}

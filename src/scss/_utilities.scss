@@ -1,0 +1,31 @@
+.wrapper {
+  margin: 0 20px;
+  max-width: 1400px;
+  @include media("min", "1440px") {
+    margin: 0 auto;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.svg-container {
+  height: 48px;
+  width: 48px;
+  border-radius: .25rem;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background-color: rgba(color(accent), .1);
+}
+
+svg {
+  path.color {
+    fill: color(accent);
+  }
+  path.stroke {
+    stroke: color(accent);
+    fill: none;
+  }
+}

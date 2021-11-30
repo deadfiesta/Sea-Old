@@ -1,0 +1,37 @@
+section#services {
+  padding-bottom: 3rem;
+  @include media {
+    padding-bottom: 6rem;
+  }
+  ul.cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    @include media {
+      gap: 2.5rem;
+    }
+    li {
+      cursor: default;
+      @include flex(column) {
+        gap: 1rem;
+        @include media {
+          gap: 1.5rem;
+        }
+        h3 {
+          color: color(gray);
+        }
+        .label {
+          width: fit-content;
+          padding: .125rem .75rem;
+          border-radius: .75rem;
+          font-weight: 700;
+          font-size: .75rem;
+          color: color(accent, secondary);
+          background-color: rgba(color(accent, secondary), .1)
+        }
+      }
+    }
+  }
+
+}

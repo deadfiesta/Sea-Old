@@ -1,0 +1,58 @@
+section#end {
+  position: relative;
+  z-index: 1;
+  height: 320px;
+  background: color(bg) url('../img/living-09-full.jpg') center center / cover no-repeat;
+  @include media {
+    height: 540px;
+  }
+  &:before {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background-color: rgba(color(gray), .25);
+  }
+  .wrapper {
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .content-container {
+    @include flex(column) {
+      align-items: center;
+      gap: 2rem;
+    }
+    color: color(neutral);
+    text-align: center;
+    h2 {
+      color: color(neutral);
+    }
+    button {
+      cursor: pointer;
+      @include flex {
+        justify-content: center;
+        align-items: center;
+        gap: 1rem
+      }
+      padding: .75rem 1.5rem;
+      background-color: color(accent, secondary);
+      color: color(neutral);
+      border-radius: 1.5rem;
+      svg {
+        transition: all .2s ease;
+      }
+      &:hover {
+        background-color: lighten(color(accent, secondary), 2.5%);
+        svg {
+          transform: translateY(-15%);
+          transition: all .3s ease;
+        }
+      }
+    }
+  }
+
+}

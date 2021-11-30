@@ -1,0 +1,150 @@
+nav {
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: background-color .3s ease;
+  ul.menu-container {
+    position: relative;
+    color: color(neutral);
+    height: 72px;
+    @include flex {
+      align-items: center;
+      gap: 2rem;
+    }
+    li {
+      font-weight: 700;
+    }
+    li.contact {
+      cursor: pointer;
+      flex: 1;
+      @include flex {
+        justify-content: flex-end;
+      }
+    }
+    li.underliner {
+      position: absolute;
+      bottom: 0;
+      height: 4px;
+      background-color: color(accent);
+      transition: all 0.3s ease;
+    }
+  }
+  button.contact-us {
+    border-radius: $radius;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    color: color(neutral);
+    background-color: color(accent, secondary);
+  }
+  span.divider {
+    display: inline-block;
+    height: 32px;
+    width: 1px;
+    background-color: color(neutral, divider);
+  }
+  .branding {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    @include flex {
+      gap: 1rem;
+    }
+  }
+  svg.sofa {
+    .color {
+      fill: color(neutral);
+    }
+    .stroke {
+      fill: none;
+      stroke: color(neutral);
+    }
+  }
+}
+
+nav.scrolled {
+  background-color: color(neutral);
+  box-shadow: 0 .25rem .75rem 0 rgba(color(gray), .1);
+  ul.menu-container {
+    color: color(gray);
+  }
+  svg.sofa {
+    .color {
+      fill: color(accent);
+    }
+    .stroke {
+      fill: none;
+      stroke: color(accent);
+    }
+  }
+}
+@media screen and (min-width: $breakpoint) {
+  nav {
+    .hamburger-container {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint) {
+  nav.scrolled {
+    li.branding {
+      color: color(gray) !important;
+      background-color: color(neutral);
+      box-shadow: 0 .25rem .75rem 0 rgba(color(gray), .1);
+    }
+  }
+  nav {
+    z-index: 20;
+    ul.open.menu-container {
+      right: 0;
+    }
+    ul.menu-container {
+      position: fixed;
+      top: 0;
+      color: color(gray);
+      padding-top: 72px;
+      width: 50vw;
+      height: 100vh;
+      max-width: 320px;
+      padding-right: 20px;
+      background-color: color(neutral);
+      right: -80%;
+      transition: all .3s ease;
+      @include flex(column) {
+        align-items: flex-end;
+      }
+      li.branding {
+        color: color(neutral);
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0 20px;
+        height: 72px;
+        width: 100%;
+        transition: all .3s ease;
+        @include flex {
+          justify-content: space-between;
+          align-items: center;
+        }
+        .hamburger-container {
+          transform: scale(.75);
+        }
+      }
+      li.backing.branding {
+        color: color(gray);
+        background-color: color(neutral);
+      }
+      li.contact {
+        flex: 0;
+      }
+      svg {
+        display: none;
+      }
+    }
+    span.divider, li.underliner {
+      display: none;
+    }
+  }
+}

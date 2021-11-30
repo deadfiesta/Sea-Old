@@ -1,0 +1,167 @@
+#plans {
+  ul.plans-container {
+    width: 100%;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    @include media("min", "560px") {
+      grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+    }
+    @include media {
+      gap: 2.5rem;
+    }
+    li.plan.privateproperty {
+      .type {
+        @include media {
+          max-width: 120px;
+          line-height: 120%;
+        }
+      }
+    }
+    li.plan {
+      cursor: pointer;
+      display: grid;
+      border-radius: 0.5rem;
+      grid-template-rows: 1fr 2fr 1fr;
+      background-color: color(neutral);
+      overflow: hidden;
+      transition: all .15s ease;
+      &:hover {
+        box-shadow: 0 0 1rem rgba(color(gray), 0.05), 5px 0.5rem 32rem rgba(color(gray), 0.1);
+        transform: scale(1.015);
+        button.choose-plan {
+          background-color: color(accent);
+          span,
+          svg {
+            font-weight: 600;
+            color: color(neutral);
+          }
+        }
+      }
+      .type-container {
+        padding: 1rem 1.5rem 0;
+        @include flex(column) {
+          gap: 0.25rem;
+        }
+        @include media {
+          padding: 1.5rem 2rem 0;
+        }
+        .type {
+          color: color(gray);
+          font-weight: 700;
+          font-size: 1.125rem;
+          @include media {
+            font-size: 1.5rem;
+          }
+        }
+        .room {
+          font-weight: 600;
+        }
+      }
+      .price-container {
+        padding: 1rem 1.5rem;
+        display: grid;
+        place-items: center;
+        gap: 1.5rem;
+        @include media {
+          padding: 1.5rem 2rem;
+          gap: 2rem;
+        }
+        .label-container {
+          overflow-x: hidden;
+          display: inline-block;
+          width: 100%;
+          .label {
+            width: fit-content;
+            border-radius: 1rem;
+            padding: 0.125rem 0.5rem;
+            color: color(accent, secondary);
+            background-color: rgba(color(accent, secondary), 0.1);
+            font-weight: 700;
+            font-size: 0.8rem;
+            @include flex {
+              gap: 0.5rem;
+              align-items: center;
+            }
+            animation: entry-left 0.15s ease-out forwards;
+            @keyframes entry-left {
+              from {
+                opacity: 0;
+                transform: scale(1.1);
+              }
+              to {
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+          }
+        }
+        .price-info {
+          width: 100%;
+          @include flex(column) {
+            gap: 1.25rem;
+          }
+        }
+        .price {
+          color: color(gray);
+          @include flex {
+            align-items: flex-end;
+            gap: 0.25rem;
+          }
+          .per-month {
+            line-height: 75%;
+          }
+          .big-number {
+            font-weight: 800;
+            line-height: 75%;
+            font-size: 2rem;
+            @include media {
+              font-size: 3rem;
+            }
+          }
+        }
+        .notes {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+        }
+
+        .em {
+          font-weight: 700;
+          color: color(accent, secondary);
+        }
+        .un.em {
+          font-weight: initial;
+          color: color(gray, secondary);
+        }
+      }
+      .choose-container {
+        width: 100%;
+        @include flex(column) {
+          justify-content: flex-end;
+        }
+        button.choose-plan {
+          cursor: pointer;
+          color: color(gray, secondary);
+          width: 100%;
+          padding: 1.25rem 1.5rem;
+          transition: all 0.2s ease;
+          @include flex {
+            justify-content: space-between;
+            align-items: center;
+          }
+          @include media {
+            padding: 1.5rem 2rem;
+          }
+        }
+      }
+    }
+  }
+  .bottom-container {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    p {
+      text-align: center;
+    }
+  }
+}

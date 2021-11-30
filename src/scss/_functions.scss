@@ -1,0 +1,16 @@
+@function color($color, $tone: "primary") {
+  @return map-get(map-get($colors, $color), $tone);
+}
+
+@mixin flex($flexdirection: "row", $gap: "0") {
+  display: flex;
+  flex-direction: $flexdirection;
+  gap: $gap;
+  @content;
+}
+
+@mixin media($minmax: "min", $size: "1024px") {
+  @media screen and (#{$minmax}-width: $size) {
+    @content;
+  }
+}
