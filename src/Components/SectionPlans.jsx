@@ -98,8 +98,10 @@ const SectionPlans = () => {
   }
 
   const BottomNotes = () => {
+
+
     return (
-      <div className="bottom-container">
+      <div className="bottom-container" onClick={()=>document.getElementById('general-maintenance').scrollIntoView({block: "center"})}>
         <p>{data.footer}</p>
         <MdKeyboardArrowDown />
       </div>

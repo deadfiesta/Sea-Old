@@ -157,11 +157,20 @@
     }
   }
   .bottom-container {
+    cursor: pointer;
     display: grid;
     place-items: center;
     gap: 1rem;
     p {
       text-align: center;
+    }
+    svg {
+      transition: all .3s ease;;
+    }
+    &:hover {
+      svg {
+        transform: translateY(25%);
+      }
     }
   }
 }

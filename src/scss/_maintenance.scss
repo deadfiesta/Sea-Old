@@ -5,6 +5,7 @@ section#general-maintenance {
     padding-bottom: 6rem;
   }
   .content-container {
+    width: 100%;
     @include media {
       display: grid;
       grid-template-columns: repeat(2, 1fr);

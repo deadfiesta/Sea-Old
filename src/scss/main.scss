@@ -258,6 +258,9 @@ footer {
         }
       }
     }
+    .em {
+      font-weight: 700;
+    }
   }
   .social-container {
     @include flex {
@@ -266,6 +269,10 @@ footer {
       @include media {
         gap: 1.25rem;
       }
+    }
+    li {
+      display: grid;
+      place-items: center;
     }
   }
 }

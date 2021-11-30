@@ -9,7 +9,7 @@ const Footer = () => {
 
           <li>
             <ul className="copyright-container">
-              <li>© HomeGuru+ 2021</li>
+              <li className="em">© HomeGuru+ 2021</li>
               <li className="divider"></li>
               <li>All Rights Reserved</li>
             </ul>
