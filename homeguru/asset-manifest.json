@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/homeguru/static/css/main.bedc5724.chunk.css",
-    "main.js": "/homeguru/static/js/main.51fe85de.chunk.js",
-    "main.js.map": "/homeguru/static/js/main.51fe85de.chunk.js.map",
+    "main.css": "/homeguru/static/css/main.0146d96f.chunk.css",
+    "main.js": "/homeguru/static/js/main.a02e8d5f.chunk.js",
+    "main.js.map": "/homeguru/static/js/main.a02e8d5f.chunk.js.map",
     "runtime-main.js": "/homeguru/static/js/runtime-main.351e6f70.js",
     "runtime-main.js.map": "/homeguru/static/js/runtime-main.351e6f70.js.map",
     "static/js/2.cabfb7a0.chunk.js": "/homeguru/static/js/2.cabfb7a0.chunk.js",
@@ -10,17 +10,21 @@
     "static/js/3.41f77caa.chunk.js": "/homeguru/static/js/3.41f77caa.chunk.js",
     "static/js/3.41f77caa.chunk.js.map": "/homeguru/static/js/3.41f77caa.chunk.js.map",
     "index.html": "/homeguru/index.html",
-    "static/css/main.bedc5724.chunk.css.map": "/homeguru/static/css/main.bedc5724.chunk.css.map",
+    "static/css/main.0146d96f.chunk.css.map": "/homeguru/static/css/main.0146d96f.chunk.css.map",
     "static/js/2.cabfb7a0.chunk.js.LICENSE.txt": "/homeguru/static/js/2.cabfb7a0.chunk.js.LICENSE.txt",
     "static/media/affordable-01-full.dec9828c.jpg": "/homeguru/static/media/affordable-01-full.dec9828c.jpg",
     "static/media/cleaning-02-full.471f772e.jpg": "/homeguru/static/media/cleaning-02-full.471f772e.jpg",
     "static/media/customer-01-full.f2fb2ef6.jpg": "/homeguru/static/media/customer-01-full.f2fb2ef6.jpg",
+    "static/media/kitchen-01-full.1ca582a6.jpg": "/homeguru/static/media/kitchen-01-full.1ca582a6.jpg",
+    "static/media/kitchen-02-full.0837cfb9.jpg": "/homeguru/static/media/kitchen-02-full.0837cfb9.jpg",
+    "static/media/living-01-full.ef00d6e8.jpg": "/homeguru/static/media/living-01-full.ef00d6e8.jpg",
+    "static/media/living-02-full.e5f63064.jpg": "/homeguru/static/media/living-02-full.e5f63064.jpg",
     "static/media/main.scss": "/homeguru/static/media/sponge-01-full.41f5637d.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.351e6f70.js",
     "static/js/2.cabfb7a0.chunk.js",
-    "static/css/main.bedc5724.chunk.css",
-    "static/js/main.51fe85de.chunk.js"
+    "static/css/main.0146d96f.chunk.css",
+    "static/js/main.a02e8d5f.chunk.js"
   ]
 }
