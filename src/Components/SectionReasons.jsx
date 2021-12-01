@@ -11,9 +11,9 @@ const SectionReasons = () => {
     cards: [
       {
         icon: <QualitySVG />,
-        title: "Handyman",
+        title: "Professional Service",
         image: "./images/cleaning-02-full.jpg",
-        text: "Fixes common household repair jobs and carry out maintenance work on both exterior and interior of the house."
+        text: "Our service crews and housekeepers specialised in quality cleaning services. We provide professional cleaning services at the highest standards of cleanliness for you and your family."
       },
       {
         icon: <CostSVG />,
