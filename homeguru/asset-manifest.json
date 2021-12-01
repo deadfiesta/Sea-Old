@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/homeguru/static/css/main.c4f95341.chunk.css",
-    "main.js": "/homeguru/static/js/main.05314855.chunk.js",
-    "main.js.map": "/homeguru/static/js/main.05314855.chunk.js.map",
+    "main.css": "/homeguru/static/css/main.bedc5724.chunk.css",
+    "main.js": "/homeguru/static/js/main.51fe85de.chunk.js",
+    "main.js.map": "/homeguru/static/js/main.51fe85de.chunk.js.map",
     "runtime-main.js": "/homeguru/static/js/runtime-main.351e6f70.js",
     "runtime-main.js.map": "/homeguru/static/js/runtime-main.351e6f70.js.map",
     "static/js/2.cabfb7a0.chunk.js": "/homeguru/static/js/2.cabfb7a0.chunk.js",
@@ -10,14 +10,17 @@
     "static/js/3.41f77caa.chunk.js": "/homeguru/static/js/3.41f77caa.chunk.js",
     "static/js/3.41f77caa.chunk.js.map": "/homeguru/static/js/3.41f77caa.chunk.js.map",
     "index.html": "/homeguru/index.html",
-    "static/css/main.c4f95341.chunk.css.map": "/homeguru/static/css/main.c4f95341.chunk.css.map",
+    "static/css/main.bedc5724.chunk.css.map": "/homeguru/static/css/main.bedc5724.chunk.css.map",
     "static/js/2.cabfb7a0.chunk.js.LICENSE.txt": "/homeguru/static/js/2.cabfb7a0.chunk.js.LICENSE.txt",
+    "static/media/affordable-01-full.dec9828c.jpg": "/homeguru/static/media/affordable-01-full.dec9828c.jpg",
+    "static/media/cleaning-02-full.471f772e.jpg": "/homeguru/static/media/cleaning-02-full.471f772e.jpg",
+    "static/media/customer-01-full.f2fb2ef6.jpg": "/homeguru/static/media/customer-01-full.f2fb2ef6.jpg",
     "static/media/main.scss": "/homeguru/static/media/sponge-01-full.41f5637d.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.351e6f70.js",
     "static/js/2.cabfb7a0.chunk.js",
-    "static/css/main.c4f95341.chunk.css",
-    "static/js/main.05314855.chunk.js"
+    "static/css/main.bedc5724.chunk.css",
+    "static/js/main.51fe85de.chunk.js"
   ]
 }
