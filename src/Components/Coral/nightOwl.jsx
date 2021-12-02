@@ -35,21 +35,21 @@ const theme = {
       types: ["changed"],
       style: {
         color: "rgb(162, 191, 252)",
-        fontStyle: "italic",
+        // fontStyle: "italic",
       },
     },
     {
       types: ["deleted"],
       style: {
         color: "rgba(239, 83, 80, 0.56)",
-        fontStyle: "italic",
+        // fontStyle: "italic",
       },
     },
     {
       types: ["inserted", "attr-name"],
       style: {
         color: "rgb(173, 219, 103)",
-        fontStyle: "italic",
+        // fontStyle: "italic",
       },
     },
     {

@@ -2,12 +2,14 @@ import React from 'react'
 import { useState } from 'react';
 import styled from 'styled-components'
 import { coral } from './StyledCoral'
+import { MdAdd } from "react-icons/md";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import { Pre, Line, LineContent, theme } from "./nightOwl"
 import faker from 'faker'
 import ShowCodeBtn from './ShowCodeBtn';
 import ImagePlaceholder from './ImagePlaceholder'
-import ReloadBtn from './ReloadBtn';
+import ToggleBtn from './ToggleBtn';
+import Textfield from './Textfield';
 
 const Wrapper = styled.div`
 display: flex;
@@ -195,14 +197,6 @@ const Animation = () => {
             <Label>
               <Circle />
               <Square>
-                <Transparent />
-                <BgSecondary />
-              </Square>
-            </Label>
-            <Bar style={{ flex: ".2" }} />
-            <Label>
-              <Circle />
-              <Square>
                 <BgPrimary />
               </Square>
             </Label>
@@ -214,15 +208,22 @@ const Animation = () => {
                 <BgSecondary />
               </Square>
             </Label>
+            <Bar style={{ flex: ".2" }} />
+            <Label>
+              <Circle />
+              <Square>
+                <BgPrimary />
+              </Square>
+            </Label>
             <Bar style={{ flex: ".3" }} />
           </GradientLabel>
           <GradientLabel>
             <Bar style={{ flex: ".3", opacity: "0" }} />
-            <Text>#F2F3F4, 0%</Text>
+            <Text>#F2F3F4, 100%</Text>
             <Bar style={{ flex: ".2", opacity: "0" }} />
-            <Text>#E0E2E5, 100%</Text>
+            <Text>#E0E2E5, 0%</Text>
             <Bar style={{ flex: ".2", opacity: "0" }} />
-            <Text>#F2F3F4, 0%</Text>
+            <Text>#F2F3F4, 100%</Text>
             <Bar style={{ flex: ".3", opacity: "0" }} />
           </GradientLabel>
         </div>
@@ -245,6 +246,7 @@ const Animation = () => {
         <ShowCodeBtn onclick={() => setOpenPulse(prev => !prev)} open={openPulse} />
         {openPulse && <Code codeblock={PulsingCode} codelanguage="css" />}
       </Container>
+      <Textfield />
     </div >
   )
 }
@@ -337,50 +339,29 @@ const Rectangle = () => {
   )
 }
 
+
 const Sample = () => {
-  const data = (type) => {
-    switch (type) {
-      case "table":
-        const arr = []
-        for (let i = 0; i < 11; i++) {
-          const person = { name: faker.name.findName(), address: faker.address.streetAddress(), account: faker.finance.account(), email: faker.internet.email(), company: faker.company.companyName() }
-          arr.push(person)
-        }
-        return arr
-      case "cards":
-        const cards = []
-        for (let i = 0; i <= 8; i++) {
-          const card = { image: faker.image.unsplash.objects(96, 96, Math.floor(Math.random() * 100)), product: faker.commerce.productName(), price: faker.commerce.price(), color: faker.commerce.color(), material: faker.commerce.productMaterial(), description: faker.commerce.productDescription() }
-          cards.push(card)
-        }
-        return cards
-      default:
-        return
-    }
-  }
+  let arr = []
+  let cards = []
+
   const table = {
     header: ["Name", "Address", "Account Number", "E-mail Address", "Company"],
-    data: data("table")
+    data: arr
   }
-  const [reloadingTable, startReloadingTable] = useState(false);
-  const reload = (e) => {
-    let btn = e.currentTarget
-    if (!reloadingTable) {
-      startReloadingTable(true)
-      btn.disabled = true
-      let cells = document.querySelectorAll('.skeleton-table td span')
-      cells.forEach(cell => {
-        cell.classList.add('skeleton', 'gradient', 'waving', 'remove')
-      })
-      setTimeout(() => {
-        cells.forEach(cell => {
-          cell.classList.remove('skeleton', 'gradient', 'waving', 'remove')
-        })
-        startReloadingTable(false)
-        btn.disabled = false
-      }, 1250)
-    }
+
+  const [reloadingTable, startReloadingTable] = useState(false)
+  const [reloadingCard, startReloadingCard] = useState(false)
+
+  for (let i = 0; i < 11; i++) {
+    const person = { name: faker.name.findName(), address: faker.address.streetAddress(), account: faker.finance.account(), email: faker.internet.email(), company: faker.company.companyName() }
+    arr.push(person)
   }
+
+  for (let i = 0; i <= 8; i++) {
+    const card = { image: faker.image.unsplash.objects(96, 96, Math.floor(Math.random() * 100)), product: faker.commerce.productName(), price: faker.commerce.price(), color: faker.commerce.color(), material: faker.commerce.productMaterial(), description: faker.commerce.productDescription() }
+    cards.push(card)
+  }
+
   return (
     <Wrapper>
       <Container>
@@ -388,7 +369,8 @@ const Sample = () => {
           <VariantHeader>
             Table
           </VariantHeader>
-          <ReloadBtn reload={reloadingTable} onclick={reload} />
+          <ToggleBtn id="table" checked={reloadingTable} click={() => startReloadingTable(prev => !prev)} />
+          {/* <ReloadBtn reload={reloadingTable} onclick={reload} /> */}
         </div>
         <div className="mockup-container" style={{ padding: "0" }}>
           <table>
@@ -402,11 +384,11 @@ const Sample = () => {
             <tbody className="skeleton-table">
               {table.data.map((person, i) => (
                 <tr className="skeleton-row" key={i} id={person.name.toLowerCase().replace(/\s/g, '')}>
-                  <td><span>{person.name}</span></td>
-                  <td><span>{person.address}</span></td>
-                  <td><span>{person.account}</span></td>
-                  <td><span>{person.email.toLowerCase()}</span></td>
-                  <td><span>{person.company}</span></td>
+                  <td><span className={reloadingTable ? "skeleton gradient waving remove" : "name"}>{person.name}</span></td>
+                  <td><span className={reloadingTable ? "skeleton gradient waving remove" : null}>{person.address}</span></td>
+                  <td><span className={reloadingTable ? "skeleton gradient waving remove" : null}>{person.account}</span></td>
+                  <td><span className={reloadingTable ? "skeleton gradient waving remove" : "email"}>{person.email.toLowerCase()}</span></td>
+                  <td><span className={reloadingTable ? "skeleton gradient waving remove" : null}>{person.company}</span></td>
                 </tr>
               ))}
             </tbody>
@@ -418,38 +400,50 @@ const Sample = () => {
           <VariantHeader>
             Cards
           </VariantHeader>
-          <ReloadBtn reload={reloadingTable} onclick={reload} />
+          <ToggleBtn id="cards" checked={reloadingCard} click={() => startReloadingCard(prev => !prev)} />
         </div>
-        <div className="mockup-container">
-          <ul className="cards-container">
-            {data("cards").map((card, i) => (
-              <li key={i} className="card-container">
-                <div className="img-container gridcenter">
-                  <div className="img" style={{ backgroundImage: `url(${card.image})` }} />
-                </div>
-                <div className="info-container">
-                  <div className="product-container">
-                    <div className="name"><h3>{card.product}</h3></div>
-                    <div className="price">SGD {card.price}</div>
-                  </div>
-                  <div className="description-container">
-                    {card.description}
-                  </div>
-                  <div className="footer-container">
-                    <div className="color-container flex-container middle between">
-                      <span className="product-label">Color</span>
-                      <span className="color">{card.color.charAt(0).toUpperCase()}{card.color.slice(1)}</span>
+        <ul className="cards-container">
+          {cards.map((card, i) => (
+            <li key={i} className="card-container">
+              <div className="img-container gridcenter">
+                {reloadingCard
+                  && <div className="placeholder-img skeleton pulsing"><ImagePlaceholder /></div>}
+                <div className="img" style={{ backgroundImage: `url(${card.image})` }} />
+              </div>
+              <div className="info-container">
+                <div className="product-container">
+                  <div className="flex-container between flex-start" style={{ gap: "1rem" }}>
+                    <div className="name-container" style={{ flex: "1" }}>
+                      <div className={reloadingCard ? "name skeleton gradient waving" : "name"}><h3>{card.product}</h3></div>
+                      <div className={reloadingCard ? "price-container skeleton gradient waving" : "price-container"}><span className="currency">SGD</span> <span className="price">{card.price}</span></div>
                     </div>
-                    <div className="material-container flex-container middle between">
-                      <span className="product-label">Material</span>
-                      <span className="product">{card.material}</span>
-                    </div>
+                    <div role="button" className={reloadingCard ? "cart-container skeleton gradient waving" : "cart-container"}><MdAdd /><span className="add">Add</span></div>
                   </div>
                 </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+                <div className="description-container">
+                  {reloadingCard
+                    ? <div className="placeholder-container">
+                      <span className="description-placeholder skeleton gradient waving" />
+                      <span className="description-placeholder skeleton gradient waving" />
+                      <span className="description-placeholder skeleton gradient waving" />
+                      <span className="description-placeholder skeleton gradient waving" />
+                    </div>
+                    : <div className="description">{card.description}</div>}
+                </div>
+                <div className="footer-container">
+                  <div className="color-container flex-container middle between">
+                    <span className={reloadingCard ? "skeleton gradient waving product-label" : "product-label"}><span>Color</span></span>
+                    <span className={reloadingCard ? "skeleton gradient waving info-label" : "info-label"}><span>{card.color.charAt(0).toUpperCase()}{card.color.slice(1)}</span></span>
+                  </div>
+                  <div className="material-container flex-container middle between">
+                    <span className={reloadingCard ? "skeleton gradient waving product-label" : "product-label"}><span>Material</span></span>
+                    <span className={reloadingCard ? "skeleton gradient waving info-label" : "info-label"}><span>{card.material}</span></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </Container>
     </Wrapper>
   )

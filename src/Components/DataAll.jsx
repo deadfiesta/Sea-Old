@@ -1,4 +1,6 @@
 import { Animation, Image, Avatar, Rectangle, Sample } from './Coral/Skeleton'
+import { Spinner, Spinning, SpinWithComponent } from './Coral/Spinner'
+import Textfield from './Coral/Textfield'
 
 const lastUpdated = () => {
     const updated = new Date(document.lastModified)
@@ -691,12 +693,99 @@ const content = [
         ],
         coral: [
             {
+                topic: "By Product / Platform",
+                anchor: "product",
+                subtopics: [
+                    {
+                        title: "SealCloud",
+                        anchor: "sealcloud",
+                        videos: [
+                            {
+                                url: "./media/skeleton/skeleton1.mp4",
+                                type: "SealCloud",
+                                caption: "Refresh Loading Skeleton",
+                            },
+                            {
+                                url: "./media/sidemenu/sidemenu1.mp4",
+                                type: "SealCloud",
+                                caption: "Side Menu Expand",
+                            },
+                            {
+                                url: "./media/drawers/drawer1.mp4",
+                                type: "SealCloud",
+                                caption: "Drawer View Instance Detail",
+                            },
+                            {
+                                url: "./media/drawers/drawer2.mp4",
+                                type: "SealCloud",
+                                caption: "Add Data Disk Drawer",
+                            },
+
+                        ],
+                        description: <Textfield />,
+                    },
+                    {
+                        title: "Review System",
+                        anchor: "review-system",
+                        videos: [
+                            {
+                                url: "./media/page/page1.mp4",
+                                type: "Review System",
+                                caption: "Page Reload",
+                            },
+                            {
+                                url: "./media/sidemenu/sidemenu2.mp4",
+                                type: "Review System",
+                                caption: "Side Menu Expand on Small Screen",
+                            },
+                        ],
+                        description: <Textfield />,
+                    },
+                    {
+                        title: "Investment System",
+                        anchor: "investment",
+                        videos: [
+                            {
+                                url: "./media/sidemenu/sidemenu4.mp4",
+                                type: "Investment System",
+                                caption: "Side Menu Collapse",
+                            },
+                            {
+                                url: "./media/tabs/tab4.mp4",
+                                type: "Investment System",
+                                caption: "Post Deals Intake"
+                            },
+                        ],
+                        description: <Textfield />,
+                    },
+                    {
+                        title: "IT Center",
+                        anchor: "itcenter",
+                        videos: [
+                            {
+                                url: "./media/sidemenu/sidemenu3.mp4",
+                                type: "IT Center",
+                                caption: "Side Menu Collapse",
+                            },
+
+                            {
+                                url: "./media/tabs/tab5.mp4",
+                                type: "IT Center",
+                                caption: "Ticket Details Activity"
+                            },
+                        ],
+                        description: <Textfield />,
+                    },
+
+                ]
+            },
+            {
                 topic: "Large Elements",
                 anchor: "large",
                 subtopics: [
                     {
                         title: "Skeleton",
-                        anchor: "skeleton",
+                        anchor: "skeletonnav",
                         videos: [
                             {
                                 url: "./media/skeleton/skeleton1.mp4",
@@ -915,6 +1004,232 @@ const content = [
                         anchor: "skelsamplle",
                         component: <Sample />,
                     },
+                ]
+            },
+            {
+                topic: "Spinner",
+                anchor: "spinner",
+                // credits: [
+                //     {
+                //         title: "What You Should Know About Skeleton Screen",
+                //         url: "https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a"
+                //     }
+                // ],
+                subtopics: [
+                    {
+                        title: "Static",
+                        anchor: "spinstatic",
+                        component: <Spinner />,
+                    },
+                    {
+                        title: "Animation",
+                        anchor: "spinanim",
+                        component: <Spinning />,
+                    },
+                    {
+                        title: "Display",
+                        anchor: "spindisplay",
+                        component: <SpinWithComponent />,
+                    },
+                ]
+            },
+            {
+                topic: "Navigation / Menu",
+                anchor: "menunav",
+                subtopics: [
+                    {
+                        title: "Side Menu",
+                        anchor: "sidemenuanim",
+                        images: [
+                            {
+                                url: "./media/figma/sidemenu.png",
+                            },
+                            {
+                                url: "./media/figma/sidemenu2.png",
+                            },
+                        ],
+                        component: <Textfield />
+                    },
+                    {
+                        title: "Title Bar",
+                        anchor: "titlebar",
+                        images: [
+                            {
+                                url: "./media/figma/topmenu.png",
+                            }
+                        ],
+                        component: <Textfield />
+                    },
+                    {
+                        title: "Drawer",
+                        anchor: "drawercoral",
+                        videos: [
+                            {
+                                url: "./media/drawers/drawer1.mp4",
+                                type: "SealCloud",
+                                caption: "View Instance Detail",
+                            },
+                            {
+                                url: "./media/drawers/drawer2.mp4",
+                                type: "SealCloud",
+                                caption: "Add Data Disk Drawer",
+                            },
+                        ],
+                        component: <Textfield />
+                    },
+                    {
+                        title: "Tabs",
+                        anchor: "tabsanim",
+                        videos: [
+                            {
+                                url: "./media/tabs/tab1.mp4",
+                                type: "SealCloud",
+                                caption: "Tab in a Drawer Preview for an Instance"
+                            },
+                            {
+                                url: "./media/tabs/tab2.mp4",
+                                type: "SealCloud",
+                                caption: "Cluster Overview Tabs"
+                            },
+                            {
+                                url: "./media/tabs/tab3.mp4",
+                                type: "SealCloud",
+                                caption: "Instance Page View"
+                            },
+                            {
+                                url: "./media/tabs/tab4.mp4",
+                                type: "Investment System",
+                                caption: "Post Deals Intake"
+                            },
+                            {
+                                url: "./media/tabs/tab5.mp4",
+                                type: "IT Center",
+                                caption: "Ticket Details Activity"
+                            },
+                        ],
+                        component: <Textfield />
+                    },
+                    {
+                        title: "Dropdown Menu",
+                        anchor: "dropdownmenu",
+                        images: [
+                            {
+                                url: "./media/figma/dropdown.png"
+                            },
+                        ],
+                        videos: [
+                            {
+                                url: "./media/dropdown/dropdown1.mp4",
+                                type: "SealCloud",
+                                caption: "View More Options"
+                            },
+                            {
+                                url: "./media/dropdown/dropdown2.mp4",
+                                type: "SealCloud",
+                                caption: "[SealCloud] Support and Help"
+                            },
+                            {
+                                url: "./media/dropdown/dropdown3.mp4",
+                                type: "SealCloud",
+                                caption: "[SealCloud] Account Option"
+                            },
+                        ],
+                        component: <Textfield />
+                    }
+                ]
+            },
+            {
+                topic: "Button",
+                anchor: "buttonanim",
+                subtopics: [
+                    {
+                        title: "General Button",
+                        anchor: "buttoninner",
+                        images: [
+                            {
+                                url: "./media/figma/button.png",
+                            }
+                        ],
+                        component: <Textfield />
+                    },
+                    {
+                        title: "Toggle",
+                        anchor: "togglebtn",
+                        images: [
+                            {
+                                url: "./media/figma/togglebutton.png",
+                            }
+                        ],
+                        component: <Textfield />,
+                    },
+                    {
+                        title: "Checkbox",
+                        anchor: "checkbox",
+                        images: [
+                            {
+                                url: "./media/figma/checkbox.png",
+                            }
+                        ],
+                        component: <Textfield />
+                    }
+                ]
+            },
+            {
+                topic: "Alerts",
+                anchor: "alertsanim",
+                subtopics: [
+                    {
+                        title: "Toast",
+                        anchor: "toast",
+                        images: [
+                            {
+                                url: "./media/figma/toast.png"
+                            }
+                        ],
+                        component: <Textfield />
+                    },
+                    {
+                        title: "Dialog / Modal",
+                        anchor: "dialogmodal",
+                        images: [
+                            {
+                                url: "./media/figma/dialog.png"
+                            }
+                        ],
+                        videos: [
+                            {
+                                url: "./media/modals/modal1.mp4",
+                                type: "SealCloud",
+                                caption: "View More Info on SSH Proxy"
+                            },
+                            {
+                                url: "./media/modals/modal2.mp4",
+                                type: "SealCloud",
+                                caption: "Delete Warning Modal"
+                            },
+                            {
+                                url: "./media/modals/modal3.mp4",
+                                type: "SealCloud",
+                                caption: "Confirmation Modal"
+                            },
+                            {
+                                url: "./media/modals/modal4.mp4",
+                                type: "IT Center",
+                                caption: "Leave Page Confirmation"
+                            },
+                            {
+                                url: "./media/modals/modal5.mp4",
+                                type: "IT Center",
+                                caption: "Apply for Multiple Assets"
+                            },
+                        ],
+                        component: <Textfield />
+                    },
+                    {
+                        title: "Tooltip",
+                        anchor: "tooltip",
+                        component: <Textfield />
+                    }
                 ]
             }
         ]

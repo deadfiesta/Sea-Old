@@ -22,13 +22,14 @@ header {
         }
     }
     .hamburger-container.open {
-        z-index: 50;
+        z-index: 100;
     }
     .hamburger-container.fixed {
         top: 3rem;
     }
     .hamburger-container {
         border-radius: .25rem;
+        z-index: 50;
         position: fixed;
         bottom: 1.5rem;
         right: 1.5rem;
@@ -80,8 +81,14 @@ header {
         .tabs-container {
             overflow-x: scroll;
             position: relative;
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+            scrollbar-width: none; /* Firefox */
+            &::-webkit-scrollbar {
+                display: none;
+            }
             @include media {
                 background-color: rgba(color(neutral), 0.25);
+                overflow: hidden;
             }
             ul.tabs {
                 overflow-x: visible;

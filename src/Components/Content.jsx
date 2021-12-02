@@ -44,7 +44,7 @@ const Content = ({ topicId, data, onclick }) => {
                     <h2>{heading.topic}</h2>
                     <ul className="subsection-container">
                         {heading.subtopics.map((subtopic, i) => (
-                            <li key={i} className={subtopic.anchor} >
+                            <li key={i} id={subtopic.anchor} >
                                 <div className="top-container">
 
                                     {subtopic.link !== undefined

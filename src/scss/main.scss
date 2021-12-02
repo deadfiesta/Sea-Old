@@ -146,15 +146,15 @@ section {
     }
     .caption-container {
         @include flex {
-            gap: .5rem;
+            gap: 0.5rem;
             align-items: center;
         }
         .type {
-            border-radius: .25rem;
+            border-radius: 0.25rem;
             font-size: 10px;
             font-weight: 600;
             line-height: 22px;
-            padding: 0 .5rem;
+            padding: 0 0.5rem;
             background-color: color(gray, secondary);
             color: color(neutral);
         }
@@ -248,7 +248,7 @@ section {
             &:hover {
                 color: color(accent, sea);
                 .title-container {
-                    gap: .5rem;
+                    gap: 0.5rem;
                 }
             }
         }
@@ -264,7 +264,7 @@ section {
             .title-container {
                 cursor: pointer;
                 padding: 0.5rem 0;
-                transition: all .3s ease;
+                transition: all 0.3s ease;
                 @include flex {
                     align-items: center;
                     gap: 1rem;
@@ -278,7 +278,6 @@ section {
                     // @include media {
                     //     max-width: var(--max-width);
                     // }
-                    
                 }
             }
         }
@@ -302,7 +301,7 @@ section {
     button.view-code {
         @include flex {
             align-items: center;
-            gap: .25rem;
+            gap: 0.25rem;
         }
         font-family: inherit;
         font-size: 14px;
@@ -310,35 +309,99 @@ section {
         cursor: pointer;
         border: 1px solid color(neutral, divider);
         width: fit-content;
-        padding: .75rem 1rem;
+        padding: 0.75rem 1rem;
         background: none;
-        border-radius: .25rem;
-        transition: background-color .1s ease;
+        border-radius: 0.25rem;
+        transition: background-color 0.1s ease;
         &:hover {
-            background-color: color(neutral, bg)
+            background-color: color(neutral, bg);
         }
         &:active {
-            background-color: darken(color(neutral, bg), 5%)
+            background-color: darken(color(neutral, bg), 5%);
         }
         &:disabled {
             background-color: color(neutral, bg);
             cursor: not-allowed;
-            filter: saturate(0)
+            filter: saturate(0);
         }
     }
     button.view-code.reload {
         &:disabled {
             svg {
-                animation: rotate 1100ms ease forwards;
+                animation: rotate 1250ms ease forwards;
                 @keyframes rotate {
                     from {
-                        transform: rotate(0)
+                        transform: rotate(0);
                     }
                     to {
                         transform: rotate(720deg);
                     }
                 }
             }
+        }
+    }
+    .toggle-container {
+        position: relative;
+        span {
+            font-size: 14px;
+        }
+    }
+    label.toggle {
+        display: block;
+        position: relative;
+        width: 2.65rem;
+        height: 1.5rem;
+        border-collapse: collapse;
+        border-radius: 0.725rem;
+        overflow: hidden;
+        background: linear-gradient(to top right,
+        color(accent), lighten(color(accent), 10%));
+        outline: 1px solid darken(color(neutral, divider), 2%);
+        transition: all .3s ease;
+        &:after {
+            position: absolute;
+            display: block;
+            content: "";
+            left: 3px;
+            top: 50%;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 0.725rem;
+            background-color: color(neutral);
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            border: 1px solid darken(color(neutral, divider), 2%);
+            border-collapse: collapse;
+        }
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: lighten(color(neutral, bg), 2%);
+            border-radius: 0.725rem;
+            transition: all .2s ease;
+        }
+        &:active {
+            outline: 1px solid color(accent);
+            box-shadow: 0 0 .25rem 0 rgba(color(accent), .5);
+        }
+        &:active::after {
+            width: 1.5rem;
+        }
+    }
+    input {
+        position: absolute;
+        appearance: none;
+        &:checked + label.toggle::before {
+            margin: 0.75rem;
+        }
+        &:checked + label.toggle::after {
+            left: initial;
+            right: 3px;
+            transition: all 0.3s ease;
         }
     }
 }

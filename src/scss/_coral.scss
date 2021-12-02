@@ -46,7 +46,38 @@
   }
 }
 
+.field {
+  padding: 1rem;
+  border: 1px solid color(neutral, divider);
+  border-radius: .25rem;
+  transition: all .1s ease;
+  @include flex(column) {
+    gap: .25rem;
+  }
+  h3 {
+    font-size: 14px;
+    font-weight: 400;
+    color: color(gray, secondary);
+  }
+  &:focus {
+    border: 1px solid color(accent);
+    background-color: color(neutral, bg);
+  }
+}
+
+.codeblock-container.grid {
+  @include flex(column) {
+    gap: 1rem;
+  }
+  @include media {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
 .skeleton {
+  border-radius: 0.25rem;
   background-color: #f2f3f4;
 }
 .skeleton.gradient {
@@ -54,14 +85,14 @@
 }
 
 .skeleton.gradient.waving {
-  background-size: 200% 100%;
+  background-size: 400% 100%;
   animation: wave 1000ms linear infinite;
   @keyframes wave {
     from {
-      background-position: 0%;
+      background-position: 100%;
     }
     to {
-      background-position: -200%;
+      background-position: 0%;
     }
   }
 }
@@ -92,13 +123,12 @@
     text-align: center;
   }
   figcaption.label {
-    opacity: 0.75;
     font-size: 14px;
   }
 }
 
 .skeleton.remove {
-  color: rgba(color(neutral), 0)
+  color: rgba(color(neutral), 0);
 }
 
 table {
@@ -107,7 +137,7 @@ table {
   th {
     font-weight: 600;
     color: color(gray);
-    background-color: color(neutral, bg)
+    background-color: color(neutral, bg);
   }
   th,
   td {
@@ -129,21 +159,28 @@ table {
         display: none;
       }
     }
+
     span {
       display: block;
+    }
+    span.name {
+      color: color(gray);
+    }
+    span.email {
+      color: color(accent);
     }
   }
 }
 
 ul.cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   @include media {
     gap: 3rem;
   }
   li.card-container {
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     border: 1px solid color(neutral, divider);
     .info-container {
       flex: 1;
@@ -152,29 +189,178 @@ ul.cards-container {
       }
     }
     .product-container {
-      padding: 1rem 2rem .5rem 2rem;
+      padding: 1rem 1.5rem 0.5rem;
+    }
+    .name-container {
+      @include flex(column) {
+        gap: 0.5rem;
+      }
+    }
+    .name h3 {
+      line-height: 24px;
+    }
+    .name.skeleton {
+      width: 100%;
+      h3 {
+        visibility: hidden;
+      }
+    }
+    .cart-container.skeleton {
+      cursor: default;
+      outline: none;
+      span,
+      svg {
+        visibility: hidden;
+      }
+    }
+    .cart-container {
+      cursor: pointer;
+      color: color(accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.25rem;
+      outline: 1px solid color(accent);
+      transition: all 0.2s ease;
+      @include flex {
+        align-items: center;
+        gap: 0.25rem;
+      }
+      &:hover {
+        background-color: color(neutral, bg);
+      }
+      .add {
+        font-weight: 600;
+      }
+    }
+    .price-container.skeleton {
+      span {
+        visibility: hidden;
+      }
+    }
+    .price-container {
+      line-height: 16px;
+      max-width: 10ch;
+      @include flex {
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+      .currency {
+        font-size: 12px;
+      }
+      .price {
+        // font-weight: 600;
+        color: color(accent);
+      }
     }
     .description-container {
       flex: 1 0;
       font-size: 14px;
       line-height: 24px;
-      padding: .5rem 2rem 1rem 2rem;
+      padding: 0.5rem 1.5rem 1rem;
+      .placeholder-container {
+        @include flex(column) {
+          gap: 0.5rem;
+        }
+      }
+    }
+    .description-placeholder {
+      display: block;
+      width: 100%;
+      height: 1rem;
+      &:last-child {
+        width: 50%;
+      }
     }
     .img-container {
+      position: relative;
       padding: 2rem;
-      border-bottom: 1px solid color(neutral, divider)
+      border-bottom: 1px solid color(neutral, divider);
+    }
+    .placeholder-img {
+      display: grid;
+      place-items: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 124px;
+      height: 124px;
+      border-radius: 0.25rem;
+      transform: translateX(-50%) translateY(-50%);
     }
     .img {
-      border-radius: .25rem;
+      border-radius: 0.25rem;
       display: block;
       width: 120px;
       height: 120px;
       background: color(neutral, bg) center center / cover no-repeat;
     }
     .footer-container {
-      font-size: 12px;
-      background-color: color(neutral, bg);
-      padding: 1rem 2rem;
+      @include flex(column) {
+        gap: 0.5rem;
+      }
+      line-height: 16px;
+      font-size: 14px;
+      padding: 1rem 1.5rem;
+      .product-label.skeleton,
+      .info-label.skeleton {
+        span {
+          visibility: hidden;
+        }
+      }
+      .product-label {
+        width: 45%;
+      }
+      .info-label {
+        text-align: right;
+        width: 25%;
+      }
+    }
+  }
+}
+.spinner-container {
+  $length: 65.54832458496094;
+  $spinnerColor: #9499a4;
+  .spinner {
+    .stroke {
+      fill: none;
+      transform-origin: center;
+      stroke: $spinnerColor;
+      stroke-width: 3px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: $length;
+      stroke-dashoffset: $length/4;
+    }
+  }
+}
+.spinner-container.spinning {
+  $duration: 1.25s;
+  $length: 65.54832458496094;
+  .spinner {
+    animation: spin $duration linear infinite;
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .stroke {
+      backface-visibility: hidden;
+      animation: trim $duration ease-in-out infinite;
+      @keyframes trim {
+        0% {
+          stroke-dashoffset: $length/1.1;
+        }
+        50% {
+          stroke-dashoffset: $length/4;
+          transform: rotate(135deg);
+        }
+        100% {
+          stroke-dashoffset: $length/1.1;
+          transform: rotate(360deg);
+        }
+      }
     }
   }
 }
