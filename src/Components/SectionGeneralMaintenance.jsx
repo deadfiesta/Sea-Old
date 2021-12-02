@@ -1,9 +1,14 @@
 import React from 'react'
+import { useRef, useState } from 'react'
 import SectionTitle from './SectionTitle'
 import WretchSVG from './Icons/WretchSVG'
 import TieSVG from './Icons/TieSVG'
 import ClipboardSVG from './Icons/ClipboardSVG'
 import DashboardSVG from './Icons/DashboardSVG'
+import LivingImg from '../img/living-01-full.jpg'
+import DishwasherImg from '../img/kitchen-01-full.jpg'
+import KitchenImg from '../img/kitchen-02-full.jpg'
+import CoffeeImg from '../img/living-02-full.jpg'
 
 const SectionGeneralMaintenance = () => {
 
@@ -36,17 +41,31 @@ const SectionGeneralMaintenance = () => {
   }
 
   const Maintenance = () => {
+    const container = useRef(null)
+    const images = [LivingImg, DishwasherImg, KitchenImg, CoffeeImg]
+    const [bgImage, setBgImage] = useState({
+      backgroundImage: `url(${LivingImg})`
+    })
+
+    const tickle = (e) => {
+      setBgImage({ backgroundImage: `url(${images[e.currentTarget.id]})` })
+      container.current.classList.add('anim')
+      setTimeout(() => {
+        container.current.classList.remove('anim')
+      }, 300)
+    }
+
     return (
       <div className="content-container">
         <div className="image-container">
-          <div className="image" style={{backgroundImage: data.image}}></div>
+          <div ref={container} className="image" style={bgImage} />
         </div>
         <div className="cards-container">
           <ul className="cards">
             {data.cards.map((card, i) => (
-              <li key={i}>
+              <li onMouseEnter={tickle} id={i} key={i}>
                 <div className="icon-container">
-                {card.icon}
+                  {card.icon}
                 </div>
                 <h3>{card.title}</h3>
                 <p>{card.text}</p>
@@ -55,10 +74,8 @@ const SectionGeneralMaintenance = () => {
           </ul>
         </div>
       </div>
-
     )
   }
-
   return (
     <section id="general-maintenance">
       <div className="wrapper">

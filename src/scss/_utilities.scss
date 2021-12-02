@@ -1,7 +1,8 @@
 .wrapper {
+  $max-width: 1440px;
   margin: 0 20px;
-  max-width: 1400px;
-  @include media("min", "1440px") {
+  max-width: $max-width;
+  @include media("min", $max-width) {
     margin: 0 auto;
   }
 }
@@ -27,5 +28,19 @@ svg {
   path.stroke {
     stroke: color(accent);
     fill: none;
+  }
+}
+
+.label {
+  width: fit-content;
+  border-radius: 1rem;
+  padding: 0.125rem 0.5rem;
+  color: color(accent, secondary);
+  background-color: rgba(color(accent, secondary), 0.1);
+  font-weight: 700;
+  font-size: 0.8rem;
+  @include flex {
+    gap: 0.5rem;
+    align-items: center;
   }
 }

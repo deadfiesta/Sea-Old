@@ -13,6 +13,10 @@ section#reasons {
       grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
       gap: 2.5rem;
     }
+    @include media("max", $cardbreakpoint) {
+      max-width: $cardmaxwidth;
+      margin: 0 auto;
+    }
     li {
       @include flex(column) {
         gap:1rem;

@@ -92,6 +92,7 @@ header {
   background: linear-gradient(to bottom, rgba(color(gray), 0.2), rgba(color(gray), 0)),
     color(bg) url("../img/sponge-01-full.jpg") center center / cover no-repeat;
   background-blend-mode: multiply;
+  // transition:  background-position-y .3s ease-out;
   .header-container {
     color: color(neutral);
     height: 380px;
@@ -128,13 +129,6 @@ section {
   }
 }
 
-section#plans {
-  padding: 3rem 0;
-  background-color: color(bg);
-  @include media {
-    padding: 6rem 0;
-  }
-}
 .toggle-container {
   @include flex {
     gap: 1rem;
@@ -200,7 +194,6 @@ section#plans {
       transition: all 0.15s ease;
     }
     &:active {
-      // border: .5rem solid color(accent);
       &:after {
         width: 2.25rem;
       }

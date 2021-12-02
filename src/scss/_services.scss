@@ -11,6 +11,10 @@ section#services {
     @include media {
       gap: 2.5rem;
     }
+    @include media("max", $cardbreakpoint) {
+      max-width: $cardmaxwidth;
+      margin: 0 auto;
+    }
     li {
       cursor: default;
       @include flex(column) {
@@ -20,15 +24,6 @@ section#services {
         }
         h3 {
           color: color(gray);
-        }
-        .label {
-          width: fit-content;
-          padding: .125rem .75rem;
-          border-radius: .75rem;
-          font-weight: 700;
-          font-size: .75rem;
-          color: color(accent, secondary);
-          background-color: rgba(color(accent, secondary), .1)
         }
       }
     }

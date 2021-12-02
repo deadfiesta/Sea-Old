@@ -1,11 +1,17 @@
 #plans {
+  padding: 4rem 0;
+  background-color: color(bg);
   ul.plans-container {
     width: 100%;
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 1fr;
-    @include media("min", "560px") {
+    @include media("min", $cardbreakpoint) {
       grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+    }
+    @include media("max", $cardbreakpoint) {
+      margin: 0 auto;
+      max-width: $cardmaxwidth;
     }
     @include media {
       gap: 2.5rem;
@@ -19,17 +25,16 @@
       }
     }
     li.plan {
+      @include flex(column);
       cursor: pointer;
-      display: grid;
       border-radius: 0.5rem;
-      grid-template-rows: 1fr 2fr 1fr;
       background-color: color(neutral);
       overflow: hidden;
       transition: all .15s ease;
       &:hover {
         box-shadow: 0 0 1rem rgba(color(gray), 0.05), 5px 0.5rem 32rem rgba(color(gray), 0.1);
         transform: scale(1.015);
-        button.choose-plan {
+        .button-container {
           background-color: color(accent);
           span,
           svg {
@@ -60,29 +65,18 @@
       }
       .price-container {
         padding: 1rem 1.5rem;
-        display: grid;
-        place-items: center;
-        gap: 1.5rem;
+        @include flex(column) {
+          gap: 1.5rem;
+        }
         @include media {
           padding: 1.5rem 2rem;
           gap: 2rem;
         }
         .label-container {
-          overflow-x: hidden;
+          overflow: hidden;
           display: inline-block;
           width: 100%;
           .label {
-            width: fit-content;
-            border-radius: 1rem;
-            padding: 0.125rem 0.5rem;
-            color: color(accent, secondary);
-            background-color: rgba(color(accent, secondary), 0.1);
-            font-weight: 700;
-            font-size: 0.8rem;
-            @include flex {
-              gap: 0.5rem;
-              align-items: center;
-            }
             animation: entry-left 0.15s ease-out forwards;
             @keyframes entry-left {
               from {
@@ -134,11 +128,8 @@
           color: color(gray, secondary);
         }
       }
-      .choose-container {
-        width: 100%;
-        @include flex(column) {
-          justify-content: flex-end;
-        }
+      .button-container {
+        flex: 1;
         button.choose-plan {
           cursor: pointer;
           color: color(gray, secondary);

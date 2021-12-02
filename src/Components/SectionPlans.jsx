@@ -6,6 +6,9 @@ import { MdTaskAlt, MdKeyboardArrowRight, MdKeyboardArrowDown } from "react-icon
 const SectionPlans = () => {
 
   const [toggle, setToggle] = useState(true)
+  const tickle = () => {
+    setToggle(prev => !prev)
+  }
 
   const data = {
     title: "Find a Plan for Your Home",
@@ -81,14 +84,15 @@ const SectionPlans = () => {
             </div>
 
             <div className="price-container">
-              {toggle && <div className="label-container"><span className="label"><MdTaskAlt /> Save $60</span></div>}
+              
               <div className="price-info">
                 <div className="price"><span className="big-number">{toggle ? plan.annualrate : plan.monthlyrate}</span><span className="per-month">/ month</span></div>
                 <div className={toggle ? "annual notes" : "notes"}><span className={toggle ? "un em" : "em"}>{toggle ? plan.note : `${plan.annualrate} per month`}</span><span className={toggle ? "hide if-annual" : "if-annual"}> if billed annually</span></div>
               </div>
+              {toggle && <div className="label-container"><span className="label"><MdTaskAlt /> Save $60</span></div>}
             </div>
 
-            <div className="choose-container">
+            <div className="button-container">
               <button className="choose-plan"><span>Choose Plan</span><MdKeyboardArrowRight /></button>
             </div>
           </li>
@@ -112,7 +116,7 @@ const SectionPlans = () => {
     <section id="plans">
       <div className="wrapper">
         <SectionTitle title={data.title} subtitle={data.subtitle} />
-        <Toggle toggle={toggle} onchange={() => setToggle(prev => !prev)} />
+        <Toggle toggle={toggle} onchange={tickle} />
         <Plans />
         <BottomNotes />
       </div>

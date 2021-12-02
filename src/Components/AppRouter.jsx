@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom'
 import Nav from './Nav'
 import Scrium from './Scrium'
-import PricingPage from './PricingPage'
+import PricingPage from './PagePricing'
 
 const AppRouter = () => {
   const [isOpen, setOpen] = useState(false)

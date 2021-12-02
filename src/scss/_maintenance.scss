@@ -18,7 +18,17 @@ section#general-maintenance {
     border-radius: .25rem;
     .image {
       height: 100%;
-      background: color(bg) url("../img/living-01-full.jpg") center center / cover no-repeat;
+      background: color(bg) center center / cover no-repeat;
+    }
+    .image.anim {
+      animation: appear .3s ease forwards;
+      @keyframes appear {
+        from {
+          transform: scale(1.025);
+        } to {
+          transform: scale(1);
+        }
+      }
     }
   }
   ul.cards {
@@ -26,6 +36,10 @@ section#general-maintenance {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
+    @include media("max", $cardbreakpoint) {
+      margin: 0 auto;
+      max-width: $cardmaxwidth;
+    }
     li {
       cursor: default;
       background-color: color(neutral);

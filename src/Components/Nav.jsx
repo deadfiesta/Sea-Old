@@ -7,8 +7,6 @@ import { Spiral as Hamburger } from 'hamburger-react'
 
 const Nav = ({ open, setOpen }) => {
 
-  console.log('Render Nav.jsx')
-
   const pathname = useLocation().pathname;
   const [active, setActive] = useState({
     left: 0,
