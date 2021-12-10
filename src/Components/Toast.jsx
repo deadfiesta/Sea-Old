@@ -5,15 +5,12 @@ import {useSpring, animated } from 'react-spring'
 const Toast = ({ message, id, duration, update }) => {
 
     const toasty = useRef()
-    
     const [entry, api] = useSpring(()=> ({ opacity: 0, y: -10, config: { tension: 200 } }))
-
-    
 
     useEffect(()=> {
         api.start({ opacity: 1, y: 0 })
         setTimeout(()=> {
-            api.start({ opacity: 0, y: 10 })
+            api.start({ opacity: 0 })
         }, duration - 300)
     })
 

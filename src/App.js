@@ -10,12 +10,12 @@ function App() {
   const [move, api] = useSpring(() => ({ y: 0 }))
 
   const updateToast = (id, duration, height) => {
-    setTimeout(()=> {
-      api.start({ y: container.current.offsetHeight - height, config: {duration: 0} })
-    }, duration)
     setTimeout(() => {
       let go = document.getElementById(id)
-      go !== null && go.remove()
+      if (go !== null) {
+        api.start({ y: container.current.offsetHeight - height, config: {duration: 0} })
+        go.remove()
+      }
     }, duration);
   };
 
@@ -38,7 +38,6 @@ function App() {
 
   useEffect(() => {
     api.start({ y: container.current.offsetHeight, config: { tension: 170, friction: 26 } })
-    console.log(container)
   }, [toasts])
 
   return (
