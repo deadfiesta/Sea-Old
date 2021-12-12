@@ -1,9 +1,8 @@
 import React from 'react'
 import '../scss/main.scss'
-import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { useState } from 'react'
 import Header from './Header'
-// import ContentLayout from './ContentLayout'
 import { Spin as Hamburger } from 'hamburger-react'
 import PageResearch from './PageResearch'
 import PageCoral from './PageCoral'
@@ -24,22 +23,12 @@ const AppRouter = () => {
                     <Hamburger toggled={isOpen} toggle={setOpen} direction="right" />
                 </Header>
                 <Routes>
-                    <Route path="/" element={<ContentContainer />}>
-                        <Route path="/" element={<PageResearch open={isOpen} close={closeMenu} />} />
-                        <Route path="/coral" element={<PageCoral open={isOpen} close={closeMenu} />} />
-                        <Route path="/mockup" element={<PageMockup open={isOpen} close={closeMenu} />} />
-                    </Route>
+                <Route path="/" element={<PageMockup open={isOpen} close={closeMenu} />} />
+                    <Route path="/coral" element={<PageCoral open={isOpen} close={closeMenu} />} />
+                    <Route path="/research" element={<PageResearch open={isOpen} close={closeMenu} />} />
                 </Routes>
             </Router>
         </>
-    )
-}
-
-const ContentContainer = () => {
-    return (
-        <div className="content">
-            <Outlet />
-        </div>
     )
 }
 

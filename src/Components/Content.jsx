@@ -93,7 +93,7 @@ const Content = ({ topicId, data, onclick }) => {
                                 </div>
                                 {subtopic.description !== undefined &&
                                     <div className="bottom-container">
-                                        <p>{subtopic.description}</p>
+                                        {subtopic.description}
                                     </div>
                                 }
                             </li>

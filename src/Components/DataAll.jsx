@@ -1,5 +1,6 @@
 import { Animation, Image, Avatar, Rectangle, Sample } from './Coral/Skeleton'
-import { Spinner, Spinning, SpinWithComponent } from './Coral/Spinner'
+import { Spinner, Spinning } from './Coral/Spinner'
+import { ToastShowcase } from './Coral/Alert'
 import Textfield from './Coral/Textfield'
 
 const lastUpdated = () => {
@@ -25,8 +26,8 @@ const content = [
         ],
         tabs: [
             {
-                title: "Research",
-                id: "research",
+                title: "Mock Up",
+                id: "mockup",
                 anchor: "/"
             },
             {
@@ -35,9 +36,9 @@ const content = [
                 anchor: "/coral"
             },
             {
-                title: "Mock Up",
-                id: "mockup",
-                anchor: "/mockup"
+                title: "Research",
+                id: "research",
+                anchor: "/research"
             },
         ]
     },
@@ -1026,11 +1027,6 @@ const content = [
                         anchor: "spinanim",
                         component: <Spinning />,
                     },
-                    {
-                        title: "Display",
-                        anchor: "spindisplay",
-                        component: <SpinWithComponent />,
-                    },
                 ]
             },
             {
@@ -1181,12 +1177,7 @@ const content = [
                     {
                         title: "Toast",
                         anchor: "toast",
-                        images: [
-                            {
-                                url: "./media/figma/toast.png"
-                            }
-                        ],
-                        component: <Textfield />
+                        component: <ToastShowcase status="warning" button="Button" close={true} />
                     },
                     {
                         title: "Dialog / Modal",

@@ -200,8 +200,10 @@ section {
         grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
         background-color: color(neutral, bg);
         gap: 1rem;
-        padding: 1rem;
         width: 100%;
+        @include media {
+            padding: 1rem;
+        }
         @keyframes setToInvisible {
             from {
                 visibility: visible;
@@ -230,6 +232,7 @@ section {
                 overflow: hidden;
                 max-height: 19rem;
                 object-fit: contain;
+                max-width: 280px;
             }
             figcaption {
                 opacity: 0.75;
@@ -345,63 +348,62 @@ section {
         span {
             font-size: 14px;
         }
-    }
-    label.toggle {
-        display: block;
-        position: relative;
-        width: 2.65rem;
-        height: 1.5rem;
-        border-collapse: collapse;
-        border-radius: 0.725rem;
-        overflow: hidden;
-        background: linear-gradient(to top right,
-        color(accent), lighten(color(accent), 10%));
-        outline: 1px solid darken(color(neutral, divider), 2%);
-        transition: all .3s ease;
-        &:after {
-            position: absolute;
+        label.toggle {
             display: block;
-            content: "";
-            left: 3px;
-            top: 50%;
-            height: 1rem;
-            width: 1rem;
-            border-radius: 0.725rem;
-            background-color: color(neutral);
-            transform: translateY(-50%);
-            transition: all 0.3s ease;
-            border: 1px solid darken(color(neutral, divider), 2%);
+            position: relative;
+            width: 2.65rem;
+            height: 1.5rem;
             border-collapse: collapse;
-        }
-        &:before {
-            position: absolute;
-            content: "";
-            left: 0;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            background-color: lighten(color(neutral, bg), 2%);
             border-radius: 0.725rem;
-            transition: all .2s ease;
-        }
-        &:active {
-            outline: 1px solid color(accent);
-            box-shadow: 0 0 .25rem 0 rgba(color(accent), .5);
-        }
-        &:active::after {
-            width: 1.5rem;
-        }
-    }
-    input {
-        position: absolute;
-        appearance: none;
-        &:checked + label.toggle::before {
-            margin: 0.75rem;
-        }
-        &:checked + label.toggle::after {
-            left: initial;
-            right: 3px;
+            overflow: hidden;
+            background: linear-gradient(to top right, color(accent), lighten(color(accent), 10%));
+            outline: 1px solid darken(color(neutral, divider), 2%);
             transition: all 0.3s ease;
+            &:after {
+                position: absolute;
+                display: block;
+                content: "";
+                left: 3px;
+                top: 50%;
+                height: 1rem;
+                width: 1rem;
+                border-radius: 0.725rem;
+                background-color: color(neutral);
+                transform: translateY(-50%);
+                transition: all 0.3s ease;
+                border: 1px solid darken(color(neutral, divider), 2%);
+                border-collapse: collapse;
+            }
+            &:before {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                background-color: lighten(color(neutral, bg), 2%);
+                border-radius: 0.725rem;
+                transition: all 0.2s ease;
+            }
+            &:active {
+                outline: 1px solid color(accent);
+                box-shadow: 0 0 0.25rem 0 rgba(color(accent), 0.5);
+            }
+            &:active::after {
+                width: 1.5rem;
+            }
+        }
+        input {
+            position: absolute;
+            appearance: none;
+            &:checked + label.toggle::before {
+                margin: 0.75rem;
+            }
+            &:checked + label.toggle::after {
+                left: initial;
+                right: 3px;
+                transition: all 0.3s ease;
+            }
         }
     }
 }

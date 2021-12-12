@@ -10,7 +10,6 @@ const Navigation = ({ onclick, highlight, data, open }) => {
             height: 0,
         }
     )
-
     let nav = data
     const menuHeight = 48
 

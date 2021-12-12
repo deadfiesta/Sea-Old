@@ -16,14 +16,14 @@ const PageCoral = ({ open, close }) => {
   }
 
   return (
-    <>
+    <div className="content">
       <Navigation onclick={change} highlight={topicIndex} data={contentData} open={open} />
       {
         open
         && <Scrium click={close} />
       }
       <Content topicId={topicIndex} data={contentData} onclick={change} />
-    </>
+    </div>
   )
 }
 
