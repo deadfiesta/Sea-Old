@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/motion/static/css/main.81d36f8b.chunk.css",
-    "main.js": "/motion/static/js/main.c9ce213d.chunk.js",
-    "main.js.map": "/motion/static/js/main.c9ce213d.chunk.js.map",
+    "main.css": "/motion/static/css/main.6e9b28f1.chunk.css",
+    "main.js": "/motion/static/js/main.c0fea7ba.chunk.js",
+    "main.js.map": "/motion/static/js/main.c0fea7ba.chunk.js.map",
     "runtime-main.js": "/motion/static/js/runtime-main.440c0194.js",
     "runtime-main.js.map": "/motion/static/js/runtime-main.440c0194.js.map",
     "static/css/2.0d0b0543.chunk.css": "/motion/static/css/2.0d0b0543.chunk.css",
@@ -12,15 +12,16 @@
     "static/js/3.631c7785.chunk.js.map": "/motion/static/js/3.631c7785.chunk.js.map",
     "index.html": "/motion/index.html",
     "static/css/2.0d0b0543.chunk.css.map": "/motion/static/css/2.0d0b0543.chunk.css.map",
-    "static/css/main.81d36f8b.chunk.css.map": "/motion/static/css/main.81d36f8b.chunk.css.map",
+    "static/css/main.6e9b28f1.chunk.css.map": "/motion/static/css/main.6e9b28f1.chunk.css.map",
     "static/js/2.404e30ba.chunk.js.LICENSE.txt": "/motion/static/js/2.404e30ba.chunk.js.LICENSE.txt",
+    "static/media/img-sample.452d4648.jpg": "/motion/static/media/img-sample.452d4648.jpg",
     "static/media/main.scss": "/motion/static/media/me.2bc2bcf6.png"
   },
   "entrypoints": [
     "static/js/runtime-main.440c0194.js",
     "static/css/2.0d0b0543.chunk.css",
     "static/js/2.404e30ba.chunk.js",
-    "static/css/main.81d36f8b.chunk.css",
-    "static/js/main.c9ce213d.chunk.js"
+    "static/css/main.6e9b28f1.chunk.css",
+    "static/js/main.c0fea7ba.chunk.js"
   ]
 }
