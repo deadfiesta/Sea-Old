@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/giftcard/static/css/main.069393cb.chunk.css",
+    "main.js": "/giftcard/static/js/main.e21e0a37.chunk.js",
+    "main.js.map": "/giftcard/static/js/main.e21e0a37.chunk.js.map",
+    "runtime-main.js": "/giftcard/static/js/runtime-main.23b8b763.js",
+    "runtime-main.js.map": "/giftcard/static/js/runtime-main.23b8b763.js.map",
+    "static/js/2.bb9b5569.chunk.js": "/giftcard/static/js/2.bb9b5569.chunk.js",
+    "static/js/2.bb9b5569.chunk.js.map": "/giftcard/static/js/2.bb9b5569.chunk.js.map",
+    "static/js/3.470d399c.chunk.js": "/giftcard/static/js/3.470d399c.chunk.js",
+    "static/js/3.470d399c.chunk.js.map": "/giftcard/static/js/3.470d399c.chunk.js.map",
+    "index.html": "/giftcard/index.html",
+    "static/css/main.069393cb.chunk.css.map": "/giftcard/static/css/main.069393cb.chunk.css.map",
+    "static/js/2.bb9b5569.chunk.js.LICENSE.txt": "/giftcard/static/js/2.bb9b5569.chunk.js.LICENSE.txt",
+    "static/media/bg.6925a158.jpg": "/giftcard/static/media/bg.6925a158.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.23b8b763.js",
+    "static/js/2.bb9b5569.chunk.js",
+    "static/css/main.069393cb.chunk.css",
+    "static/js/main.e21e0a37.chunk.js"
+  ]
+}
