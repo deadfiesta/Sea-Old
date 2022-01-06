@@ -29,7 +29,7 @@ const Toast = ({ id, message, duration, status, update, content, close, button, 
     //Pause and reset timer with remaining delay
     if (pausing) {
       clearTimeout(timer)
-      api.start({ transform: "scale(1.015)", config: { tension: 600, friction: 30} })
+      api.start({ transform: "scale(1)", config: { tension: 600, friction: 30} })
       let pause = Date.now()
       remaining.current -= pause - start
     } else {
@@ -56,10 +56,10 @@ const Toast = ({ id, message, duration, status, update, content, close, button, 
   })
 
   return (
-    <animated.div onMouseEnter={() => setPause(true)} onMouseLeave={() => setPause(false)} style={still ? null : entry} ref={toasty} id={id} className={still ? "coral toast-container" : "coral toast-container"}>
+    <animated.div onMouseEnter={() => setPause(true)} onMouseLeave={() => setPause(false)} onFocus={() => setPause(true)} onBlur={()=> setPause(false)} style={still ? null : entry} ref={toasty} id={id} className={still ? "coral toast-container" : "coral toast-container"}>
       <span className="container">
         {status && <StatusIcon status={status} />}
-        {message !== '' && <div className="message-container" style={{ maxWidth: status ? 260 : 288 }} >{message}</div>}
+        {message !== '' && <div className="message-container" >{message}</div>}
         {button !== '' && !content && <div onClick={del} className="close-container"><Button >{button}</Button></div>}
         {close && <div onClick={del} className="close-container"><StatusIcon status="close" /></div>}
       </span>

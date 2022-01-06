@@ -1,0 +1,91 @@
+.dialogue-container {
+  @include flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background-color: color(neutral);
+  border-radius: 0.25rem;
+  .dialogue-content {
+    flex: 1;
+    @include flex(column) {
+      gap: 0.5rem;
+    }
+  }
+}
+
+input[type="text"] {
+  border-radius: 0.25rem;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  height: 2.25rem;
+  transition: all 0.3s ease;
+  padding: 0 0.75rem;
+  color: color(coral);
+  border: 1px solid color(neutral, divider);
+  width: 100%;
+  &:focus {
+    border-color: color(coral, blue);
+    outline: 0;
+  }
+  &::placeholder {
+    color: rgba(color(coral, secondary), 0.35);
+  }
+}
+
+.statuses {
+  position: relative;
+  input[type="radio"] {
+    appearance: none;
+    position: absolute;
+    top: 0;
+    &:active + label {
+      transform: scale(0.95);
+    }
+    &:checked + label[for="infod"] {
+      background-color: rgba(color(coral, blue), 0.1);
+      border-color: color(coral, blue);
+    }
+    &:checked + label[for="checkd"] {
+      background-color: rgba(color(coral, green), 0.1);
+      border-color: color(coral, green);
+    }
+    &:checked + label[for="crossd"] {
+      background-color: rgba(color(coral, red), 0.1);
+      border-color: color(coral, red);
+    }
+    &:checked + label[for="warnd"] {
+      background-color: rgba(color(coral, yellow), 0.1);
+      border-color: color(coral, yellow);
+    }
+  }
+  label {
+    cursor: pointer;
+    border-collapse: collapse;
+    display: grid;
+    place-items: center;
+    height: 2.25rem;
+    width: 2.25rem;
+    border: 1px solid color(neutral, divider);
+    border-radius: 0.25rem;
+  }
+  label[for="infod"] {
+    color: color(coral, blue);
+    &:hover {
+      border-color: rgba(color(coral, blue), 0.5);
+      background-color: rgba(color(coral, blue), .025)
+    }
+  }
+  label[for="checkd"] {
+    color: color(coral, green);
+  }
+  label[for="crossd"] {
+    color: color(coral, red);
+  }
+  label[for="warnd"] {
+    color: color(coral, yellow);
+  }
+}
+
+.Rdroh {
+  width: initial !important;
+}

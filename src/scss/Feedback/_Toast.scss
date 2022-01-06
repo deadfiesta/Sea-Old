@@ -1,0 +1,282 @@
+.toastlist-container {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  margin: 16px 0;
+  transform: translateY(-100%);
+  @include flex {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .toastlist {
+    position: relative;
+    pointer-events: all;
+    @include flex(column-reverse) {
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .toast-container.toasty {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+.message-container {
+  cursor: text;
+}
+.toast-container.light {
+  color: color(coral);
+  background-color: color(neutral);
+  box-shadow: .05rem .15rem 1.25rem 0 rgba((color(coral)), .15)
+}
+.toast-container {
+  cursor: default;
+  border-radius: 4px;
+  color: color(neutral);
+  background-color: color(coral);
+  width: fit-content;
+  max-width: 320px;
+  padding: 8px 16px;
+  @include flex(column);
+  align-items: flex-end;
+  .container {
+    align-self: flex-start;
+    display: inline-flex;
+    gap: 8px;
+  }
+}
+.toast-icon {
+  min-width: 20px;
+  height: 20px;
+}
+.toast-icon.warning {
+  fill: color(coral, yellow);
+}
+.toast-icon.info {
+  fill: color(coral, blue);
+}
+.toast-icon.success {
+  fill: color(coral, green);
+}
+.toast-icon.error {
+  fill: color(coral, red);
+}
+.toast-icon.close {
+  fill: color(neutral);
+}
+.button-container {
+  cursor: pointer;
+  color: color(coral, blue);
+}
+
+.close-options {
+  @include flex {
+    gap: 1rem;
+  }
+}
+
+.input.toast {
+  @include flex(column) {
+    gap: 1rem;
+    @include media {
+      flex-direction: row;
+    }
+    .container {
+      width: 100%;
+    }
+  }
+  .textfield-container.toast {
+    @include flex(column) {
+      gap: 1rem;
+    }
+    @include media {
+      flex-direction: row;
+      flex: 1;
+      .container {
+        width: 100%;
+      }
+    }
+    input[type="text"] {
+      border-radius: 0.25rem;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      height: 2.25rem;
+      transition: all 0.3s ease;
+      padding: 0 0.75rem;
+      color: color(coral);
+      border: 1px solid color(neutral, divider);
+      width: 100%;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+      &:focus {
+        border-color: color(coral, blue);
+        outline: 0;
+      }
+      &::placeholder {
+        color: rgba(color(coral, secondary), 0.35);
+      }
+    }
+    input[type="text"]#message {
+      width: 100%;
+    }
+    button {
+      cursor: pointer;
+      border-radius: 0.25rem;
+      border: 0;
+      background-color: color(coral, blue);
+      padding: 0.5rem 1rem;
+      color: color(neutral);
+      height: 2.25rem;
+      transition: all 0.1s ease;
+      @include media {
+        align-self: flex-end;
+      }
+      &:hover {
+        background-color: lighten(color(coral, blue), 10%);
+      }
+    }
+  }
+  .container {
+    @include flex(column) {
+      gap: 0.5rem;
+    }
+  }
+  .bottom-container {
+    position: relative;
+    @include flex {
+      gap: 1rem;
+      justify-content: space-between;
+      @include media {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .checkbox-container.toast,
+  .radio-container.toast {
+    input[type="radio"],
+    input[type="checkbox"] {
+      appearance: none;
+      position: absolute;
+      top: 0;
+      &:active + label {
+        transform: scale(0.95);
+      }
+      &:checked + label {
+        background-color: color(neutral, bg);
+        border-color: rgba(color(gray, secondary), 0.5);
+      }
+      &:checked + label[for="success"] {
+        background-color: rgba(color(coral, green), 0.05);
+        border-color: color(coral, green);
+      }
+      &:checked + label[for="info"] {
+        background-color: rgba(color(coral, blue), 0.05);
+        border-color: color(coral, blue);
+      }
+      &:checked + label[for="warning"] {
+        background-color: rgba(color(coral, yellow), 0.05);
+        border-color: color(coral, yellow);
+      }
+      &:checked + label[for="error"] {
+        background-color: rgba(color(coral, red), 0.05);
+        border-color: color(coral, red);
+      }
+      &:checked + label[for="close"] {
+        background-color: rgba(color(coral), 1);
+        border-color: color(coral);
+      }
+    }
+    label {
+      cursor: pointer;
+      border: 1px solid rgba(color(coral, secondary3), 0.5);
+      border-collapse: collapse;
+      border-radius: 0.25rem;
+      display: grid;
+      place-items: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      transition: all 0.1s ease;
+    }
+    label:hover {
+      background-color: color(neutral, bg);
+    }
+    label[for="close"] {
+      background-color: color(coral, secondary3);
+      &:hover {
+        background-color: color(coral, secondary2);
+      }
+    }
+    label[for="success"]:hover {
+      border-color: rgba(color(coral, green), 0.25);
+      background-color: rgba(color(coral, green), 0.05);
+    }
+    label[for="info"]:hover {
+      border-color: rgba(color(coral, blue), 0.25);
+      background-color: rgba(color(coral, blue), 0.05);
+    }
+    label[for="warning"]:hover {
+      border-color: rgba(color(coral, yellow), 0.25);
+      background-color: rgba(color(coral, yellow), 0.05);
+    }
+    label[for="error"]:hover {
+      border-color: rgba(color(coral, red), 0.25);
+      background-color: rgba(color(coral, red), 0.05);
+    }
+  }
+}
+
+.close-container {
+  cursor: pointer;
+  max-height: 20px;
+}
+
+.fade {
+  animation: fadeoff .2s ease forwards;
+  @keyframes fadeoff {
+    from {
+      opacity: 1
+    }
+    to {
+      opacity: 0
+    }
+  }
+}
+
+.preview-container.toast {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  min-height: 20rem;
+  background-color: color(neutral, bg);
+}
+
+.types-container {
+  @include flex(column) {
+    gap: 2rem;
+  }
+  @include media {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .default-container, .content-container {
+    @include flex(column);
+    .type.container {
+      @include flex {
+        align-items: flex-start;
+        justify-content: center;
+      }
+      flex: 1;
+      padding: 2rem;
+      background-color: color(neutral, bg);
+    }
+  } 
+}

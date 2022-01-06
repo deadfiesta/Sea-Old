@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ToggleBtn = ({ children, click, checked, id }) => {
+const ToggleBtn = ({ notext, children, click, checked, id }) => {
   return (
     <div className="toggle-container flex-container middle" style={{ gap: "1rem" }}>
-      <span className={checked ? "em accent" : null}>{checked ? `${children}ing` : `Start ${children}`}</span>
+      <span>{!notext && checked ? `${children}ing` : children}</span>
       <input onChange={click} checked={checked} type="checkbox" name="" id={id} />
       <label className="toggle" htmlFor={id} />
     </div>
@@ -11,8 +11,9 @@ const ToggleBtn = ({ children, click, checked, id }) => {
 }
 
 ToggleBtn.defaultProps = {
+  notext: true,
   children: "Load",
-  onclick: () => console.log('Prop not passed'),
+  click: () => console.log('Prop not passed'),
   checked: false,
 }
 

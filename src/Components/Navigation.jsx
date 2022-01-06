@@ -1,15 +1,11 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useSpring, animated, config } from 'react-spring'
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Navigation = ({ onclick, highlight, data, open }) => {
 
-    const [property, setProperty] = useState(
-        {
-            top: 0,
-            height: 0,
-        }
-    )
+    const [slideLine, setSlideLine] = useSpring(()=> ({ top: 0, height: 0, config: config.slow }))
     let nav = data
     const menuHeight = 48
 
@@ -47,18 +43,17 @@ const Navigation = ({ onclick, highlight, data, open }) => {
         let selected = document.querySelector('.menu-header.active')
         selected !== null
             &&
-            setProperty({
-                top: selected.offsetTop - document.querySelector('.menu-container').offsetTop,
-                height: selected.clientHeight
-            })
+            setSlideLine.start({ top: selected.offsetTop - document.querySelector('.menu-container').offsetTop, height: selected.clientHeight})
+
     }
 
     useEffect(() => {
-        setTimeout(() => {
+        const update = setInterval(()=> {
             updateLinePos();
-        }, 300)
-
-    }, [highlight])
+        },50)
+        const final = setTimeout(()=> clearTimeout(update), 400)
+        return ()=>clearTimeout(final)
+    })
 
     return (
         <nav className={open ? "open" : null}>
@@ -69,12 +64,7 @@ const Navigation = ({ onclick, highlight, data, open }) => {
                 <div className="nav-wrapper">
 
                     <div className="line-container">
-                        <span className="line" style={
-                            {
-                                top: property.top,
-                                height: `${property.height}px`,
-                            }
-                        }></span>
+                        <animated.span className="line" style={slideLine} />
                     </div>
                     <ul className="menu-container">
                         {nav.map((menu, i) => (
@@ -83,7 +73,7 @@ const Navigation = ({ onclick, highlight, data, open }) => {
                                     <h3>{menu.topic}</h3>
                                     <MdKeyboardArrowDown />
                                 </div>
-                                <ul className="subtopic-container">
+                                <animated.ul className="subtopic-container">
                                     {menu.subtopics.map((submenu, i) => (
                                         <li key={i} className={submenu.anchor}>
                                             <span className={submenu.anchor}>
@@ -91,7 +81,7 @@ const Navigation = ({ onclick, highlight, data, open }) => {
                                             </span>
                                         </li>
                                     ))}
-                                </ul>
+                                </animated.ul>
                             </li>
                         ))}
                     </ul>

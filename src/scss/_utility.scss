@@ -7,6 +7,9 @@
 .center {
   justify-content: center;
 }
+.around {
+  justify-content: space-around;
+}
 .middle {
   align-items: center;
 }
@@ -26,6 +29,10 @@
   position: fixed;
 }
 
+.full {
+  width: 100%;
+}
+
 .gridcenter {
   display: grid;
   place-items: center;
@@ -37,4 +44,23 @@
 
 .em {
   font-weight: 600;
+}
+
+.title {
+  font-weight: 600;
+  color: color(gray)
+}
+
+.number {
+  padding: .25rem .65rem;
+  font-size: 14px;
+  border-radius: .25rem;
+  background-color: color(neutral, bg)
+}
+
+.line-clamp.three {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

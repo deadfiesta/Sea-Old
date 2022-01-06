@@ -1,0 +1,224 @@
+.content-wrapper {
+  width: fit-content;
+  cursor: default;
+  pointer-events: all;
+}
+.tooltip-container {
+  opacity: 1;
+}
+div.tooltip.relative {
+  position: relative;
+  top: initial;
+  top: initial;
+  left: initial;
+}
+div.tooltip {
+  position: absolute;
+  top: -999px;
+  left: -999px;
+  z-index: 100;
+  overflow: hidden;
+  @include flex(column) {
+    justify-content: center;
+  }
+  .body.image {
+    display: block;
+    padding: 1rem;
+    max-height: initial;
+  }
+  .body {
+    max-width: 320px;
+    padding: 0.5rem 1rem;
+    color: color(neutral);
+    border-radius: 0.25rem;
+    background-color: color(coral);
+    .inner {
+      max-height: calc(240px - 16px);
+      overflow-y: auto;
+    }
+  }
+  .tip {
+    @include flex(column) {
+      align-items: center;
+    }
+    svg {
+      margin-bottom: -0.25rem;
+    }
+    path {
+      fill: color(coral);
+      stroke: none;
+      stroke-linejoin: round;
+    }
+  }
+}
+.tooltip.top {
+  flex-direction: column-reverse;
+  align-items: center;
+  .tip {
+    transform: rotate(180deg);
+  }
+}
+.tooltip.top-left {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  .tip {
+    transform: rotate(180deg);
+  }
+}
+.tooltip.top-right {
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  .tip {
+    transform: rotate(180deg);
+  }
+}
+.tooltip.left {
+  flex-direction: row-reverse;
+  align-items: center;
+  .tip {
+    transform: rotate(90deg) translateY(2px);
+  }
+}
+.tooltip.left-top {
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  .tip {
+    transform: rotate(90deg) translateY(2px);
+  }
+}
+.tooltip.left-bottom {
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  .tip {
+    transform: rotate(90deg) translateY(2px);
+  }
+}
+.tooltip.right {
+  flex-direction: row;
+  align-items: center;
+  .tip {
+    transform: rotate(-90deg) translateY(2px);
+  }
+}
+.tooltip.right-top {
+  flex-direction: row;
+  align-items: flex-start;
+  .tip {
+    transform: rotate(-90deg) translateY(2px);
+  }
+}
+.tooltip.right-bottom {
+  flex-direction: row;
+  align-items: flex-end;
+  .tip {
+    transform: rotate(-90deg) translateY(2px);
+  }
+}
+.tooltip.bottom-right {
+  flex-direction: column;
+  align-items: flex-end;
+  .tip {
+    transform: rotate(0);
+  }
+}
+.tooltip.bottom-left {
+  flex-direction: column;
+  align-items: flex-start;
+  .tip {
+    transform: rotate(0);
+  }
+}
+
+.sample-container {
+  padding: 1rem;
+  background-color: color(neutral, bg);
+  @include media {
+    padding: 3rem;
+  }
+  .origin-btn {
+    cursor: pointer;
+    width: 7rem;
+    padding: 0.5rem 0.75rem;
+    background-color: color(neutral);
+    border: 1px solid color(neutral, divider);
+    border-radius: 0.25rem;
+    &:hover {
+      color: color(coral, blue);
+    }
+  }
+  .origin-btn.selected {
+    color: color(coral, blue);
+  }
+  .origin-btn.preview {
+    cursor: default;
+    position: relative;
+    z-index: 50;
+    width: auto;
+    color: color(neutral);
+    background-color: color(coral, blue);
+  }
+}
+.sample {
+  padding: 0.5rem;
+  background-color: color(neutral, bg);
+}
+.offsetter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  border-radius: 0.25rem;
+  background-color: rgba((color(coral, blue)), 0.25);
+}
+.slider-container#offset-tip {
+  display: none;
+}
+.slider-container {
+  width: 100%;
+  input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: color(neutral, bg);
+    transition: all 0.2s ease;
+    &:hover {
+      background-color: rgba((color(coral, blue)), 0.15);
+    }
+    &:disabled {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    &::-ms-fill-lower {
+      background-color: color(coral, blue);
+    }
+    &::-moz-range-progress {
+      height: 0.5rem;
+      border-radius: 0.25rem;
+      background-color: color(coral, blue);
+    }
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      cursor: ew-resize;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 0.5rem;
+      background-color: color(neutral);
+      border: 2px solid color(coral, blue);
+    }
+    &::-moz-range-thumb {
+      appearance: none;
+      cursor: ew-resize;
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 0.45rem;
+      background-color: color(neutral);
+      border: 2px solid color(coral, blue);
+    }
+  }
+}

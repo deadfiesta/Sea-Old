@@ -1,12 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
 import styled from 'styled-components'
-// import { coral } from './StyledCoral'
 import Highlight, { defaultProps } from "prism-react-renderer";
 import { Pre, Line, LineContent, theme } from "./nightOwl"
-// import faker from 'faker'
 import ShowCodeBtn from './ShowCodeBtn';
-// import ReloadBtn from './ReloadBtn';
 
 const Wrapper = styled.div`
 display: flex;

@@ -23,6 +23,7 @@ body {
     scroll-behavior: smooth;
 }
 
+
 a {
     color: inherit;
 }
@@ -70,10 +71,18 @@ a {
     @include flex(column) {
         gap: 2rem;
     }
-    @include media {
-        gap: 3rem;
+    .segment-container {
+        @include flex(column) {
+            gap: 1rem;
+        }
+    }
+    .demo-container {
+        padding: 1rem;
+        background-color: color(neutral, bg);
     }
 }
+
+
 
 .section-container,
 .end-container {
@@ -138,8 +147,12 @@ section {
                 gap: 1rem;
             }
             .top-container {
+                gap: 2rem;
                 @include flex(column) {
-                    gap: 1rem;
+                    gap: 3rem;
+                }
+                h3.subtopics {
+                    font-size: 1.75rem;
                 }
             }
         }
@@ -356,8 +369,7 @@ section {
             border-collapse: collapse;
             border-radius: 0.725rem;
             overflow: hidden;
-            background: linear-gradient(to top right, color(accent), lighten(color(accent), 10%));
-            outline: 1px solid darken(color(neutral, divider), 2%);
+            border: 1px solid color(neutral, divider);
             transition: all 0.3s ease;
             &:after {
                 position: absolute;
@@ -365,14 +377,15 @@ section {
                 content: "";
                 left: 3px;
                 top: 50%;
-                height: 1rem;
-                width: 1rem;
+                height: 0.95rem;
+                width: 0.95rem;
                 border-radius: 0.725rem;
                 background-color: color(neutral);
                 transform: translateY(-50%);
                 transition: all 0.3s ease;
                 border: 1px solid darken(color(neutral, divider), 2%);
                 border-collapse: collapse;
+                box-shadow: 1px 2px 0.25rem 0 rgba(color(gray), 0.1);
             }
             &:before {
                 position: absolute;
@@ -381,14 +394,11 @@ section {
                 top: 0;
                 bottom: 0;
                 right: 0;
-                background-color: lighten(color(neutral, bg), 2%);
+                background-color: color(neutral, bg);
                 border-radius: 0.725rem;
                 transition: all 0.2s ease;
             }
-            &:active {
-                outline: 1px solid color(accent);
-                box-shadow: 0 0 0.25rem 0 rgba(color(accent), 0.5);
-            }
+
             &:active::after {
                 width: 1.5rem;
             }
@@ -396,6 +406,10 @@ section {
         input {
             position: absolute;
             appearance: none;
+            &:checked + label.toggle {
+                background: linear-gradient(to top right, color(accent), lighten(color(accent), 10%));
+                border: none;
+            }
             &:checked + label.toggle::before {
                 margin: 0.75rem;
             }
