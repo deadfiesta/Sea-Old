@@ -1,9 +1,12 @@
-import { Spinner, Spinning } from './Coral/Spinner'
 import Textfield from './Coral/Textfield'
 import ToastShowcase from './Coral/Feedback/ToastShowcase'
 import TooltipShowcase from './Coral/Feedback/TooltipShowcase'
 import DialogueShowcase from './Coral/Feedback/DialogueShowcase'
+import TextFieldShowcase from './Coral/Input/TextFieldShowcase'
 import SkeletonShowcase from './Coral/Feedback/SkeletonShowcase'
+import TextAreaShowcase from './Coral/Input/TextAreaShowcase'
+import SelectShowcase from './Coral/Input/SelectShowcase'
+import SideMenuShowcase from './Coral/Navigation/SideMenuShowcase'
 
 const lastUpdated = () => {
     const updated = new Date(document.lastModified)
@@ -1005,14 +1008,17 @@ const content = [
                     {
                         title: "Text Field",
                         anchor: "textfield",
+                        component: <TextFieldShowcase />
                     },
                     {
                         title: "Text Area",
-                        anchor: "textfield",
+                        anchor: "textarea",
+                        component: <TextAreaShowcase />
                     },
                     {
                         title: "Select",
                         anchor: "select",
+                        component: <SelectShowcase />
                     },
                     {
                         title: "Tree Select",
@@ -1038,30 +1044,9 @@ const content = [
                     },
                     {
                         title: "Side Menu",
-                        anchor: "sidemenu"
+                        anchor: "sidemenu",
+                        component: <SideMenuShowcase />
                     }
-                ]
-            },
-            {
-                topic: "Spinner",
-                anchor: "spinner",
-                // credits: [
-                //     {
-                //         title: "What You Should Know About Skeleton Screen",
-                //         url: "https://uxdesign.cc/what-you-should-know-about-skeleton-screens-a820c45a571a"
-                //     }
-                // ],
-                subtopics: [
-                    {
-                        title: "Static",
-                        anchor: "spinstatic",
-                        component: <Spinner />,
-                    },
-                    {
-                        title: "Animation",
-                        anchor: "spinanim",
-                        component: <Spinning />,
-                    },
                 ]
             },
         ]

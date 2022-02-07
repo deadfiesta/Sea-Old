@@ -73,6 +73,9 @@ nav {
     .menu-header {
         padding: 1rem 2rem;
         transition: all 0.3s ease;
+        .arrow svg {
+            transition: all .3s ease;
+        }
     }
     .menu-header.active {
         color: color(accent, sea);
@@ -80,7 +83,7 @@ nav {
         h3 {
             color: color(accent, sea);
         }
-        svg {
+        .arrow svg {
             transform: rotate(180deg);
             transition: all .3s ease;
         }

@@ -71,7 +71,7 @@ const Navigation = ({ onclick, highlight, data, open }) => {
                             <li key={i} topic={i} onClick={onclick} className="menu">
                                 <div className="menu-header flex-container middle between">
                                     <h3>{menu.topic}</h3>
-                                    <MdKeyboardArrowDown />
+                                    <div className='arrow'><MdKeyboardArrowDown /></div>
                                 </div>
                                 <animated.ul className="subtopic-container">
                                     {menu.subtopics.map((submenu, i) => (

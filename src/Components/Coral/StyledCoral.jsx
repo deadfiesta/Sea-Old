@@ -15,6 +15,11 @@ const coral = {
       quaternary: "#C9CCD1",
       quinary: "#293449"
     },
+    border:
+    {
+      primary: "#E0E2E5",
+      secondary: "#ADB2BA",
+    },
     gray:
     {
       primary: "#293449",
@@ -36,7 +41,7 @@ const coral = {
   font-family: 'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Arial', 'PingFang SC', sans-serif;
   `,
   type: {
-    h1:`
+    h1: `
     font-size: 24px;
     line-height: 28px;
     font-weight: 700;

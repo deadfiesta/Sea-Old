@@ -3,7 +3,7 @@ import { MdKeyboardArrowDown } from "react-icons/md"
 
 const ShowCodeBtn = ({ onclick, open, children }) => {
   return (
-    <button onClick={onclick} className="view-code">{open ? "Hide" : "View"} {children} <MdKeyboardArrowDown style={
+    <button onClick={onclick} className={open ? "view-code active" : "view-code"}>{open ? "Hide" : "View"} {children} <MdKeyboardArrowDown style={
       open
         ? {
           transform: "rotate(180deg)",

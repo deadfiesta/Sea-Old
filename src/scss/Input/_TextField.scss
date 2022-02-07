@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap");
+.label-container,
+.placeholder-container,
+.helper-container {
+  flex: 1;
+}
+.icon-container {
+  label {
+    @include flex{
+      justify-content: center;
+    }
+    width: 36px;
+  }
+}
+.validations.label-container {
+  label {
+    padding: 0 1.5rem;
+  }
+  label[for="required"] {
+    &:hover {
+      color: color(coral, red);
+    }
+  }
+  label[for="warning"] {
+    &:hover {
+      color: color(coral, yellow);
+    }
+  }
+  
+  input {
+    &:checked + label[for="warning"] {
+      border: 1px solid color(coral, yellow);
+      color: color(coral, yellow);
+      background-color: rgba(color(coral, yellow), .05);
+    }
+    &:checked + label[for="required"] {
+      border: 1px solid color(coral, red);
+      color: color(coral, red);
+      background-color: rgba(color(coral, red), .05);
+    }
+  }
+}
+.textfield {
+  .vertical-divider {
+    display: block;
+    width: 1px;
+    background-color: color(coral, border);
+  }
+  .clear-button {
+    cursor: pointer;
+    color: color(coral, secondary2);
+    transition: all .1s ease;
+    &:hover {
+      color: color(coral, secondary)
+    }
+  }
+  .asterisk {
+    font-family: "Lexend Peta", sans-serif;
+    color: color(coral, red);
+  }
+  .focus {
+    outline-color: color(coral, blue) !important;
+  }
+  .input.required {
+    outline: 1px solid color(coral, red)
+  }
+  .input.warning {
+    outline: 1px solid color(coral, yellow)
+  }
+  .input.disabled {
+    background-color: color(coral, bg2);
+    cursor: not-allowed;
+    &:hover {
+      outline: 1px solid color(coral, border);
+    }
+    input {
+      cursor: inherit;
+    }
+  }
+  .input {
+    outline: 1px solid color(coral, border);
+    border-radius: 0.25rem;
+    background-color: color(neutral);
+    padding: 0 12px;
+    transition: all .1s ease;
+    @include flex {
+      gap: 16px;
+    }
+    .input-container {
+      width: 100%;
+    }
+    input[type="password"] {
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+    input,
+    .suffix,
+    .prefix {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 0;
+      border: none;
+      height: initial;
+      background: none;
+      &::placeholder {
+        font-weight: 400;
+        color: color(coral, secondary2);
+      }
+    }
+    .padding {
+      padding: 8px 0;
+    }
+    .trailing-icon {
+      cursor: pointer;
+      transition: all .2s ease;
+      &:hover {
+        color: color(coral, main)
+      }
+      &:active {
+        transform: scale(.95);
+      }
+    }
+    &:hover {
+      outline-color: color(coral, border2);
+    }
+  }
+
+  label {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .helper.required {
+    color: color(coral, red);
+  }
+  .helper.warning {
+    color: color(coral, yellow);
+  }
+  .helper {
+    outline: 0;
+    padding: 2px 0 4px;
+    font-size: 12px;
+    line-height: 18px;
+    transition: all .2s ease;
+  }
+  .suffix, .prefix {
+    color: color(coral, main);
+  }
+}

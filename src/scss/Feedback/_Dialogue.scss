@@ -77,15 +77,41 @@ input[type="text"] {
   }
   label[for="checkd"] {
     color: color(coral, green);
+    &:hover {
+      border-color: rgba(color(coral, green), .5);
+      background-color: rgba(color(coral, green), .025)
+    }
   }
   label[for="crossd"] {
     color: color(coral, red);
+    &:hover {
+      border-color: rgba(color(coral, red), .5);
+      background-color: rgba(color(coral, red), .025);
+    }
   }
   label[for="warnd"] {
     color: color(coral, yellow);
+    &:hover {
+      border-color: rgba(color(coral, yellow), .5);
+      background-color: rgba(color(coral, yellow), .025);
+    }
+  }
+}
+.size-container {
+  @include media {
+    flex: 1;
+    li {
+      flex: 1;
+    }
   }
 }
 
-.Rdroh {
+.transitions {
+  label {
+    padding: 0 1rem;
+  }
+}
+
+.Rdroh, .sc-ksdxgE, .ipQvBY, .sc-bqiRlB, .znMRI {
   width: initial !important;
 }

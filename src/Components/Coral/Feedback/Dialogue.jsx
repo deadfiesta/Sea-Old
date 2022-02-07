@@ -1,5 +1,6 @@
 import React from 'react'
 import { coral } from '../StyledCoral'
+import { useSpring, animated } from 'react-spring'
 import styled from 'styled-components'
 import InfoFIcon from '@seaweb/coral/icons/InfoF'
 import CheckCircleFIcon from '@seaweb/coral/icons/CheckCircleF'
@@ -7,12 +8,6 @@ import CrossCircleFIcon from '@seaweb/coral/icons/CrossCircleF'
 import WarningFIcon from '@seaweb/coral/icons/WarningF'
 import CrossIcon from '@seaweb/coral/icons/Cross'
 import Button from '@seaweb/coral/components/Button';
-
-const DialogueContainer = styled.div`
-width: ${props => props.size === 'small' ? '480px' : props.size === 'medium' ? '600px' : props.size === 'large' ? '840px' : props.size === 'extralarge' ? '1200px' : ''};
-max-width: 100%;
-transition: all .3s ease;
-`
 
 const IconContainer = styled.div`
 padding: .5rem 0;
@@ -39,7 +34,26 @@ color: ${coral.colors.gray.primary};
 ${coral.type.body}
 `
 
-const Dialogue = ({ children, status, title, size, primaryBtn, secondaryBtn, tertiaryBtn, close }) => {
+const Dialogue = ({ animate, children, status, title, size, primaryBtn, secondaryBtn, tertiaryBtn, close }) => {
+
+  const [dialogSize, setDialogSize] = useSpring(() => ({ width: 480, config: { tension: 520, friction: 40 } }))
+  const staticSize = useSpring(size === 'small' ? { width: 480 } : size === 'medium' ? { width: 600 } : size === 'large' ? { width: 840 } : size === 'extralarge' ? { width: 1200 } : '')
+
+  switch (size) {
+    default:
+    case 'small':
+      setDialogSize.start({ width: 480 })
+      break
+    case 'medium':
+      setDialogSize.start({ width: 600 })
+      break
+    case 'large':
+      setDialogSize.start({ width: 840 })
+      break
+    case 'extralarge':
+      setDialogSize.start({ width: 1200 })
+      break
+  }
 
   const icon = (status) => {
     switch (status) {
@@ -57,7 +71,7 @@ const Dialogue = ({ children, status, title, size, primaryBtn, secondaryBtn, ter
   }
 
   return (
-    <DialogueContainer size={size}>
+    <animated.div style={animate ? dialogSize : staticSize}>
       <div className='coral dialogue-container'>
         <IconContainer>{icon(status)}</IconContainer>
         <div className="dialogue-content">
@@ -71,8 +85,12 @@ const Dialogue = ({ children, status, title, size, primaryBtn, secondaryBtn, ter
             </ButtonContainer> : ''}
         </div>
       </div>
-    </DialogueContainer>
+    </animated.div>
   )
 }
 
 export default Dialogue
+
+Dialogue.defaultProps = {
+  animate: false,
+}

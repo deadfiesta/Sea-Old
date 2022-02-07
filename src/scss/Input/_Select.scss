@@ -1,0 +1,72 @@
+.select {
+  input {
+    flex: 1;
+    outline: none;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0;
+    width: auto;
+    background: none;
+    padding: 0;
+    height: auto;
+    cursor: pointer;
+  }
+  .select-button.clicked {
+    border-color: color(coral, blue);
+    &:hover {
+      border-color: color(coral, blue);
+    }
+  }
+  .select-button {
+    @include flex {
+      align-items: center;
+    }
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid color(coral, border);
+    padding: 0.5rem 0.75rem;
+    background-color: color(neutral);
+    border-radius: 0.25rem;
+    transition: border 0.15s ease;
+    text-overflow: ellipsis;
+    &:hover {
+      border-color: color(coral, border2);
+    }
+    .arrow-container {
+      height: 20px;
+    }
+  }
+  .select-list-container {
+    position: relative;
+  }
+  .select-list {
+    position: absolute;
+    top: 0.25rem;
+    left: 0;
+    width: 100%;
+    background-color: color(neutral);
+    border-radius: 0.25rem;
+    border: 1px solid color(coral, border);
+    overflow: hidden;
+    padding: .25rem 0;
+    box-shadow: 0 .4px 12px rgba(#293449, .15);
+    .select-option {
+      padding: 10px 16px;
+      &:hover {
+        background-color: color(coral, bg2);
+      }
+      &:active {
+        background-color: color(coral, bg3);
+        transition: background-color .1s ease
+      }
+    }
+  }
+  .select-option {
+    @include flex {
+      gap: 0.25rem;
+    }
+
+    cursor: pointer;
+    color: color(coral);
+  }
+}

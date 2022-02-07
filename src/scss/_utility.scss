@@ -1,8 +1,26 @@
 .flex-container {
-  @include flex;
+  @include flex
 }
+.wrap {
+  flex-wrap: wrap;
+}
+.flex-responsive {
+  @include flex(column);
+  @include media {
+    @include flex(row);
+    flex-wrap: wrap;
+  }
+}
+
+.wide-mobile-small-desktop {
+  width: 100%;
+  @include media{
+    width: 25%
+  }
+}
+
 .stack {
-  @include flex(column)
+  @include flex(column);
 }
 .center {
   justify-content: center;
@@ -33,6 +51,10 @@
   width: 100%;
 }
 
+.codeblock {
+  font-size: 14px;
+}
+
 .gridcenter {
   display: grid;
   place-items: center;
@@ -48,14 +70,14 @@
 
 .title {
   font-weight: 600;
-  color: color(gray)
+  color: color(gray);
 }
 
 .number {
-  padding: .25rem .65rem;
+  padding: 0.25rem 0.65rem;
   font-size: 14px;
-  border-radius: .25rem;
-  background-color: color(neutral, bg)
+  border-radius: 0.25rem;
+  background-color: color(neutral, bg);
 }
 
 .line-clamp.three {
@@ -63,4 +85,19 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@mixin transition($speed: "default") {
+  transition-property: all;
+  transition-timing-function: ease;
+  @if $speed = "fast" {
+    transition-duration: .15s;
+  }
+  @else if $speed = "slow" {
+    transition-duration: .5s;
+  } 
+  @else {
+    transition-duration: .3s;
+  }
+  @content
 }

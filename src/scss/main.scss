@@ -23,7 +23,6 @@ body {
     scroll-behavior: smooth;
 }
 
-
 a {
     color: inherit;
 }
@@ -81,8 +80,6 @@ a {
         background-color: color(neutral, bg);
     }
 }
-
-
 
 .section-container,
 .end-container {
@@ -341,6 +338,10 @@ section {
             filter: saturate(0);
         }
     }
+    button.view-code.active {
+        border: 1px solid color(coral, blue);
+        background-color: rgba(color(coral, blue), .05)
+    }
     button.view-code.reload {
         &:disabled {
             svg {
@@ -418,6 +419,72 @@ section {
                 right: 3px;
                 transition: all 0.3s ease;
             }
+        }
+    }
+}
+
+.label-container {
+    position: relative;
+    input[type="number"] {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        height: 2.25rem;
+        padding: 0 0.25rem;
+        border-radius: 0.25rem;
+        border: 1px solid color(neutral, divider);
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+        appearance: none;
+        position: absolute;
+        top: 0;
+        &:active + label {
+            transform: scale(0.95);
+        }
+        &:checked + label {
+            border: 1px solid color(coral, blue);
+            background-color: rgba(color(coral, blue), 0.05);
+            color: color(coral, blue);
+            .alpha {
+                background-color: color(coral, blue);
+                color: color(neutral);
+            }
+        }
+    }
+    label {
+        @include flex {
+            align-items: center;
+            gap: 0.25rem;
+            @include media {
+                gap: 0;
+            }
+        }
+        position: relative;
+        cursor: pointer;
+        height: 2.25rem;
+        padding: 0 0.25rem;
+        border-radius: 0.25rem;
+        border: 1px solid color(neutral, divider);
+        transition: all 0.1s ease;
+        &:hover {
+            color: color(coral, blue);
+        }
+        .px {
+            flex: 1;
+            @include flex {
+                justify-content: center;
+            }
+        }
+        .alpha {
+            text-transform: uppercase;
+            display: grid;
+            place-items: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            width: 1.75rem;
+            border-radius: 0.25rem;
+            background-color: color(neutral, bg);
         }
     }
 }

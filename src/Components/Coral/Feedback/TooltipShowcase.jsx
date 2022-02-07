@@ -5,8 +5,11 @@ import FigmaLink from '../FigmaLink'
 import Image from './Image'
 import { useSpring, animated } from 'react-spring'
 import ToggleBtn from '../ToggleBtn'
-import UXNotes from './Notes'
+import { ContentContainer, SegmentContainer } from '../Containers'
+import ShowCodeBtn from '../ShowCodeBtn'
 
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { materialOceanic } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const TooltipShowcase = () => {
 
@@ -15,12 +18,13 @@ const TooltipShowcase = () => {
   const [dist, setDist] = useState(8)
   const [off, setOff] = useState(8)
   const [disableOff, setDisableOff] = useState(false)
+  const [showConfig, setShowConfig] = useState(false)
 
   //Image Variant
-  const [imageStatic, setImageStatic] = useState(true)
+  const [imageStatic, setImageStatic] = useState(false)
 
   //Multiple Lines Variant
-  const [linesStatic, setLinesStatic] = useState(true)
+  const [linesStatic, setLinesStatic] = useState(false)
   const multiplelines = `I inadvertently went to See's Candy last week (I was in the mall looking for phone repair), and as it turns out, See's Candy now charges a dollar -- a full dollar -- for even the simplest of their wee confection offerings. I bought two chocolate lollipops and two chocolate-caramel-almond things. The total cost was four-something. I mean, the candies were tasty and all, but let's be real: A Snickers bar is fifty cents. After this dollar-per-candy revelation, I may not find myself wandering dreamily back into a See's Candy any time soon.`
 
   const previews = [
@@ -86,32 +90,40 @@ const TooltipShowcase = () => {
     },
   ]
 
-  const notes = [
-    {
-      title: "Placement",
-      description: "By default, the tooltip is placed at the top of the paired element. Its tip points to the center of the paired element. There should be a margin of at least 8px."
-    },
-    {
-      title: "Flip",
-      description: "Tooltip re-position itself to stay within viewport. (Not implemented here)"
-    },
-    {
-      title: "Resize",
-      description: "Tooltip capped at a max width of 320px and scrollable text at 240px in height.",
-    },
-    {
-      title: "Persist",
-      description: "Moving the pointer within the paired element and moving the pointer over to the tooltip content."
-    },
-    {
-      title: "Motion",
-      description: "Animate originates from position of the tip with opacity and scaling. High tension and friction spring animation mechanism."
-    },
-    {
-      title: "Dismiss",
-      description: "Tooltip transit out in reverse to entry animation when the pointer moves out from its paried element or from the tooltip itself."
-    },
-  ]
+  // const notes = [
+  //   {
+  //     title: "Placement",
+  //     description: "By default, the tooltip is placed at the top of the paired element. Its tip points to the center of the paired element. There should be a margin of at least 8px."
+  //   },
+  //   {
+  //     title: "Flip",
+  //     description: "Tooltip re-position itself to stay within viewport. (Not implemented here)"
+  //   },
+  //   {
+  //     title: "Resize",
+  //     description: "Tooltip capped at a max width of 320px and scrollable text at 240px in height.",
+  //   },
+  //   {
+  //     title: "Persist",
+  //     description: "Moving the pointer within the paired element and moving the pointer over to the tooltip content."
+  //   },
+  //   {
+  //     title: "Motion",
+  //     description: "Animate originates from position of the tip with opacity and scaling. High tension and friction spring animation mechanism."
+  //   },
+  //   {
+  //     title: "Dismiss",
+  //     description: "Tooltip transit out in reverse to entry animation when the pointer moves out from its paried element or from the tooltip itself."
+  //   },
+  // ]
+
+  const codeString = `  const transitions = useTransition(hovered, {
+    from: { opacity: 0, scale: .85 },
+    enter: { opacity: 1, scale: 1 },
+    leave: { opacity: 0, scale: .85 },
+    config: { tension: 1200, friction: 40, precision: 0.01, },
+  })`;
+
 
   useEffect(() => {
     const previewer = document.querySelector('.origin-btn.preview')
@@ -148,13 +160,12 @@ const TooltipShowcase = () => {
   }, [originName, setOriginName])
 
   return (
-    <div className="category-container stack" style={{ gap: "2rem" }}>
+    <ContentContainer>
       <div className="description-container">
         <p>A tooltip displays short messages that clarifies “What it is” or  “How to use”. It is typically only visibile on hover and is to be easily dismissed.</p>
       </div>
       <div className="preview-container stack" style={{ gap: "1rem" }}>
         <p className="title">Positioning</p>
-
         <div className="coral sample-container" >
           <div className="container stack" style={{ maxWidth: "40rem", gap: "2rem", margin: "0 auto" }}>
             <div className="row-container flex-container around" >
@@ -205,15 +216,23 @@ const TooltipShowcase = () => {
             <label style={disableOff ? { opacity: .35 } : {}} htmlFor="off">{off}%</label>
           </div>
         </div>
-        <div className="notes stack" style={{ gap: "1rem" }}>
+        {/* <div className="notes stack" style={{ gap: "1rem" }}>
           <p className="title">UX Notes</p>
           <ul className="notes-container stack" style={{ gap: "1rem" }}>
             {notes.map((note, i) => (
               <UXNotes key={i} id={i} title={note.title} description={note.description}></UXNotes>
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
+      <SegmentContainer>
+        <ShowCodeBtn open={showConfig} onclick={() => setShowConfig(!showConfig)}>Spring Config</ShowCodeBtn>
+        {showConfig && <div className="codeblock">
+          <SyntaxHighlighter language={"jsx"} style={materialOceanic}>
+            {codeString}
+          </SyntaxHighlighter>
+        </div>}
+      </SegmentContainer>
       <div className="variants-container stack" style={{ gap: "2rem" }}>
         <p className="title">Variants</p>
         <div className="image-tooltip-container stack" style={{ gap: "1rem" }}>
@@ -260,7 +279,7 @@ const TooltipShowcase = () => {
       </div>
       <FigmaLink url="https://www.figma.com/file/CHJcwbBlyx7pIYmiPkno3R/?node-id=537%3A32754" />
       <hr />
-    </div>
+    </ContentContainer>
   )
 }
 

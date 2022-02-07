@@ -1,0 +1,30 @@
+.textarea-container {
+  background-color: color(neutral);
+  min-height: 36px;
+  padding: 8px 16px;
+  outline: 1px solid color(coral, border);
+  border-radius: 4px;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  textarea {
+    max-width: 100%;
+    display: block;
+    box-sizing: border-box;
+    background: none;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    border: none;
+    resize: none;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &:focus, &:active {
+      outline: none;
+    }
+  }
+
+}

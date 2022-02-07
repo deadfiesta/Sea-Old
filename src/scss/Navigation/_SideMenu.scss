@@ -1,0 +1,209 @@
+.sidemenu.gray {
+  color: color(coral);
+  background-color: #f8f8f9;
+  --icon-color: #5e6776;
+  --hover-color: #E5E5E8;
+  --click-color: #e7e9eb;
+  --selected-color: #e8e9eb;
+  --bg-color: #fff;
+  --border-color: #E6E8E9;
+}
+.sidemenu.white {
+  color: color(coral);
+  background-color: color(neutral);
+  --icon-color: #5e6776;
+  --hover-color: #f2f3f4;
+  --click-color: #e7e9eb;
+  --selected-color: #e8e9eb;
+  --bg-color: #fff;
+  --border-color: #e0e2e5;
+}
+.sidemenu.dark {
+  color: color(neutral);
+  background-color: #262D3F;
+  --icon-color: rgba(white, 0.6);
+  --hover-color: #313743;
+  --click-color: rgba(white, 0.1);
+  --selected-color: rgba(white, 0.15);
+  --bg-color: #262D3F;
+  --border-color: #373E50;
+}
+div.sidemenu {
+  min-height: 800px;
+}
+.sidemenu {
+  border-right: 1px solid var(--border-color);
+  width: 264px;
+  padding: 10px 0;
+  white-space: nowrap;
+  @include flex(column);
+  transition: background-color .15s ease;
+  .sidemenu-main {
+    flex: 1;
+  }
+  .sidemenu-label {
+    color: color(coral, secondary2);
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0 16px 0 24px;
+    overflow: hidden;
+    text-transform: uppercase;
+    &:not(:first-child) {
+      position: relative;
+      &:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: var(--border-color);
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+  .sidemenu-item {
+    position: relative;
+    padding: 8px;
+    gap: 0;
+    .sidemenu-item-content.closed {
+      max-width: 72px;
+      overflow: hidden;
+    }
+    .sidemenu-item-content {
+      cursor: pointer;
+      padding: 10px 8px 10px 16px;
+      border-radius: 4px;
+      gap: 8px;
+      @include transition("fast");
+      &:hover {
+        background-color: var(--hover-color);
+      }
+      &:active {
+        background-color: var(--click-color);
+      }
+      .menu-title {
+        flex: 1;
+      }
+      .icon-container > svg {
+        color: var(--icon-color);
+        display: block;
+      }
+    }
+    .sidemenu-item-content.selected {
+      background-color: var(--click-color);
+    }
+    .sidemenu-subgroup.float {
+      position: absolute;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 160px;
+      padding: 12px 0;
+      margin-top: 8px;
+      border-radius: 4px;
+      transform: translateX(66px);
+      background-color: var(--bg-color);
+      box-shadow: 0 4px 12px rgba(#293449, .15);
+      .submenu-label {
+        padding: 0 16px;
+        font-size: 12px;
+        line-height: 18px;
+        color: color(coral, secondary2);
+      }
+      .sidemenu-subitem {
+        padding: 0;
+        .submenu-title {
+          padding: 10px 16px;
+          border-radius: 0;
+        }
+      }
+    }
+    .sidemenu-subgroup {
+      overflow: hidden;
+    }
+    .ellipses-container {
+      position: absolute;
+      color: #C9CCD1;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 16px;
+      width: 8px;
+      display: grid;
+      place-items: center;
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+  }
+  .sidemenu-subitem {
+    cursor: pointer;
+    padding: 4px 16px 4px 24px;
+    .submenu-title {
+      padding: 6px 4px 6px 28px;
+      border-radius: 4px;
+      @include transition("slow");
+      &:hover {
+        background-color: var(--hover-color);
+      }
+      &:active {
+        background-color: var(--click-color);
+      }
+    }
+    .submenu-title.selected {
+      background-color: var(--click-color);
+    }
+  }
+  .sidemenu-footer {
+    border-top: 1px solid var(--border-color);
+    height: 56px;
+    position: relative;
+    .icon-container {
+      z-index: 1;
+      svg {
+        display: block;
+      }
+    }
+    .collapse-container {
+      cursor: pointer;
+      position: absolute;
+      right: -2px;
+      top: 50%;
+      height: 42px;
+      width: 22px;
+      display: grid;
+      place-items: center;
+      transform: translateY(-50%);
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    svg.collapse {
+      fill: var(--bg-color);
+      stroke: var(--border-color);
+    }
+  }
+}
+
+.sidemenu.closed {
+  .menu-title {
+    opacity: 0;
+  }
+  .sidemenu-label {
+    margin: 0 16px;
+  }
+  .chevron-container {
+    opacity: 0;
+  }
+  .collapse-container {
+    transform: translateY(-50%) translateX(19px);
+    .collapse {
+      transform: rotate(180deg);
+    }
+  }
+}
