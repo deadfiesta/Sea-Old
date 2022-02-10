@@ -1,25 +1,37 @@
 {
   "files": {
-    "main.css": "/lego/static/css/main.08bd0fde.css",
-    "main.js": "/lego/static/js/main.3409a436.js",
+    "main.css": "/lego/static/css/main.5b375835.css",
+    "main.js": "/lego/static/js/main.dd7e0d61.js",
     "static/js/787.f69292f2.chunk.js": "/lego/static/js/787.f69292f2.chunk.js",
+    "static/media/06.mp4": "/lego/static/media/06.db727f1f200c06015a75.mp4",
+    "static/media/05.mp4": "/lego/static/media/05.564e58f148124117ff61.mp4",
+    "static/media/02.mp4": "/lego/static/media/02.14696b03b4db9237006e.mp4",
+    "static/media/04.mp4": "/lego/static/media/04.7452f87adbaeff4aaa1c.mp4",
+    "static/media/03.mp4": "/lego/static/media/03.3b106fe097c32701cc1a.mp4",
+    "static/media/01.mp4": "/lego/static/media/01.a12daaee0562bf4f61f3.mp4",
+    "static/media/woodenduck.jpg": "/lego/static/media/woodenduck.d483781110ad09546ddd.jpg",
     "static/media/tom.jpg": "/lego/static/media/tom.fc73ed5238a042349854.jpg",
     "static/media/liberty.jpg": "/lego/static/media/liberty.7109114aa4b3f4785435.jpg",
     "static/media/patent.jpg": "/lego/static/media/patent.e7ef0b93d98469851aab.jpg",
     "static/media/lego-logo-evolution.jpg": "/lego/static/media/lego-logo-evolution.e9f2836dab840443d572.jpg",
+    "static/media/02.png": "/lego/static/media/02.70a5221d1858a527dee8.png",
     "static/media/injection-molding.jpg": "/lego/static/media/injection-molding.b56132efb177fe097802.jpg",
+    "static/media/01.png": "/lego/static/media/01.4cabdb1cccfb49074463.png",
+    "static/media/05.png": "/lego/static/media/05.4b5f58ef7595d0dd6cd6.png",
     "static/media/cover.jpg": "/lego/static/media/cover.5563286135b14f878c58.jpg",
-    "static/media/olekirk.jpg": "/lego/static/media/olekirk.26104699c6e918eefe06.jpg",
+    "static/media/04.png": "/lego/static/media/04.7c79051c099421b829dc.png",
+    "static/media/03.png": "/lego/static/media/03.771721c15fc681783e0e.png",
+    "static/media/06.png": "/lego/static/media/06.0f6cce4608e6a9340d0f.png",
     "static/media/legologo1973.jpg": "/lego/static/media/legologo1973.c359d569079986460c21.jpg",
     "static/media/legofirstlogo.jpg": "/lego/static/media/legofirstlogo.2674d6f7fc6f01561235.jpg",
     "static/media/legologo.svg": "/lego/static/media/legologo.708439783eee7bdb207e65a68645e406.svg",
     "index.html": "/lego/index.html",
-    "main.08bd0fde.css.map": "/lego/static/css/main.08bd0fde.css.map",
-    "main.3409a436.js.map": "/lego/static/js/main.3409a436.js.map",
+    "main.5b375835.css.map": "/lego/static/css/main.5b375835.css.map",
+    "main.dd7e0d61.js.map": "/lego/static/js/main.dd7e0d61.js.map",
     "787.f69292f2.chunk.js.map": "/lego/static/js/787.f69292f2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.08bd0fde.css",
-    "static/js/main.3409a436.js"
+    "static/css/main.5b375835.css",
+    "static/js/main.dd7e0d61.js"
   ]
 }
