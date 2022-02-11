@@ -1,0 +1,57 @@
+@mixin media($size: "1024px") {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+.full-height {
+  height: 40vh;
+  @include media {
+    height: 100vh;
+  }
+}
+
+.cover {
+  transition: all .15s ease;
+  object-fit: cover;
+  background: center center / cover no-repeat;
+}
+
+.gridcenter {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #000 center center / cover no-repeat;
+}
+
+#starwars {
+  .video-container {
+    position: relative;
+  }
+  #starwarsvideo {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+  }
+}
