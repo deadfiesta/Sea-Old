@@ -7,6 +7,8 @@ import SkeletonShowcase from './Coral/Feedback/SkeletonShowcase'
 import TextAreaShowcase from './Coral/Input/TextAreaShowcase'
 import SelectShowcase from './Coral/Input/SelectShowcase'
 import SideMenuShowcase from './Coral/Navigation/SideMenuShowcase'
+import MenuBarShowcase from './Coral/Navigation/MenuBarShowcase'
+import SelectTreeShowcase from './Coral/Input/SelectTreeShowcase'
 
 const lastUpdated = () => {
     const updated = new Date(document.lastModified)
@@ -1023,6 +1025,7 @@ const content = [
                     {
                         title: "Tree Select",
                         anchor: "treeselect",
+                        component: <SelectTreeShowcase />
                     },
                     {
                         title: "Input Group",
@@ -1040,7 +1043,8 @@ const content = [
                 subtopics: [
                     {
                         title: "Menu Bar",
-                        anchor: "menubar",
+                        anchor: "menubarshowcase",
+                        component: <MenuBarShowcase />
                     },
                     {
                         title: "Side Menu",

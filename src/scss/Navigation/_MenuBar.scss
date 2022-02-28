@@ -1,0 +1,70 @@
+.menubar {
+  @include flex {
+    align-items: center;
+    gap: 48px;
+    justify-content: space-between;
+  }
+  height: 64px;
+  padding: 0 24px;
+  background-color: color(neutral);
+  .branding {
+    @include flex {
+      align-items: center;
+    }
+    gap: 16px;
+  }
+  .menu-list {
+    height: 100%;
+    @include flex {
+      align-items: center;
+    }
+    position: relative;
+    .menu.active {
+      color: color(coral, blue);
+      .name {
+        color: inherit;
+      }
+    }
+    .menu {
+      cursor: pointer;
+      .name {
+        color: color(coral);
+        padding: 0 32px;
+        text-transform: capitalize;
+        transition: color .15s ease;
+      }
+    }
+    .underline {
+      position: absolute;
+      bottom: 0;
+      height: 4px;
+      background-color: color(coral, blue);
+    }
+  }
+  .end {
+    @include flex {
+      align-items: center;
+      gap: 16px;
+    }
+    .account {
+      @include flex {
+        align-items: center;
+        gap: 8px;
+      };
+      .avatar {
+        display: grid;
+        place-items: center;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background-color: color(coral, bg3);
+      }
+    }
+  }
+  .divider {
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #e7e9eb;
+  }
+}

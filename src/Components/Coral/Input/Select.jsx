@@ -29,7 +29,7 @@ const SelectList = ({ children, clicked, onChange }) => {
     from: { opacity: 0, y: -8 },
     enter: { opacity: 1, y: 0, pointerEvents: 'all', zIndex: 100 },
     leave: { opacity: 0, y: -8, pointerEvents: 'none' },
-    config: { tension: 800, friction: 40 }
+    config: { tension: 600, mass: .5 }
   })
 
   const listArray = [...children]
@@ -49,8 +49,7 @@ const SelectList = ({ children, clicked, onChange }) => {
 
 const SelectOption = ({ children, value }) => {
   return (
-    <li id={value} className="select-option">
-      {children}
+    <li id={value} className=" select select-option">{children}
     </li>
   )
 }

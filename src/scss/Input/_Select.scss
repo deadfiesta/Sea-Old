@@ -35,6 +35,19 @@
     .arrow-container {
       height: 20px;
     }
+    .select, .selected {
+      padding: 0;
+    }
+    .select-option.selected {
+      background: none
+    }
+    .select-option {
+      padding:0;
+      background: none;
+      &:before {
+        display: none;
+      }
+    }
   }
   .select-list-container {
     position: relative;
@@ -50,23 +63,72 @@
     overflow: hidden;
     padding: .25rem 0;
     box-shadow: 0 .4px 12px rgba(#293449, .15);
-    .select-option {
-      padding: 10px 16px;
-      &:hover {
-        background-color: color(coral, bg2);
-      }
-      &:active {
-        background-color: color(coral, bg3);
-        transition: background-color .1s ease
-      }
+  }
+  .select-option.selected {
+    background-color: color(coral, bg3);
+    &:before {
+      background-color: color(coral, bg3);
     }
   }
+  .select {
+    padding: 10px 0 10px 0;
+  }
   .select-option {
+    z-index: 1;
+    position: relative;
     @include flex {
       gap: 0.25rem;
     }
-
     cursor: pointer;
     color: color(coral);
+    padding-left: 16px;
+    &:hover {
+      &:before {
+        background-color: color(coral, bg2);
+      }
+      background-color: color(coral, bg2);
+    }
+    &:active {
+      background-color: color(coral, bg3);
+      transition: background-color .1s ease
+    }
+    &:before {
+      z-index: -1;
+      position: absolute;
+      content: '';
+      top: 0;
+      left: -50%;
+      width: 1000%;
+      height: 100%;
+    }
+  }
+  .icon-container.caret {
+    position: relative;
+    transition: color .15s ease;
+    &:hover {
+      color: color(coral, blue)
+    }
+    svg {
+      color: inherit;
+    }
+    .click-area {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 32px;
+      height: 32px;
+    }
+  }
+  // .tree-menu {
+  //   overflow: hidden;
+  // }
+  .line {
+    z-index: 2;
+    margin-left: 19px;
+    display: block;
+    width: 1px;
+    transform: translateX(4px);
+    border-left: 1px dashed color(coral, border2);
   }
 }
