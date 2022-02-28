@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/motion/static/css/main.b019d219.chunk.css",
-    "main.js": "/motion/static/js/main.5876185d.chunk.js",
-    "main.js.map": "/motion/static/js/main.5876185d.chunk.js.map",
-    "runtime-main.js": "/motion/static/js/runtime-main.c5e3efb0.js",
-    "runtime-main.js.map": "/motion/static/js/runtime-main.c5e3efb0.js.map",
+    "main.css": "/motion/static/css/main.ffe219f8.chunk.css",
+    "main.js": "/motion/static/js/main.f2d5c5a6.chunk.js",
+    "main.js.map": "/motion/static/js/main.f2d5c5a6.chunk.js.map",
+    "runtime-main.js": "/motion/static/js/runtime-main.ec664edd.js",
+    "runtime-main.js.map": "/motion/static/js/runtime-main.ec664edd.js.map",
     "static/css/2.0d0b0543.chunk.css": "/motion/static/css/2.0d0b0543.chunk.css",
-    "static/js/2.2c85d71b.chunk.js": "/motion/static/js/2.2c85d71b.chunk.js",
-    "static/js/2.2c85d71b.chunk.js.map": "/motion/static/js/2.2c85d71b.chunk.js.map",
-    "static/js/3.cc04a619.chunk.js": "/motion/static/js/3.cc04a619.chunk.js",
-    "static/js/3.cc04a619.chunk.js.map": "/motion/static/js/3.cc04a619.chunk.js.map",
+    "static/js/2.4397827d.chunk.js": "/motion/static/js/2.4397827d.chunk.js",
+    "static/js/2.4397827d.chunk.js.map": "/motion/static/js/2.4397827d.chunk.js.map",
+    "static/js/3.aa45bb7a.chunk.js": "/motion/static/js/3.aa45bb7a.chunk.js",
+    "static/js/3.aa45bb7a.chunk.js.map": "/motion/static/js/3.aa45bb7a.chunk.js.map",
     "index.html": "/motion/index.html",
     "static/css/2.0d0b0543.chunk.css.map": "/motion/static/css/2.0d0b0543.chunk.css.map",
-    "static/css/main.b019d219.chunk.css.map": "/motion/static/css/main.b019d219.chunk.css.map",
-    "static/js/2.2c85d71b.chunk.js.LICENSE.txt": "/motion/static/js/2.2c85d71b.chunk.js.LICENSE.txt",
+    "static/css/main.ffe219f8.chunk.css.map": "/motion/static/css/main.ffe219f8.chunk.css.map",
+    "static/js/2.4397827d.chunk.js.LICENSE.txt": "/motion/static/js/2.4397827d.chunk.js.LICENSE.txt",
     "static/media/img-sample.452d4648.jpg": "/motion/static/media/img-sample.452d4648.jpg",
     "static/media/main.scss": "/motion/static/media/me.2bc2bcf6.png",
     "static/media/sea-logo.b08e3393.svg": "/motion/static/media/sea-logo.b08e3393.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c5e3efb0.js",
+    "static/js/runtime-main.ec664edd.js",
     "static/css/2.0d0b0543.chunk.css",
-    "static/js/2.2c85d71b.chunk.js",
-    "static/css/main.b019d219.chunk.css",
-    "static/js/main.5876185d.chunk.js"
+    "static/js/2.4397827d.chunk.js",
+    "static/css/main.ffe219f8.chunk.css",
+    "static/js/main.f2d5c5a6.chunk.js"
   ]
 }
