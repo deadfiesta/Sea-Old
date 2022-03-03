@@ -13,11 +13,13 @@ const Drawer = ({ open, toggle, direction, size, component, primaryBtn, secondar
     from: { x: '100%' },
     enter: {
       x: '0', config: size === 'small' || size === 'medium'
-        ? { mass: .25, friction: 18, tension: 200 } : { mass: .5, friction: 24, tension: 240 }
+        ? { mass: .25, friction: 18, tension: 200 } 
+        : { mass: .5, friction: 24, tension: 240 }
     },
     leave: {
       x: '100%', config: size === 'small' || size === 'medium'
-        ? { mass: .25, friction: 20, tension: 300 } : { mass: .5, friction: 26, tension: 280 }
+        ? { mass: .25, friction: 20, tension: 300 } 
+        : { mass: .5, friction: 26, tension: 280 }
     },
   })
 
@@ -47,7 +49,7 @@ const Drawer = ({ open, toggle, direction, size, component, primaryBtn, secondar
               <div className="close-container" onClick={toggle}><CrossIcon /></div>
             </div>
             <div className="drawer-body">
-              <div className="arrow left" /><hr /><p>{size === 'small' ? 'Small 480px' : size === 'medium' ? 'Medium 560px' : size === 'large' ? 'Large 648px' : 'Extra Large 840px'}</p><hr /><div className="arrow right"></div>
+              <div className="arrow left" /><hr style={{ transform: 'translateX(-4.5px)' }} /><p>{size === 'small' ? 'Small 480px' : size === 'medium' ? 'Medium 560px' : size === 'large' ? 'Large 648px' : 'Extra Large 840px'}</p><hr style={{ transform: 'translateX(4.5px)' }} /><div className="arrow right"></div>
             </div>
             <div className="drawer-buttons">
               {tertiaryBtn}

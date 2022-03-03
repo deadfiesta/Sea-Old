@@ -20,14 +20,18 @@ const DrawerShowcase = () => {
   const codeString = `const transitions = useTransition(open, {
   from: { x: '100%' },
   enter: {
-    x: '0', config: size === 'small' || size === 'medium'
-      ? { mass: .25, friction: 18, tension: 200 } : { mass: .5, friction: 24, tension: 240 }
+    x: '0', 
+    config: size === 'small' || size === 'medium'
+      ? { mass: .25, friction: 18, tension: 200 } 
+      : { mass: .5, friction: 24, tension: 240 }
   },
   leave: {
-    x: '100%', config: size === 'small' || size === 'medium'
-      ? { mass: .25, friction: 20, tension: 300 } : { mass: .5, friction: 26, tension: 280 }
-  },
-  })
+    x: '100%', 
+    config: size === 'small' || size === 'medium'
+      ? { mass: .25, friction: 20, tension: 300 } 
+      : { mass: .5, friction: 26, tension: 280 }
+  }
+})
 
 const scrim = useTransition(open, {
   from: { opacity: 0, pointerEvents: 'none' },
@@ -46,8 +50,9 @@ const scrim = useTransition(open, {
   console.log(currentSize)
   return (
     <ContentContainer>
+      <p>A Drawer is a panel that overlays on top of a page and slides in from the right. It contains a set of information or actions. Drawer can present actions or information without clustering the current page content or asking users to leave the page.</p>
       <SegmentContainer>
-        <p>A Drawer is a panel that overlays on top of a page and slides in from the right. It contains a set of information or actions. Drawer can present actions or information without clustering the current page content or asking users to leave the page.</p>
+        <h3>Interactive Demo</h3>
         <DemoContainer>
           <Drawer size={currentSize} primaryBtn={<PrimaryBtn />} secondaryBtn={<SecondaryBtn />} toggle={() => setOpen(!open)} open={open} />
           <Button onRelease={() => setOpen(!open)}>{open ? "Close Drawer" : "Open Drawer"}</Button>

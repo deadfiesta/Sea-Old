@@ -56,10 +56,10 @@
         padding: 3px;
       }
       .left {
-        transform: rotate(135deg);
+        transform: translateX(2px) rotate(135deg) ;
       }
       .right {
-        transform: rotate(-45deg);
+        transform: translateX(-2px) rotate(-45deg) ;
       }
       hr {
         border: 1px solid color(coral, border2);
