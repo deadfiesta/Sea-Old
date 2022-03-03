@@ -195,7 +195,7 @@ header {
             height: $smallsize;
             background-color: color(accent, coral#{$i});
             // transform-origin: top left;
-            animation: move#{$i} ease-in-out alternate infinite;
+            animation: move#{$i} ease-in-out forwards;
             animation-duration: (random(20) * 5) + s;
             @include media {
                 top: (random(2)-0.5 * $multiplier) + px;

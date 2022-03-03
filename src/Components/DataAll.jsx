@@ -9,6 +9,7 @@ import SelectShowcase from './Coral/Input/SelectShowcase'
 import SideMenuShowcase from './Coral/Navigation/SideMenuShowcase'
 import MenuBarShowcase from './Coral/Navigation/MenuBarShowcase'
 import SelectTreeShowcase from './Coral/Input/SelectTreeShowcase'
+import DrawerShowcase from './Coral/Pattern/DrawerShowcase'
 
 const lastUpdated = () => {
     const updated = new Date(document.lastModified)
@@ -1000,6 +1001,17 @@ const content = [
                         title: "Skeleton",
                         anchor: "skel",
                         component: <SkeletonShowcase />
+                    }
+                ]
+            },
+            {
+                topic: "Pattern",
+                anchor: "pattern",
+                subtopics: [
+                    {
+                        title: "Drawer",
+                        anchor: "drawershowcase",
+                        component: <DrawerShowcase />
                     }
                 ]
             },

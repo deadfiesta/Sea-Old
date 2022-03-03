@@ -6,7 +6,7 @@ import CrossCircleFIcon from '@seaweb/coral/icons/CrossCircleF';
 const TextField = ({ type, clear, label, value, helper, validation, size, leadIcon, trailIcon, trailClick, prefix, prefixDivider, prefixOpacity, suffix, suffixDivider, suffixOpacity, onChange, placeholder, name, id }) => {
 
   const input = useRef()
-  const [style, api] = useSpring(() => ({ from: { width: 304 }, config: { tension: 400, friction: 22 } }))
+  const [style, api] = useSpring(() => ({config: { tension: 400, friction: 22 } }))
   const [visible, setVisible] = useState(false)
   const transition = useTransition(visible, {
     from: { opacity: 0, scale: 0.5 },
@@ -16,13 +16,13 @@ const TextField = ({ type, clear, label, value, helper, validation, size, leadIc
   })
 
   switch (size) {
+    default:
     case 'xs':
       api.start({ width: 96 })
       break
     case 's':
       api.start({ width: 200 })
       break
-    default:
     case 'm':
       api.start({ width: 304 })
       break
