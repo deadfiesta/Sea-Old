@@ -35,7 +35,9 @@ a {
         align-items: center;
     }
 }
-
+.wrapper__ {
+    @include flex;
+}
 .wrapper {
     padding: 0 1.5rem;
     @include media {

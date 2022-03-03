@@ -10,6 +10,7 @@ import SideMenuShowcase from './Coral/Navigation/SideMenuShowcase'
 import MenuBarShowcase from './Coral/Navigation/MenuBarShowcase'
 import SelectTreeShowcase from './Coral/Input/SelectTreeShowcase'
 import DrawerShowcase from './Coral/Pattern/DrawerShowcase'
+import SidesheetShowcase from './Coral/Pattern/SidesheetShowcase'
 
 const lastUpdated = () => {
     const updated = new Date(document.lastModified)
@@ -1012,6 +1013,11 @@ const content = [
                         title: "Drawer",
                         anchor: "drawershowcase",
                         component: <DrawerShowcase />
+                    },
+                    {
+                        title: "Side Sheet",
+                        anchor: "sidesheetshowcase",
+                        component: <SidesheetShowcase />
                     }
                 ]
             },

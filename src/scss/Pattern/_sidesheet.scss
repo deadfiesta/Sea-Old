@@ -1,0 +1,52 @@
+.sidesheet-showcase {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.sidesheet {
+  width: 0;
+}
+
+.sidesheet-container {
+  @include flex(column) {
+    gap: 8px;
+  }
+  padding: 16px 0 0;
+  height: 100%;
+  min-width: 320px;
+  border-left: 1px solid #E1E3E8;
+  .sidesheet-title {
+    @include flex {
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 24px;
+    }
+  }
+  .sidesheet-body {
+    @include flex {
+      align-items: center;
+      justify-content: center;
+    }
+    flex: 1;
+    width: 100%;
+    background-color: color(coral, bg2);
+    .arrow {
+      border: solid color(coral, border2);
+      border-width: 0 2px 2px 0;
+      padding: 3px;
+    }
+    .left {
+      transform: translateX(2px) rotate(135deg) ;
+    }
+    .right {
+      transform: translateX(-2px) rotate(-45deg) ;
+    }
+    hr {
+      border: 1px solid color(coral, border2);
+      flex: 1 1;
+    }
+    p {
+      padding: 1rem;
+    }
+  }
+}

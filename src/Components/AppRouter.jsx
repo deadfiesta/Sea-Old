@@ -23,7 +23,7 @@ const AppRouter = () => {
                     <Hamburger toggled={isOpen} toggle={setOpen} direction="right" />
                 </Header>
                 <Routes>
-                <Route path="/" element={<PageMockup open={isOpen} close={closeMenu} />} />
+                    <Route path="/" element={<PageMockup open={isOpen} close={closeMenu} />} />
                     <Route path="/coral" element={<PageCoral open={isOpen} close={closeMenu} />} />
                     <Route path="/research" element={<PageResearch open={isOpen} close={closeMenu} />} />
                 </Routes>
