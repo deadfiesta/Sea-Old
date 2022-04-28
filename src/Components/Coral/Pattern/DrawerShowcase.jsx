@@ -21,13 +21,13 @@ const DrawerShowcase = () => {
   from: { x: '100%' },
   enter: {
     x: '0', 
-    config: size === 'small' || size === 'medium'
+    config: size <= 560
       ? { mass: .25, friction: 18, tension: 200 } 
       : { mass: .5, friction: 24, tension: 240 }
   },
   leave: {
     x: '100%', 
-    config: size === 'small' || size === 'medium'
+    config: size <= 560
       ? { mass: .25, friction: 20, tension: 300 } 
       : { mass: .5, friction: 26, tension: 280 }
   }

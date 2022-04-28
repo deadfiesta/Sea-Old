@@ -11,6 +11,8 @@ import MenuBarShowcase from './Coral/Navigation/MenuBarShowcase'
 import SelectTreeShowcase from './Coral/Input/SelectTreeShowcase'
 import DrawerShowcase from './Coral/Pattern/DrawerShowcase'
 import SidesheetShowcase from './Coral/Pattern/SidesheetShowcase'
+import TabsShowcase from './Coral/Navigation/TabsShowcase'
+import ProgressShowcase from './Coral/Feedback/ProgressShowcase'
 
 const lastUpdated = () => {
     const updated = new Date(document.lastModified)
@@ -1002,6 +1004,11 @@ const content = [
                         title: "Skeleton",
                         anchor: "skel",
                         component: <SkeletonShowcase />
+                    },
+                    {
+                        title: "Progress",
+                        anchor: "progressshowcase",
+                        component: <ProgressShowcase />
                     }
                 ]
             },
@@ -1068,6 +1075,11 @@ const content = [
                         title: "Side Menu",
                         anchor: "sidemenu",
                         component: <SideMenuShowcase />
+                    },
+                    {
+                        title: "Tabs",
+                        anchor: "tabsshowcase",
+                        component: <TabsShowcase />
                     }
                 ]
             },

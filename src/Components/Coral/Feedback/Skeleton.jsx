@@ -373,7 +373,7 @@ const Sample = () => {
           {/* <ReloadBtn reload={reloadingTable} onclick={reload} /> */}
         </div>
         <div className="mockup-container" style={{ padding: "0" }}>
-          <table>
+          <table className="skeleton-table">
             <thead>
               <tr>
                 {table.header.map((head, i) => (

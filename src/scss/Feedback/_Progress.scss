@@ -1,0 +1,85 @@
+.progressbar-container {
+  position: relative;
+  width: 464px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  .progressbar {
+    position: relative;
+    height: 8px;
+    border-radius: 4px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .loadingbar,
+  .bgbar {
+    width: 418px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    stroke-width: 8px;
+    stroke-linecap: round;
+  }
+  .loadingbar {
+    left: -418px;
+    z-index: 10;
+  }
+  .bgbar {
+    stroke: color(coral, bg3);
+    left: 0;
+  }
+  .progress-state {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+  }
+  .percentage-number {
+    width: 38px;
+    color: color(coral);
+    @include flex {
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+  .progress-icon-container {
+    max-height: 20px;
+  }
+}
+
+.progress-circle-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  .progress-circle {
+    stroke-width: 6;
+    stroke-linecap: round;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  }
+  .circle-loader {
+    z-index: 10;
+  }
+  .circle-bg {
+    stroke: color(coral, bg3);
+  }
+  .circle-number-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    .circle-number {
+      color: color(coral);
+      font-size: 14px;
+    }
+  }
+  .progress-icon-container {
+    display: grid;
+    place-items: center;
+    height: 64px;
+    width: 64px;
+  }
+}

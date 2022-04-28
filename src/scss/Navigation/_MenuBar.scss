@@ -19,20 +19,18 @@
       align-items: center;
     }
     position: relative;
-    .menu.active {
-      color: color(coral, blue);
-      .name {
-        color: inherit;
-      }
+    .name {
+      color: inherit;
+      padding: 0 32px;
+      text-transform: capitalize;
+      transition: color 0.15s ease;
     }
-    .menu {
+    .menubar-item.active {
+      color: color(coral, blue);
+    }
+    .menubar-item {
+      color: color(coral);
       cursor: pointer;
-      .name {
-        color: color(coral);
-        padding: 0 32px;
-        text-transform: capitalize;
-        transition: color .15s ease;
-      }
     }
     .underline {
       position: absolute;
@@ -50,7 +48,7 @@
       @include flex {
         align-items: center;
         gap: 8px;
-      };
+      }
       .avatar {
         display: grid;
         place-items: center;

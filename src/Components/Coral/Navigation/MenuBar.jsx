@@ -7,14 +7,15 @@ import UserIcon from '@seaweb/coral/icons/User';
 
 const MenuBar = () => {
 
-  const [tabActive, setTabActive] = useState('home')
+  const [tabActive, setTabActive] = useState(0)
+  const tabNames = ['Home', 'Organisation', 'App Center', 'Settings']
 
   const [styles, api] = useSpring(() => ({ left: 0, width: 0, config: { tension: 200, friction: 10, mass: .125 } }))
 
   useEffect(() => {
-    let active = document.getElementById(tabActive)
+    let active = document.querySelector('.menu-list').childNodes[tabActive]
     active !== null && api.start({ left: active.offsetLeft, width: active.offsetWidth })
-  }, [tabActive, api])
+  })
 
   return (
     <div className='coral menubar'>
@@ -24,10 +25,8 @@ const MenuBar = () => {
         <h3>Investment System</h3>
       </div>
       <ul className="menu-list">
-        {['home', 'organisation', 'app center', 'settings'].map((tab, i) => (
-          <li onClick={() => setTabActive(tab.replace(/\s/g, ''))} id={tab.replace(/\s/g, '')} className={tabActive === tab.replace(/\s/g, '') ? "menu active" : "menu"} key={`menu${i}`}>
-            <span className='name'>{tab}</span>
-          </li>
+        {tabNames.map((tab, i) => (
+          <li onClick={()=>setTabActive(i)} className={tab && tabActive === i ? 'menubar-item active' : 'menubar-item'} key={`tab${i}`}><div className="name">{tab}</div></li>
         ))}
         <animated.li style={styles} className="underline" />
       </ul>

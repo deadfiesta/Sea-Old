@@ -44,7 +44,7 @@ const Header = ({ open, children }) => {
 
     let boxes = []
 
-    for (let i=1; i<8; i++) {
+    for (let i=1; i<3; i++) {
         let box = i.toString()
         boxes.push(box)
     }
