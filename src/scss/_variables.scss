@@ -1,0 +1,82 @@
+@function color($color, $tone: 1) {
+  @return map-get(map-get($colors, $color), $tone);
+}
+
+$colors: (
+  gray: (
+    1: #17181a,
+    2: #282e33,
+    3: #495057,
+    4: #6c757d,
+    5: #adb5bd,
+    6: #ced4da,
+    7: #e9ecef,
+    8: #f8f9fa,
+  ),
+  white: (
+    1: #fff,
+  ),
+);
+
+:root {
+  --white: #fff;
+  --grey-1: #17181a;
+  --grey-2: #282e33;
+  --grey-3: #495057;
+  --grey-4: #6c757d;
+  --grey-5: #adb5bd;
+  --grey-6: #ced4da;
+  --grey-7: #e9ecef;
+  --grey-8: #f8f9fa;
+  --grey-1-stay: #17181a;
+  --grey-2-stay: #282e33;
+  --grey-3-stay: #495057;
+  --grey-4-stay: #6c757d;
+  --grey-5-stay: #adb5bd;
+  --grey-6-stay: #ced4da;
+  --grey-7-stay: #e9ecef;
+  --grey-8-stay: #f8f9fa;
+  --white-stay: #fff;
+  --bg-black-stay: #000;
+  --bg-color: none;
+  --light-vis: 1;
+  --dark-vis: 0;
+  --orange-deep: #fa531c;
+  --orange: #f5881b;
+  --yellow: #f5ac1b;
+  --ginger: #f5d81b;
+  --lime: #81d617;
+  --green: #16c42a;
+  --cyan: #19b7e3;
+  --blue: #1b92f5;
+  --blue-deep: #1b5cf5;
+  --purple: #9a17d1;
+  --pink: #e0198d;
+  --red: #f5222d;
+  @include scheme {
+    --white: #17181a;
+    --grey-1: #fff;
+    --grey-2: #e9ecef;
+    --grey-3: #ced4da;
+    --grey-4: #adb5bd;
+    --grey-5: #6c757d;
+    --grey-6: #495057;
+    --grey-7: #282e33;
+    --grey-8: #17181a;
+    --bg-color: #000;
+    --light-vis: 0;
+    --dark-vis: 1;
+    --orange-deep: #D74B1D;
+    --orange: #D3781C;
+    --yellow: #f5ac1b;
+    --ginger: #D3961C;
+    --lime: #70BA19;
+    --green: #16AB29;
+    --cyan: #18A0C6;
+    --blue: #1A80D6;
+    --blue-deep: #1A52D6;
+    --purple: #8618B7;
+    --pink: #C1197D;
+    --red: #D3212C;
+  }
+}
