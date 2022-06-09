@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/new-responsive/static/css/main.0599c4a1.css",
-    "main.js": "/new-responsive/static/js/main.913b20e8.js",
-    "static/js/787.a2ba8300.chunk.js": "/new-responsive/static/js/787.a2ba8300.chunk.js",
-    "index.html": "/new-responsive/index.html",
-    "main.0599c4a1.css.map": "/new-responsive/static/css/main.0599c4a1.css.map",
-    "main.913b20e8.js.map": "/new-responsive/static/js/main.913b20e8.js.map",
-    "787.a2ba8300.chunk.js.map": "/new-responsive/static/js/787.a2ba8300.chunk.js.map"
+    "main.css": "/new-responsive/static/css/main.eb995e88.css",
+    "main.js": "/new-responsive/static/js/main.80ed2134.js",
+    "static/js/27.aa912d31.chunk.js": "/new-responsive/static/js/27.aa912d31.chunk.js",
+    "static/media/apple-2022.png": "/new-responsive/static/media/apple-2022.49eca3d4318f71edd48d.png",
+    "static/media/apple-2017.jpg": "/new-responsive/static/media/apple-2017.bac865cbb209c4ea07ee.jpg",
+    "static/media/apple-2010.png": "/new-responsive/static/media/apple-2010.870b9a46884ac7560139.png",
+    "static/media/apple-2012.png": "/new-responsive/static/media/apple-2012.7522ea3b8f77938261ed.png",
+    "static/media/apple-1998.png": "/new-responsive/static/media/apple-1998.3c71e6629ed4f0cc6b80.png",
+    "static/media/apple-1996.png": "/new-responsive/static/media/apple-1996.2f3199f9f1ab0ce0d257.png",
+    "index.html": "/new-responsive/index.html"
   },
   "entrypoints": [
-    "static/css/main.0599c4a1.css",
-    "static/js/main.913b20e8.js"
+    "static/css/main.eb995e88.css",
+    "static/js/main.80ed2134.js"
   ]
 }
