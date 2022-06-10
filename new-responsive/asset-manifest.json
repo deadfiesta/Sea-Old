@@ -1,9 +1,12 @@
 {
   "files": {
-    "main.css": "/new-responsive/static/css/main.eb995e88.css",
-    "main.js": "/new-responsive/static/js/main.80ed2134.js",
+    "main.css": "/new-responsive/static/css/main.0a1c9865.css",
+    "main.js": "/new-responsive/static/js/main.7e4e7460.js",
     "static/js/27.aa912d31.chunk.js": "/new-responsive/static/js/27.aa912d31.chunk.js",
     "static/media/apple-2022.png": "/new-responsive/static/media/apple-2022.49eca3d4318f71edd48d.png",
+    "static/media/container-query.mp4": "/new-responsive/static/media/container-query.a2e5e364b0fe63dd247e.mp4",
+    "static/media/container.mp4": "/new-responsive/static/media/container.915110d9606e646f1c83.mp4",
+    "static/media/formfactor.mp4": "/new-responsive/static/media/formfactor.f0ddc551c7c7f449a219.mp4",
     "static/media/apple-2017.jpg": "/new-responsive/static/media/apple-2017.bac865cbb209c4ea07ee.jpg",
     "static/media/apple-2010.png": "/new-responsive/static/media/apple-2010.870b9a46884ac7560139.png",
     "static/media/apple-2012.png": "/new-responsive/static/media/apple-2012.7522ea3b8f77938261ed.png",
@@ -12,7 +15,7 @@
     "index.html": "/new-responsive/index.html"
   },
   "entrypoints": [
-    "static/css/main.eb995e88.css",
-    "static/js/main.80ed2134.js"
+    "static/css/main.0a1c9865.css",
+    "static/js/main.7e4e7460.js"
   ]
 }
