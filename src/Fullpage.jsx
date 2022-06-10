@@ -5,6 +5,15 @@ import ResponsiveDesignToday from './Components/ResponsiveDesignToday';
 import PerceptionChanged from './Components/PerceptionChanged';
 import GoodNews from './Components/GoodNews';
 import Timeline from './Components/Timeline';
+import NewEra from './Components/NewEra';
+import ResponsiveUser from './Components/ResponsiveUser';
+import ReduceMotion from './Components/ReduceMotion';
+import ColorScheme from './Components/ColorScheme';
+import PrefersContrast  from './Components/PrefersContrast';
+import ResponsiveContainer from './Components/ResponsiveContainer';
+import ContainerQuery from './Components/ContainerQuery';
+import ResponsiveFormFactor from './Components/ResponsiveFormFactor';
+import NewResponsive from './Components/NewResponsive';
 
 const Fullpage = () => {
   const [page, setPage] = useState(0)
@@ -36,9 +45,15 @@ const Fullpage = () => {
             <PerceptionChanged darkMode={darkMode} currentIndex={page} i={2} fadeConfig={fadeConfig} />
             <GoodNews darkMode={darkMode} currentIndex={page} i={3} fadeConfig={fadeConfig} />
             <Timeline darkMode={darkMode} currentIndex={page} i={4} fadeConfig={fadeConfig} />
-            <div className="section">
-              <p>Section 2</p>
-            </div>
+            <NewEra darkMode={darkMode} currentIndex={page} i={5} fadeConfig={fadeConfig} />
+            <ResponsiveUser darkMode={darkMode} currentIndex={page} i={6} fadeConfig={fadeConfig} />
+            <ReduceMotion darkMode={darkMode} currentIndex={page} i={7} fadeConfig={fadeConfig} />
+            <ColorScheme darkMode={darkMode} currentIndex={page} i={8} fadeConfig={fadeConfig} />
+            <PrefersContrast darkMode={darkMode} currentIndex={page} i={9} fadeConfig={fadeConfig} />
+            <ResponsiveContainer darkMode={darkMode} currentIndex={page} i={10} fadeConfig={fadeConfig} />
+            <ContainerQuery darkMode={darkMode} currentIndex={page} i={11} fadeConfig={fadeConfig} />
+            <ResponsiveFormFactor darkMode={darkMode} currentIndex={page} i={12} fadeConfig={fadeConfig} />
+            <NewResponsive darkMode={darkMode} currentIndex={page} i={13} fadeConfig={fadeConfig} />
           </ReactFullpage.Wrapper>
         );
       }}

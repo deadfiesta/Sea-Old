@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap");
 
 @import "function";
@@ -91,7 +91,7 @@ h4 {
   width: 100%;
   height: 100vh;
   z-index: 100;
-  background-color: rgba(black, .7);
+  background-color: rgba(black, 0.7);
   display: grid;
   place-items: center;
   padding: 2rem;
@@ -116,6 +116,27 @@ h4 {
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
   }
+}
+
+span.code {
+  cursor: default;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--grey-7);
+  display: max-content;
+  white-space: nowrap;
+  font-family: "Fira Code", sans-serif !important;
+  font-size: 1.5rem;
+  transition: all 0.15s ease;
+  &:hover {
+    color: var(--white-stay);
+    transform: translateY(10px);
+    background-color: var(--cyan);
+  }
+}
+
+video {
+  max-height: 500px;
 }
 
 //Homepage
@@ -244,7 +265,8 @@ h4 {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    height: 100vh;
+    min-width: 100%;
   }
   svg {
     width: 100% !important;
@@ -258,6 +280,9 @@ h4 {
     gap: 4rem;
   }
   .timeline-container {
+    @supports not (grid-template-columns: subgrid) {
+      display: none;
+    }
     width: 100%;
     display: grid;
     row-gap: 1rem;
@@ -281,7 +306,7 @@ h4 {
         color: var(--grey-2);
         width: 100%;
         &:before {
-          content: '';
+          content: "";
           position: absolute;
           top: 50%;
           left: 50%;
@@ -299,13 +324,14 @@ h4 {
       grid-template-columns: subgrid;
       div {
         @include flex(column wrap);
-        gap: .5rem;
+        gap: 0.5rem;
       }
       h4 {
+        color: var(--white-stay);
         cursor: pointer;
-        border-radius: .5rem;
-        padding: .25rem 1rem;
-        transition: all .3s ease;
+        border-radius: 0.5rem;
+        padding: 0.25rem 1rem;
+        transition: all 0.3s ease;
         &:hover {
           filter: brightness(110%);
         }
@@ -341,7 +367,6 @@ h4 {
           background-color: var(--purple);
         }
       }
-
     }
   }
   .lottie-container {
@@ -355,9 +380,316 @@ h4 {
     width: 100px !important;
   }
   .here h4 {
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     display: inline-block;
-    padding: .5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     background-color: var(--red);
   }
+}
+
+.new-era {
+  @include flex(column nowrap);
+  gap: 3rem;
+  @include desktop {
+    gap: 5rem;
+  }
+  text-align: center;
+  width: 100%;
+  ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .lottie-container {
+    height: 10vh;
+    @include desktop {
+      height: 23vh;
+    }
+  }
+  svg {
+    height: 140px !important;
+    width: 140px !important;
+    @include desktop {
+      height: 300px !important;
+      width: 300px !important;
+    }
+  }
+}
+
+.responsive-user {
+  width: 100%;
+  @include flex(column nowrap);
+  gap: 3rem;
+  @include desktop {
+    gap: 5rem;
+  }
+  ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    align-items: center;
+    gap: 3rem;
+  }
+  .lottie-container {
+    height: 10vh;
+    @include desktop {
+      height: 18vh;
+    }
+  }
+  svg {
+    height: 140px !important;
+    width: 140px !important;
+    @include desktop {
+      height: 300px !important;
+      width: 300px !important;
+    }
+  }
+}
+
+.reduce-motion {
+  width: 100%;
+  @include flex(column nowrap);
+  gap: 3rem;
+  @include desktop {
+    gap: 5rem;
+  }
+  ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    li {
+      position: relative;
+      height: 30vh;
+      &:hover {
+        .card-wrapper {
+          transform: rotateY(180deg);
+        }
+        @media (prefers-reduced-motion) {
+          .card-wrapper {
+            transform: rotateY(0);
+          }
+          .card-front {
+            opacity: 0;
+          }
+          .card-back {
+            opacity: 1;
+          }
+        }
+      }
+      .card-wrapper {
+        width: 100%;
+        height: 100%;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        transition: all 0.4s ease;
+      }
+    }
+  }
+  .settings {
+    @include flex;
+    gap: 1rem;
+  }
+  .card-front,
+  .card-back {
+    border-radius: 0.5rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  .card-front {
+    display: grid;
+    place-items: center;
+    background-color: var(--blue);
+    transition: opacity 0.15s ease;
+    h3 {
+      color: var(--white-stay);
+    }
+  }
+  .card-back {
+    background-color: #ffd302;
+    transform: rotateY(180deg);
+    transition: opacity 0.15s ease;
+    @media (prefers-reduced-motion) {
+      opacity: 0;
+      transform: rotateY(0);
+    }
+  }
+  .lottie-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 20vh;
+    @include desktop {
+      height: 23vh;
+    }
+  }
+  svg {
+    height: 140px !important;
+    width: 140px !important;
+    @include desktop {
+      height: 300px !important;
+      width: 300px !important;
+    }
+  }
+}
+
+.color-scheme {
+  @include flex(column nowrap);
+  justify-content: center;
+  gap: 3rem;
+  @include desktop {
+    gap: 5rem;
+  }
+  svg {
+    height: 240px !important;
+    width: 240px !important;
+    opacity: inherit;
+  }
+
+  ul {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+    grid-template-columns: repeat(12, 48px);
+    li {
+      height: 48px;
+    }
+    .one {
+      background-color: var(--orange-deep);
+    }
+    .two {
+      background-color: var(--orange);
+    }
+    .three {
+      background-color: var(--yellow);
+    }
+    .four {
+      background-color: var(--ginger);
+    }
+    .five {
+      background-color: var(--lime);
+    }
+    .six {
+      background-color: var(--green);
+    }
+    .seven {
+      background-color: var(--cyan);
+    }
+    .eight {
+      background-color: var(--blue);
+    }
+    .nine {
+      background-color: var(--blue-deep);
+    }
+    .ten {
+      background-color: var(--purple);
+    }
+    .eleven {
+      background-color: var(--pink);
+    }
+    .twelve {
+      background-color: var(--red);
+    }
+  }
+
+  .lottie-container {
+    height: 20vh;
+    padding: 2rem 0;
+    @include desktop {
+      height: 20vh;
+      padding: 4rem 0;
+    }
+  }
+}
+
+.prefers-contrast {
+  @include flex(column nowrap);
+  gap: 3rem;
+  @include desktop {
+    gap: 5rem;
+  }
+  .settings {
+    @include flex;
+    gap: 1rem;
+  }
+  .box {
+    padding: 2rem 2.5rem;
+    border-radius: .5rem;
+    text-align: center;
+    color: var(--white-stay);
+    background-color: var(--lime);
+    transition: all .3s ease;
+    @media (prefers-contrast: more) {
+      color: var(--grey-1);
+      background-color: var(--white);
+      border: 1px solid var(--grey-1);
+      transition: all .3s ease;
+    }
+    @media (prefers-contrast: less) {
+      color: var(--grey-4);
+      background-color: var(--white);
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      transition: all .3s ease;
+    }
+    @media (prefers-contrast: custom) {
+      color: var(--white-stay);
+      background-color: var(--pink);
+      transition: all .3s ease;
+    }
+    p {
+      color: inherit;
+      transition: color .15s ease;
+    }
+  }
+}
+
+.responsive-container, .container-query {
+  @include flex(column nowrap);
+  gap: 3rem;
+}
+
+.responsive-formfactor {
+  @include flex(column nowrap);
+  gap: 3rem;
+}
+
+.new-responsive {
+  @include flex(column nowrap);
+  gap: 3rem;
+  @include desktop {
+    gap: 5rem;
+  }
+  .round {
+    @include flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 20rem;
+    span {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--white-stay);
+      text-align: center;
+    }
+  }
+  .user {
+    background-color: var(--blue)
+  }
+  .viewport {
+    background-color: var(--green)
+  }
+  .macro {
+    background-color: var(--yellow);
+  }
+  .container-styles {
+    border-radius: 3rem;
+    background-color: var(--red);
+  }
+
 }
