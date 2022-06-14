@@ -33,6 +33,9 @@ const Fullpage = () => {
       //fullpage options
       licenseKey={'YOUR_KEY_HERE'}
       navigation={true}
+      anchors={['home', 'responsiveToday', 'newPerception', 'newTechnology', 'cssEvolution', 'newEra', 'responsiveToUser', 'reducedMotion', 'colorScheme', 'prefersContrast', 'responsiveToContainer', 'containerQuery', 'responsiveFormFactor', 'newResponsive']}
+      navigationTooltips={['Home', 'Responsive Today', 'The New Perception', 'New Responsive Technology', 'CSS Evolution', 'Responsive to User', 'Reduced Motion', 'Prefers Color Scheme', 'Prefers Contrast', 'Responsive to Container', 'Container Query', 'Responsive to Form Factor', 'The New Responsive']} 
+      showActiveTooltip={true}
 
       scrollingSpeed={550} /* Options here */
       onLeave={(origin, destination, direction) => setPage(destination.index)}

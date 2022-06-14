@@ -16,6 +16,11 @@
   background: var(--grey-5) !important;
 }
 
+#fp-nav ul li .fp-tooltip {
+  color: var(--grey-5) !important;
+  transform: translateY(-4px);
+}
+
 .fp-watermark {
   display: none !important;
 }
