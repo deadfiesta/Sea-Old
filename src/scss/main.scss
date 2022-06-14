@@ -574,9 +574,6 @@ video {
   @include flex(column nowrap);
   justify-content: center;
   gap: 3rem;
-  @include desktop {
-    gap: 5rem;
-  }
   svg {
     height: 240px !important;
     width: 240px !important;
