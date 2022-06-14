@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/new-responsive/static/css/main.698af88f.css",
+    "main.css": "/new-responsive/static/css/main.d295b85d.css",
     "main.js": "/new-responsive/static/js/main.12927205.js",
     "static/js/27.aa912d31.chunk.js": "/new-responsive/static/js/27.aa912d31.chunk.js",
     "static/media/apple-2022.png": "/new-responsive/static/media/apple-2022.49eca3d4318f71edd48d.png",
@@ -15,7 +15,7 @@
     "index.html": "/new-responsive/index.html"
   },
   "entrypoints": [
-    "static/css/main.698af88f.css",
+    "static/css/main.d295b85d.css",
     "static/js/main.12927205.js"
   ]
 }
