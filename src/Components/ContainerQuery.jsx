@@ -7,10 +7,13 @@ const ContainerQuery = ({ darkMode, currentIndex, i, fadeConfig }) => {
     <animated.div style={fade} className="section">
       <div className="container container-query">
         <h2>Container query cards</h2>
-        <p>In this demo plant website, each of the product cards, including the one in the hero, the sidebar of recently viewed items, and the product grid, are all the exact same component, with the same markup.</p> 
-        <video width="100%" data-autoplay data-keepplaying autoPlay muted playsInline>
-          <source src={video} type="video/mp4" />
-        </video>
+        <ul className="video-content">
+          <li><p>In this demo plant website, each of the product cards, including the one in the hero, the sidebar of recently viewed items, and the product grid, are all the exact same component, with the same markup.</p> </li>
+          <li><video width="100%" data-autoplay data-keepplaying autoPlay muted playsInline>
+            <source src={video} type="video/mp4" />
+          </video>
+          </li>
+        </ul>
       </div>
     </animated.div>
   )

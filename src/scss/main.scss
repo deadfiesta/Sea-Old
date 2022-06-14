@@ -61,23 +61,23 @@ h4 {
     line-height: 150%;
   }
   p {
-    font-size: 2rem;
-    line-height: 3rem;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
   }
   h1 {
-    font-size: 6rem;
-    line-height: 8.5rem;
+    font-size: 4rem;
+    line-height: 6rem;
   }
 
   h2 {
-    font-size: 3rem;
-    line-height: 4.5rem;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
   }
 
   h3 {
     font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 2.25rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
   h4 {
     font-size: 1.25rem;
@@ -105,6 +105,8 @@ h4 {
   margin: 0 auto;
   padding: clamp(20px, 20%, 48px);
   max-width: 1280px;
+  max-height: 100vh;
+  overflow-y: hidden;
 }
 
 .lottie-container {
@@ -130,13 +132,23 @@ span.code {
   transition: all 0.15s ease;
   &:hover {
     color: var(--white-stay);
-    transform: translateY(10px);
     background-color: var(--cyan);
   }
 }
 
 video {
-  max-height: 500px;
+  object-fit: contain;
+  width: 100%;
+}
+.video-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow-y: hidden;
+  gap: 2rem;
+  li {
+    width: 100%;
+  }
 }
 
 //Homepage
@@ -257,6 +269,9 @@ video {
 }
 
 .good-news {
+  height: 100vh;
+  display: grid;
+  place-items: center;
   h2 {
     z-index: 100;
   }
@@ -265,7 +280,6 @@ video {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 100vh;
     min-width: 100%;
   }
   svg {
@@ -281,7 +295,7 @@ video {
   }
   .timeline-container {
     @supports not (grid-template-columns: subgrid) {
-      display: none;
+      @include flex(column nowrap);
     }
     width: 100%;
     display: grid;
@@ -289,18 +303,31 @@ video {
     grid-template-columns: repeat(6, auto);
     grid-template-rows: repeat(3, auto);
     text-align: center;
+    .grid-columns {
+      grid-template-columns: 10% 25% 20% 10% 25% 10%;
+    }
     .year {
-      grid-column: 1 / span 6;
-      grid-row: 1 / 2;
+      width: 100%;
       display: grid;
-      grid-template-columns: subgrid;
+      @extend .grid-columns;
+      @supports (grid-template-columns: subgrid) {
+        grid-column: 1 / span 6;
+        grid-row: 1 / 2;
+        display: grid;
+        grid-template-columns: subgrid;
+      }
     }
     .dots {
-      grid-column: 1 / span 6;
-      grid-row: 2 / 3;
+      width: 100%;
       display: grid;
-      grid-template-columns: subgrid;
-      place-items: center;
+      @extend .grid-columns;
+      @supports (grid-template-columns: subgrid) {
+        grid-column: 1 / span 6;
+        grid-row: 2 / 3;
+        display: grid;
+        grid-template-columns: subgrid;
+        place-items: center;
+      }
       li {
         position: relative;
         color: var(--grey-2);
@@ -318,13 +345,19 @@ video {
       }
     }
     .event {
-      grid-column: 1 / span 6;
-      grid-row: 3 / 4;
+      width: 100%;
       display: grid;
-      grid-template-columns: subgrid;
+      @extend .grid-columns;
+      @supports (grid-template-columns: subgrid) {
+        grid-column: 1 / span 6;
+        grid-row: 3 / 4;
+        display: grid;
+        grid-template-columns: subgrid;
+      }
       div {
         @include flex(column wrap);
         gap: 0.5rem;
+        padding: .25rem;
       }
       h4 {
         color: var(--white-stay);
@@ -404,7 +437,7 @@ video {
   .lottie-container {
     height: 10vh;
     @include desktop {
-      height: 23vh;
+      height: 300px;
     }
   }
   svg {
@@ -421,28 +454,25 @@ video {
   width: 100%;
   @include flex(column nowrap);
   gap: 3rem;
-  @include desktop {
-    gap: 5rem;
-  }
   ul {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     align-items: center;
     gap: 3rem;
   }
   .lottie-container {
     height: 10vh;
     @include desktop {
-      height: 18vh;
+      height: 220px;
     }
   }
   svg {
     height: 140px !important;
     width: 140px !important;
     @include desktop {
-      height: 300px !important;
-      width: 300px !important;
+      height: 220px !important;
+      width: 220px !important;
     }
   }
 }
@@ -451,9 +481,6 @@ video {
   width: 100%;
   @include flex(column nowrap);
   gap: 3rem;
-  @include desktop {
-    gap: 5rem;
-  }
   ul {
     width: 100%;
     display: grid;
@@ -525,15 +552,15 @@ video {
     transform: translateX(-50%) translateY(-50%);
     height: 20vh;
     @include desktop {
-      height: 23vh;
+      height: 220px;
     }
   }
   svg {
     height: 140px !important;
     width: 140px !important;
     @include desktop {
-      height: 300px !important;
-      width: 300px !important;
+      height: 220px !important;
+      width: 220px !important;
     }
   }
 }
@@ -620,38 +647,39 @@ video {
   }
   .box {
     padding: 2rem 2.5rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     text-align: center;
     color: var(--white-stay);
     background-color: var(--lime);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     @media (prefers-contrast: more) {
       color: var(--grey-1);
       background-color: var(--white);
       border: 1px solid var(--grey-1);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     @media (prefers-contrast: less) {
       color: var(--grey-4);
       background-color: var(--white);
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     @media (prefers-contrast: custom) {
       color: var(--white-stay);
       background-color: var(--pink);
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
     p {
       color: inherit;
-      transition: color .15s ease;
+      transition: color 0.15s ease;
     }
   }
 }
 
-.responsive-container, .container-query {
+.responsive-container,
+.container-query {
   @include flex(column nowrap);
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .responsive-formfactor {
@@ -679,10 +707,10 @@ video {
     }
   }
   .user {
-    background-color: var(--blue)
+    background-color: var(--blue);
   }
   .viewport {
-    background-color: var(--green)
+    background-color: var(--green);
   }
   .macro {
     background-color: var(--yellow);
@@ -691,5 +719,4 @@ video {
     border-radius: 3rem;
     background-color: var(--red);
   }
-
 }

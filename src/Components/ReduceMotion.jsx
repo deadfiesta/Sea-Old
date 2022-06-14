@@ -8,8 +8,9 @@ import wink from '../lotties/91530-pink-tongue-emoji.json'
 const ReduceMotion = ({ darkMode, currentIndex, i, fadeConfig }) => {
   const [motion, setMotion] = useState('')
   const fade = useSpring({ opacity: currentIndex === i ? 1 : 0, config: fadeConfig })
+  window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', e => e.matches ? setMotion('prefers-reduced-motion: reduce') :  setMotion('prefers-reduced-motion: none') )
   useEffect(() => {
-    window.matchMedia && window.matchMedia('(prefers-reduce-motion: reduced').matches ? setMotion('prefers-reduce-motion: reduced') : setMotion('prefers-reduce-motion: none')
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce').matches ? setMotion('prefers-reduced-motion: reduced') : setMotion('prefers-reduced-motion: none')
   }, [])
   return (
     <animated.div style={fade} className="section">
