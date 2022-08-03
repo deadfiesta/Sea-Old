@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "d3-ease": "^3.0.1",
     "gh-pages": "^3.2.3",
     "node-sass": "^6.0.1"
   }

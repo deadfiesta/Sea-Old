@@ -1,16 +1,21 @@
 .progressbar-container {
   position: relative;
-  width: 464px;
   height: 20px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
+  .progressbar-bg {
+    background-color: color(coral, bg3);
+  }
   .progressbar {
     position: relative;
     height: 8px;
     border-radius: 4px;
-    width: 100%;
+    width: 410px;
     overflow: hidden;
   }
+  .indeterminatebar,
   .loadingbar,
   .bgbar {
     width: 418px;
@@ -21,19 +26,28 @@
     stroke-width: 8px;
     stroke-linecap: round;
   }
+  .indeterminatebar,
   .loadingbar {
-    left: -418px;
     z-index: 10;
   }
+  .loadingbar {
+    left: -418px;
+  }
   .bgbar {
+    width: 418px;
     stroke: color(coral, bg3);
+    left: 0;
+  }
+  .bar {
+    position: absolute;
+    top: 0;
     left: 0;
   }
   .progress-state {
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translate3d(0, -50%, 0);
+    transform: translate3d(56px, -50%, 0);
   }
   .percentage-number {
     width: 38px;
@@ -60,8 +74,15 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%) rotate(-90deg);
   }
-  .circle-loader {
+  .circle-loader,
+  .circle-indeterminate {
+    position: relative;
     z-index: 10;
+  }
+  .circle-indeterminate {
+    circle {
+      transform-origin: 50% 50%;
+    }
   }
   .circle-bg {
     stroke: color(coral, bg3);
@@ -82,4 +103,75 @@
     height: 64px;
     width: 64px;
   }
+}
+
+.progress.controls-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+input[type="range"] {
+  width: 100%;
+  border: none;
+}
+
+input[type="number"] {
+  border-radius: 0.25rem;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  height: 2.25rem;
+  transition: all 0.3s ease;
+  padding: 0 0.75rem;
+  color: color(coral);
+  width: 100%;
+  border: 1px solid color(neutral, divider);
+  &:focus {
+    border-color: color(coral, blue);
+    outline: 0;
+  }
+  &::placeholder {
+    color: rgba(color(coral, secondary), 0.35);
+  }
+}
+
+
+$len: 232.1023406982422;
+$duration: 1.25s;
+
+@keyframes trim {
+  0% {
+    stroke-dashoffset: $len*3/4;
+  }
+  50% {
+    stroke-dashoffset: $len/4;
+  }
+  100% {
+    stroke-dashoffset: $len*3/4;
+    transform: rotate(540deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) ;
+  }
+  to {
+    transform: translateX(-50%) translateY(-50%) rotate(180deg);
+  }
+}
+
+.circle-spinner {
+  animation: spin $duration linear infinite;
+}
+.path-spinner {
+  stroke-dasharray: $len;
+  animation: trim $duration ease-in-out infinite;
+}
+
+.path-stop {
+  transition: stroke-dasharray 1s ease-in-out;
+  stroke-dasharray: 0;
+  stroke-dashoffset: $len;
 }
