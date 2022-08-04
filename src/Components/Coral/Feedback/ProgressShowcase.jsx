@@ -17,6 +17,7 @@ const ProgressShowcase = () => {
   const [warning, setWarning] = useState(48)
 
   const [showConfig, setShowConfig] = useState(false)
+  const [showConfigIndeterminate, setShowConfigIndeterminate] = useState(false)
   const [showStyle, setShowStyle] = useState('easing')
 
   const [useWarning, setUseWarning] = useState(false)
@@ -102,7 +103,7 @@ const ProgressShowcase = () => {
     to: { transform: "rotate(315deg)" },
     config: { duration: 1400, easing: easings.easePolyInOut.exponent(1.1) }
   })
-  
+
   //Spring Easing Circle SVG
   <animated.svg className='progress-circle circle-indeterminate' width="80" height="80" viewBox="0 0 80 80" fill="none" style={{
     ...rotateAnimEase,
@@ -234,8 +235,8 @@ const ProgressShowcase = () => {
         </DemoContainer>
       </SegmentContainer>
       <SegmentContainer>
-        <ShowCodeBtn open={showConfig} onclick={() => setShowConfig(!showConfig)}>Spring Config</ShowCodeBtn>
-        {showConfig && <div className="codeblock" style={{ maxWidth: "100%" }}>
+        <ShowCodeBtn open={showConfigIndeterminate} onclick={() => setShowConfigIndeterminate(!showConfigIndeterminate)}>Spring Config</ShowCodeBtn>
+        {showConfigIndeterminate && <div className="codeblock" style={{ maxWidth: "100%" }}>
           <SyntaxHighlighter language={"jsx"} style={materialOceanic}>
             {indeterminateCode}
           </SyntaxHighlighter>
